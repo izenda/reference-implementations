@@ -1,4 +1,4 @@
-<%@ Page Title="Report Designer" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportDesigner.aspx.cs" Inherits="ReportDesigner" %>
+﻿<%@ Page Title="Report Designer" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportDesigner.aspx.cs" Inherits="ReportDesigner" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
