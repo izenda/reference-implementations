@@ -96,21 +96,6 @@
 <% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton) {%>
 <li class="top-nav-item" style="float: right;"><a href="Settings.aspx" title="Settings"><img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" /></a></li>
 <% } %>
-			<!--****DEMO****-->
-			<li class="top-nav-item btn-group" style="float: right; margin: 0 4px;" id="loginas" class="btn-group"> 
-				<a class="btn" href="javascript:insertParam('loginas', 'admin');" title="Login as"><img class="icon" src="rs.aspx?image=ModernImages.login.png" alt="Login as admin" /></a><button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-					<span class="caret"></span>
-				</button>				
-				<ul class="dropdown-menu">
-					<li id="adminitem"><a href="javascript:insertParam('loginas', 'admin');">Admin</a></li>
-					<li id="analystitem"><a href="javascript:insertParam('loginas', 'analyst');">Analyst</a></li>
-					<li id="useritem"><a href="javascript:insertParam('loginas', 'user');">Viewer</a></li>
-					<li class="divider"></li>
-					<li id="codeitem"><a href="http://izenda.com/Site/KB/CodeSamples/Basic-security-sample">View Security Code</a></li>
-					<li id="downloadappitem"><a href="http://izenda.com/site/downloadcomplete.aspx">Download Sample App</a></li>
-				</ul>
-			</li>	
-			<!--****DEMO****-->
 		</ul>
 		<div class="clearfix"></div>
 
@@ -130,7 +115,7 @@
 		<div class="line"></div>
 		<div class="page">
 			<p>
-				Copyright 2012 Izenda, LLC<br />
+				Copyright 2013 Izenda, LLC<br />
 				<a href="http://izenda.com">Home</a> <em style="margin: 0 .25em;">·</em> <a href="http://dev5.izenda.com/bi/ReportList.aspx">Reports</a> <em style="margin: 0 .25em;">·</em> <a href="http://blog.izenda.com">Blog</a>
 			</p>
 		</div>

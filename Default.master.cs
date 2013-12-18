@@ -14,24 +14,6 @@ public partial class MasterPage1 : MasterPage
     HttpSessionState session = HttpContext.Current.Session;
     if (session["ReportingInitialized"] == null || session["ReportingInitialized"] as bool? != true)
       return;
-    /****DEMO****/
-		string wasLogin = "";
-		if (HttpContext.Current != null && HttpContext.Current.Session != null && HttpContext.Current.Session["loginas"] != null)
-			wasLogin = HttpContext.Current.Session["loginas"].ToString();
-		DemoAdHocConfig.LoginUser();
-		string newLogin = "";
-		if (HttpContext.Current != null && HttpContext.Current.Session != null && HttpContext.Current.Session["loginas"] != null)
-			newLogin = HttpContext.Current.Session["loginas"].ToString();
-		if (newLogin != wasLogin) {
-			Response.Redirect(Request.RawUrl);
-			Response.End();
-			return;
-		}
-    if (AdHocSettings.MaxVersion <= 6.6f)
-      irItem.Visible = false;
-    else
-      irItem.Visible = true;
-    /****DEMO****/
     if (!String.IsNullOrEmpty(AdHocSettings.ApplicationHeaderImageUrl))
       rightLogo.Src = AdHocSettings.ApplicationHeaderImageUrl;
     if (!AdHocSettings.ShowDesignLinks) {
