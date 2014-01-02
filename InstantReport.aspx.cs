@@ -1,11 +1,8 @@
-﻿using Izenda.AdHoc;
-
-public partial class InstantReport : System.Web.UI.Page
+﻿public partial class InstantReport : System.Web.UI.Page
 {
-	protected override void OnInit(System.EventArgs e)
-	{
-		Utility.CheckUserName();
-		Utility.CheckLimitations();
-		base.OnInit(e);
-	}
+  protected override void OnPreInit(System.EventArgs e)
+  {
+    ASP.global_asax.CustomAdHocConfig.InitializeReporting();
+  }
 }
+

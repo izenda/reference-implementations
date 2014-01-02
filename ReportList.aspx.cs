@@ -1,12 +1,7 @@
-﻿using System.Web.UI;
-using Izenda.AdHoc;
-
-public partial class ReportList : Page
+﻿public partial class ReportList : System.Web.UI.Page
 {
-	protected override void OnInit(System.EventArgs e)
-	{
-		Utility.CheckUserName();
-		Utility.CheckLimitations();
-		base.OnInit(e);
-	}
+  protected override void OnPreInit(System.EventArgs e)
+  {
+    ASP.global_asax.CustomAdHocConfig.InitializeReporting();
+  }
 }

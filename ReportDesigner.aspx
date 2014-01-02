@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Report Designer" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportDesigner.aspx.cs" Inherits="ReportDesigner" %>
+<%@ Page Title="Report Designer" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportDesigner.aspx.cs" Inherits="ReportDesigner" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
@@ -15,7 +15,7 @@
           while (frn.indexOf('\\\\') >= 0) {
             frn = frn.replace('\\\\', '\\');
           }
-          var frNodes = frn.split('\\');
+          var frNodes = frn.split(categoryCharacter);
           var hdr = '<h1 style=\"margin-left:40px;\">' + frNodes[frNodes.length - 1].replace(/'/g, "&#39;") + (frNodes.length <= 1 ? '' : ' <i>(' + frNodes[frNodes.length - 2].replace(/'/g, "&#39;") + ')</i>') + '</h1>';
           var repHeader = document.getElementById('repHeader');
           repHeader.innerHTML = hdr;

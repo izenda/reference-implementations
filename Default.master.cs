@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using System.Web.SessionState;
 using System.Web.UI;
 using Izenda.AdHoc;
 
@@ -8,12 +7,7 @@ public partial class MasterPage1 : MasterPage
 {
   protected override void OnInit(EventArgs e)
   {
-    if (HttpContext.Current == null || HttpContext.Current.Session == null)
-      return;
-    Utility.CheckLimitations(true);
-    HttpSessionState session = HttpContext.Current.Session;
-    if (session["ReportingInitialized"] == null || session["ReportingInitialized"] as bool? != true)
-      return;
+    ASP.global_asax.CustomAdHocConfig.InitializeReporting();
     if (!String.IsNullOrEmpty(AdHocSettings.ApplicationHeaderImageUrl))
       rightLogo.Src = AdHocSettings.ApplicationHeaderImageUrl;
     if (!AdHocSettings.ShowDesignLinks) {

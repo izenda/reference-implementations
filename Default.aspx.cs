@@ -1,9 +1,7 @@
-﻿using System;
-
-public partial class _Default : System.Web.UI.Page
+﻿public partial class _Default : System.Web.UI.Page
 {
-    protected override void OnLoad(EventArgs e)
-    {
-        Response.Redirect("ReportList.aspx");
-    }
+  protected override void OnLoad(System.EventArgs e)
+  {
+    Response.Redirect("ReportList.aspx");
+  }
 }
