@@ -1,5 +1,6 @@
 ﻿<%@ Application Language="C#" %>
 <%@ Import Namespace="Izenda.AdHoc"%>
+<%@ Import Namespace="Izenda.Fusion"%>
 
 <script runat="server">
  [Serializable]
@@ -21,6 +22,13 @@
 		 AdHocSettings.ReportCssUrl = "Resources/css/Report.css";
 		 AdHocSettings.ShowBetweenDateCalendar = true;
 		 AdHocSettings.AdHocConfig = new CustomAdHocConfig();
+
+     FusionDriver fd = new FusionDriver();
+
+     fd.AddConnection("", FusionConnectionType.MsSql, "Server=66.29.211.132,41433;Database=northwind;User ID=northwind;Password=traders;");
+
+     AdHocContext.Driver = fd;
+
 		 //Initialize User
 		 //AdHocSettings.VisibleDataSources=
 		 //AdHocSettings.CurrentUserName=
