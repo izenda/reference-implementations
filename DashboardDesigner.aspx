@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Dashboard designer" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="DashboardDesigner.aspx.cs" Inherits="DashboardDesigner" %>
+<%@ Page Title="Dashboard designer" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="DashboardDesigner.aspx.cs" Inherits="DashboardDesigner" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
