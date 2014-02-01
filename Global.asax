@@ -3,14 +3,12 @@
 
 <script RunAt="server">
   [Serializable]
-  public class CustomAdHocConfig : FileSystemAdHocConfig
-  {
-    public static void InitializeReporting()
-    {
+  public class CustomAdHocConfig : FileSystemAdHocConfig {
+    public static void InitializeReporting() {
       //Check to see if we've already initialized.
       if (HttpContext.Current.Session == null || HttpContext.Current.Session["ReportingInitialized"] != null)
         return;
-      // Initialize System
+      //Initialize System
       AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
       AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
       AdHocSettings.GenerateThumbnails = true;
@@ -24,20 +22,15 @@
       //Initialize User
       //AdHocSettings.VisibleDataSources=
       //AdHocSettings.CurrentUserName=
-      //AdHocSettings.HiddenFilters["Field"] = new string [] {"value1","value2"};      
-      //Success!      
+      //AdHocSettings.HiddenFilters["Field"] = new string [] {"value1","value2"};
+      //Success!
       HttpContext.Current.Session["ReportingInitialized"] = true;
     }
-
-    public override void ProcessDataSet(System.Data.DataSet ds, string reportPart)
-    {
+    public override void ProcessDataSet(System.Data.DataSet ds, string reportPart) {
       base.ProcessDataSet(ds, reportPart);
     }
-
-    public override void PreExecuteReportSet(ReportSet reportSet)
-    {
+    public override void PreExecuteReportSet(ReportSet reportSet) {
       base.PreExecuteReportSet(reportSet);
     }
   }
-
 </script>
