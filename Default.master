@@ -102,7 +102,6 @@
           <% } %>
         </ul>
         <div class="clearfix"></div>
-
       </div>
     </div>
 
@@ -119,8 +118,12 @@
       <div class="line"></div>
       <div class="page">
         <p>
-          Copyright 2013 Izenda, LLC<br />
-          <a href="http://izenda.com">Home</a> <em style="margin: 0 .25em;">·</em> <a href="http://dev5.izenda.com/bi/ReportList.aspx">Reports</a> <em style="margin: 0 .25em;">·</em> <a href="http://blog.izenda.com">Blog</a>
+          Copyright 2014 Izenda, LLC
+          <br />
+          <a href="http://izenda.com">Home</a><em style="margin: 0 .25em;">·</em>
+          <a href="http://dev5.izenda.com/bi/ReportList.aspx">Reports</a>
+          <em style="margin: 0 .25em;">·</em>
+          <a href="http://blog.izenda.com">Blog</a>
         </p>
       </div>
     </div>
@@ -128,7 +131,8 @@
   </div>
 
   <!-- For Google analytics -->
-  <asp:ContentPlaceHolder ID="TrackerPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+  <asp:ContentPlaceHolder ID="TrackerPlaceHolder" runat="server">
+  </asp:ContentPlaceHolder>
 
 </body>
 </html>
