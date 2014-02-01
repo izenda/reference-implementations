@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Izenda Ad Hoc Reports and Embedded BI Live Demo" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportListIntro.aspx.cs" Inherits="ReportListIntro" %>
+<%@ Page Title="Izenda Ad Hoc Reports and Embedded BI Live Demo" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportListIntro.aspx.cs" Inherits="ReportListIntro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" Runat="Server">
 </asp:Content>
