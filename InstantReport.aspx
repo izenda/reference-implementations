@@ -4,8 +4,9 @@
 <%@ Register Src="~/Resources/html/InstantReport-Body.ascx" TagName="ccn2" TagPrefix="ccp2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="server">
-<ccp1:ccn1 runat="server" />
+  <ccp1:ccn1 runat="server" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder" runat="server">    
-<ccp2:ccn2 runat="server" />
+
+<asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder" runat="server">
+  <ccp2:ccn2 runat="server" />
 </asp:Content>
