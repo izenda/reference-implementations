@@ -7,6 +7,8 @@
     <h1>Thank You for Evaluating Izenda Reports</h1>
     <p>
       Please click <a href="ReportList.aspx">Reports</a> or <a href="Dashboards.aspx">Dashboards</a> on the menu above to explore sample reports or play the video below to watch an overview of the demo.
+      <br/>
+      Click <a href="http://www.izenda.com/Site/DownloadComplete.aspx">here to download and install</a> Izenda on your server.
     </p>
     <div style="padding: 3px; border: 3px solid #fff; display: inline-block;">
       <iframe width="800" height="480" src="http://www.youtube.com/embed/9f5rlHOmPy8?rel=0" frameborder="0" allowfullscreen></iframe>
