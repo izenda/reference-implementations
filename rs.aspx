@@ -1,1 +1,1 @@
-<%@ Page language="c#" AutoEventWireup="false" Inherits="Izenda.AdHoc.ResponseServer, Izenda.AdHoc"%>
+<%@ Page language="VB" AutoEventWireup="false" Inherits="Izenda.AdHoc.ResponseServer, Izenda.AdHoc"%>
