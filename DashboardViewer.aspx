@@ -1,4 +1,4 @@
-<%@ Page language="c#" Inherits="DashboardViewer" CodeFile="DashboardViewer.aspx.cs" Debug="true" EnableEventValidation="false"%>
+<%@ Page language="C#" Inherits="DashboardViewer" CodeFile="DashboardViewer.aspx.cs" Debug="true" EnableEventValidation="false"%>
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
