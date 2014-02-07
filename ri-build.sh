@@ -6,5 +6,6 @@ rm izenda.adhoc.zip
 mkdir -p Reports
 touch Izenda.config
 mkdir -p "${RI}"
-find . ! -name "${RI}" | cpio -mpvd "${RI}"
-zip -r ${RI}.zip ${RI}
+find . ! -name "${RI}"
+#find . ! -name "${RI}" | cpio -mpvd "${RI}"
+#zip -r ${RI}.zip ${RI}
