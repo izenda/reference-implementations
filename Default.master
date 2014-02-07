@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="MasterPage1" %>
+<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Default.master.vb" Inherits="MasterPage1" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
