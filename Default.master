@@ -95,11 +95,13 @@
               <li><a href="DashboardDesigner.aspx?clear=1">Dashboard</a></li>
             </ul>
           </li>
-          <% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
-             {%>
-          <li class="top-nav-item" style="float: right;"><a href="Settings.aspx" title="Settings">
-            <img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" /></a></li>
-          <% } %>
+          <% If Izenda.AdHoc.AdHocSettings.ShowSettingsButton=True Then%>
+          <li class="top-nav-item" style="float: right;">
+            <a href="Settings.aspx" title="Settings">
+              <img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" />
+            </a>
+          </li>
+          <% End If %>
         </ul>
         <div class="clearfix"></div>
       </div>
