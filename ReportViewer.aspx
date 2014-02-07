@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportViewer.aspx.cs" Inherits="ReportViewer" %>
+<%@ Page Title="" Language="VB" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="ReportViewer.aspx.vb" Inherits="ReportViewer" %>
 <%@ Register Src="~/Resources/html/ReportViewer-Head.ascx" TagName="ccn1" TagPrefix="ccp1" %>
 <%@ Register Src="~/Resources/html/ReportViewer-Body.ascx" TagName="ccn2" TagPrefix="ccp2" %>
 
