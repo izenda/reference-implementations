@@ -96,9 +96,13 @@
             </ul>
           </li>
           <% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
-             {%>
-          <li class="top-nav-item" style="float: right;"><a href="Settings.aspx" title="Settings">
-            <img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" /></a></li>
+             {
+          %>
+            <li class="top-nav-item" style="float: right;">
+              <a href="Settings.aspx" title="Settings">
+                <img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" />
+              </a>
+            </li>
           <% } %>
         </ul>
         <div class="clearfix"></div>
