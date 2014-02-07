@@ -6,8 +6,7 @@
     CustomAdHocConfig.InitializeReporting()
   End Sub
 
-  <Serializable()>
-  Public Class CustomAdHocConfig
+  <Serializable()> Public Class CustomAdHocConfig
     Inherits FileSystemAdHocConfig
     Public Shared Sub InitializeReporting()
       'Check to see if we've already initialized.
