@@ -2,8 +2,7 @@
 <%@ Import Namespace="Izenda.AdHoc" %>
 
 <script RunAt="server">
-  [Serializable]
-  public class CustomAdHocConfig : FileSystemAdHocConfig {
+  [Serializable] public class CustomAdHocConfig : FileSystemAdHocConfig {
     public static void InitializeReporting() {
       //Check to see if we've already initialized.
       if (HttpContext.Current.Session == null || HttpContext.Current.Session["ReportingInitialized"] != null)
