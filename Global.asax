@@ -1,7 +1,7 @@
 <%@ Application Language="C#" %>
 <%@ Import Namespace="Izenda.AdHoc" %>
 
-<script RunAt="server">
+<script runat="server">
   [Serializable]
   public class CustomAdHocConfig : FileSystemAdHocConfig {
     public static void InitializeReporting() {
