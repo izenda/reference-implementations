@@ -1,0 +1,3 @@
+[submodule "Reporting/elrte"]
+	path = Reporting/elrte
+	url = https://github.com/izenda/elrte
