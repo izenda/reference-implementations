@@ -35,6 +35,6 @@ exitOnFailure
 mkdir -p Reports
 touch Izenda.config
 mkdir -p "${RI}"
-${FIND} . \( -path "./.git" -o -path "./${RI}" \) -prune -o -print | cpio -mpvd "${RI}"
+${FIND} . \( -path "./.git" -o -path "./packages" -o -path "./${RI}" \) -prune -o -print | cpio -mpvd "${RI}"
 zip -r ${RI}.zip ${RI}
 exitOnFailure
