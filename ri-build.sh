@@ -1,6 +1,9 @@
 #!/bin/bash
 RI=${1}
-wget http://archives.izenda.us/core/latest/izenda.adhoc.zip
+CORE_TYPE=${2}
+CORE_TYPE=${CORE_TYPE:="latest"}
+
+wget http://archives.izenda.us/core/${CORE_TYPE}/izenda.adhoc.zip
 unzip izenda.adhoc.zip
 rm izenda.adhoc.zip
 mkdir -p Reports
