@@ -4,8 +4,9 @@
 <%@ Import Namespace="System.Xml" %>
 <%@ Import Namespace="System.Web.Hosting" %>
 <%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Globalization" %>
 
-<script RunAt="server">
+<script runat="server">
   [Serializable]
   public class CustomAdHocConfig : FileSystemAdHocConfig {
     public static void InitializeReporting() {
@@ -84,7 +85,7 @@
     /// </summary>
     public void LoadLocalizationStrings() {
       XmlDocument res = new XmlDocument();
-      res.Load(HostingEnvironment.MapPath("/Resources/Strings.EN.resx"));
+      res.Load(HostingEnvironment.MapPath("/Resources/Strings." + CultureInfo.CurrentCulture.Name + ".resx"));
       
       foreach (XmlNode node in res.SelectNodes("//data")) {
         locals.Add(node.Attributes.GetNamedItem("name").Value,
