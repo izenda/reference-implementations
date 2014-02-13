@@ -1,5 +1,9 @@
 <%@ Application Language="C#" %>
 <%@ Import Namespace="Izenda.AdHoc" %>
+<%@ Import Namespace="HtmlAgilityPack" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="System.Web.Hosting" %>
+<%@ Import Namespace="System.Collections.Generic" %>
 
 <script RunAt="server">
   [Serializable]
@@ -26,11 +30,66 @@
       //Success!
       HttpContext.Current.Session["ReportingInitialized"] = true;
     }
+
+    private Dictionary<string, string> locals = new Dictionary<string, string>();
+    
     public override void ProcessDataSet(System.Data.DataSet ds, string reportPart) {
       base.ProcessDataSet(ds, reportPart);
     }
     public override void PreExecuteReportSet(ReportSet reportSet) {
       base.PreExecuteReportSet(reportSet);
+    }
+
+    /// <summary>
+    /// This method allows you to perform custom rendering of a report. We'll use this to
+    /// find all localizable elements and then inject the localized version in their places. 
+    /// </summary>
+
+    public override string PerformCustomRendering(string initialHtml) {
+      HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+      doc.LoadHtml(initialHtml);
+
+      // This uses an Xpath declaration to get all elements marked as localize. 
+      HtmlNodeCollection localizableStrings = doc.DocumentNode.SelectNodes("//span[@class='localize']");
+      
+      // Loop over each Node that's localizable and inject the value from the resource file into the html
+      if (localizableStrings != null) {
+        LoadLocalizationStrings();
+
+        foreach (HtmlNode node in localizableStrings) {
+          node.InnerHtml = locals[node.InnerText];
+        }
+        return doc.DocumentNode.OuterHtml;
+      }
+
+      return initialHtml;
+    }
+
+    /// <summary>
+    /// Localizes every string in the report that is in a span with the class localize
+    /// </summary>
+    
+    public void LocalizeStrings(ref HtmlNodeCollection stringsToLocalize) {
+      if (locals.Count == 0) {
+        LoadLocalizationStrings();
+      }
+
+      foreach (HtmlNode node in stringsToLocalize) {
+        node.InnerHtml = locals[node.InnerText];
+      }
+    }
+
+    /// <summary>
+    /// Reads in the Strings resource file and adds each string to the locals dictionary
+    /// </summary>
+    public void LoadLocalizationStrings() {
+      XmlDocument res = new XmlDocument();
+      res.Load(HostingEnvironment.MapPath("/Resources/Strings.EN.resx"));
+      
+      foreach (XmlNode node in res.SelectNodes("//data")) {
+        locals.Add(node.Attributes.GetNamedItem("name").Value,
+                   node.InnerText.Replace("\r\n", string.Empty).Trim());
+      }
     }
   }
 </script>
