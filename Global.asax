@@ -32,6 +32,7 @@
       HttpContext.Current.Session["ReportingInitialized"] = true;
     }
 
+    // This dictionary holds all localization strings. 
     private Dictionary<string, string> locals = new Dictionary<string, string>();
 
     public override void ProcessDataSet(System.Data.DataSet ds, string reportPart) {
@@ -62,6 +63,8 @@
         foreach (HtmlNode node in localizableStrings) {
           node.InnerHtml = locals[node.InnerText];
         }
+        
+        // Return the XML document as a string.
         return doc.DocumentNode.OuterHtml;
       }
 
@@ -74,8 +77,10 @@
     public void LoadLocalizationStrings() {
 
       XmlDocument res = new XmlDocument();
+      
       res.Load(HostingEnvironment.MapPath("/Resources/Strings." + CultureInfo.CurrentCulture.Name + ".resx"));
 
+      // Finds all '<data> tags in the document and extracts the name value pair and loads it to the dictionary
       foreach (XmlNode node in res.SelectNodes("//data")) {
         locals.Add(node.Attributes.GetNamedItem("name").Value,
                    node.InnerText.Replace("\r\n", string.Empty).Trim());
