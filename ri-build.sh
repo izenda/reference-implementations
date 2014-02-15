@@ -1,5 +1,7 @@
 #!/bin/bash
 RI=${1}
+CORE_TYPE=${2}
+CORE_TYPE=${CORE_TYPE:="latest"}
 
 case `uname -s` in
   Darwin)
@@ -26,7 +28,7 @@ exitOnFailure() {
   fi
 }
 
-wget http://archives.izenda.us/core/latest/izenda.adhoc.zip
+wget http://archives.izenda.us/core/${CORE_TYPE}/izenda.adhoc.zip
 exitOnFailure
 unzip izenda.adhoc.zip
 rm izenda.adhoc.zip
