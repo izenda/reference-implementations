@@ -1,6 +1,11 @@
 <%@ Application Codebehind="Global.asax.cs" Inherits="MVC4Razor2.MvcApplication" Language="C#" %>
 <%@ Import Namespace="Izenda.AdHoc"%>
 <%@ Import Namespace="System.IO"%>
+<%@ Import Namespace="HtmlAgilityPack" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="System.Web.Hosting" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Globalization" %>
 
 <script runat="server">
   void Application_AcquireRequestState(object sender, EventArgs e) {
@@ -34,6 +39,54 @@
       AdHocSettings.PrintMode = PrintMode.Html2PdfAndHtml;
       AdHocSettings.AdHocConfig = new CustomAdHocConfig();
       HttpContext.Current.Session["ReportingInitialized"] = true;
+    }
+
+    // This dictionary holds all localization strings. 
+    private Dictionary<string, string> locals = new Dictionary<string, string>();
+
+    /// <summary>
+    /// This method allows you to perform custom rendering of a report. We'll use this to
+    /// find all localizable elements and then inject the localized version in their places. 
+    /// </summary>
+
+    public override string PerformCustomRendering(string initialHtml) {
+      HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+      doc.LoadHtml(initialHtml);
+
+      // This uses an Xpath declaration to get all elements marked as localize. 
+      HtmlNodeCollection localizableStrings = doc.DocumentNode.SelectNodes("//span[@class='localize']");
+
+      // Loop over each Node that's localizable and inject the value from the resource file into the html
+      if (localizableStrings != null) {
+        if (locals.Count == 0) {
+          LoadLocalizationStrings();
+        }
+
+        foreach (HtmlNode node in localizableStrings) {
+          node.InnerHtml = locals[node.InnerText];
+        }
+
+        // Return the XML document as a string.
+        return doc.DocumentNode.OuterHtml;
+      }
+
+      return initialHtml;
+    }
+
+    /// <summary>
+    /// Reads in the Strings resource file and adds each string to the locals dictionary
+    /// </summary>
+    public void LoadLocalizationStrings() {
+
+      XmlDocument res = new XmlDocument();
+
+      res.Load(HostingEnvironment.MapPath("/Resources/Strings." + CultureInfo.CurrentCulture.Name + ".resx"));
+
+      // Finds all '<data> tags in the document and extracts the name value pair and loads it to the dictionary
+      foreach (XmlNode node in res.SelectNodes("//data")) {
+        locals.Add(node.Attributes.GetNamedItem("name").Value,
+                   node.InnerText.Replace("\r\n", string.Empty).Trim());
+      }
     }
   }
 </script>
