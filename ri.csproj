@@ -162,7 +162,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.6, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>packages\HtmlAgilityPack.1.4.6\lib\net40\HtmlAgilityPack.dll</HintPath>
+      <HintPath>packages\HtmlAgilityPack\lib\net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
