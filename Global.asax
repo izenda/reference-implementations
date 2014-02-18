@@ -80,7 +80,7 @@
 
       XmlDocument res = new XmlDocument();
             
-      res.Load(HttpContext.Current.Server.MapPath("/Resources/Strings." + CultureInfo.CurrentCulture.Name + ".resx"));
+      res.Load(HttpContext.Current.Server.MapPath("~/Resources/Strings." + CultureInfo.CurrentCulture.Name + ".resx"));
 
       // Finds all '<data> tags in the document and extracts the name value pair and loads it to the dictionary
       foreach (XmlNode node in res.SelectNodes("//data")) {
