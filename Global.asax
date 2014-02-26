@@ -40,6 +40,17 @@
       AdHocSettings.AdHocConfig = new CustomAdHocConfig();
       HttpContext.Current.Session["ReportingInitialized"] = true;
     }
+      
+    public override void PostLoadReportSet(string name, ReportSet reportSet)
+    {
+        // Adjust dimentions for printing
+        reportSet.PageWidth = 8.07f;
+        reportSet.PageHeight = 11.49f;
+        reportSet.OutputAreaWidth = 7.67f;
+        reportSet.OutputAreaHeight = 11.19f;
+        reportSet.OutputAreaLeft = 0.1f;
+        reportSet.OutputAreaTop = 0.1f;
+    }
 
     // This dictionary holds all localization strings. 
     private Dictionary<string, string> locals = new Dictionary<string, string>();
