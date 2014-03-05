@@ -8,82 +8,86 @@ using System.Web.UI;
 using Izenda.AdHoc;
 using System.Text;
 using System.Web.UI.WebControls;
-using System.Reflection;
 
-namespace MVC3SK.Controllers {
-  public class ReportingController : Controller {
-    [ValidateInput(false)]
-    public ActionResult ReportDesigner() {
+namespace MVC3SK.Controllers
+{
+  public class ReportingController : Controller
+  {
 
-
-      return View();
-    }
-    [ValidateInput(false)]
-    public ActionResult ReportList() {
-
-
-      if (HttpContext.Request != null && !String.IsNullOrEmpty(HttpContext.Request.RawUrl) && !HttpContext.Request.RawUrl.ToLower().Contains(AdHocSettings.ReportList.ToLower())) {
-        return RedirectToAction("ReportList", "Reporting");
-      }
-      return View();
-    }
-    [ValidateInput(false)]
-    public ActionResult Settings() {
-      return View();
-    }
-    [ValidateInput(false)]
-    public ActionResult Dashboards() {
+    public ActionResult ReportDesigner()
+    {
 
 
       return View();
     }
-    [ValidateInput(false)]
-    public ActionResult ReportViewer() {
+
+    public ActionResult ReportList()
+    {
+
+
+      if (HttpContext.Request != null && !String.IsNullOrEmpty(HttpContext.Request.RawUrl) && !HttpContext.Request.RawUrl.ToLower().Contains(AdHocSettings.ReportList.ToLower()))
+        return RedirectToAction("Index", "Home");
+      return View();
+    }
+
+    public ActionResult Settings()
+    {
+      return View();
+    }
+
+    public ActionResult Dashboards()
+    {
+
+
+      return View();
+    }
+
+    public ActionResult ReportViewer()
+    {
 
 
       AdHocSettings.ShowSimpleModeViewer = true;
       return View();
     }
-    [ValidateInput(false)]
-    public ActionResult InstantReport() {
 
-
-      return View();
-    }
-    [ValidateInput(false)]
-    public ActionResult DashboardDesigner() {
+    public ActionResult InstantReport()
+    {
 
 
       return View();
     }
 
+    public ActionResult DashboardDesigner()
+    {
+
+
+      return View();
+    }
+
     [ValidateInput(false)]
-    public ActionResult FormDesigner() {
+    public ActionResult FormDesigner()
+    {
       // Workaround to prevent security validation issues
       System.Web.Helpers.UnvalidatedRequestValues request = System.Web.Helpers.Validation.Unvalidated(Request);
 
       string templateName = request["rn"];
-      if (String.IsNullOrEmpty(templateName)) {
+      if (String.IsNullOrEmpty(templateName))
         return this.Content("Template name not specified");
-      }
       templateName = templateName.Replace("\\\\", "\\");
 
       string saveData = request["editor"];
       if (!String.IsNullOrEmpty(saveData)) {
         bool doNotDoAnything = false;
         string goCancel = request["gocancel"];
-        if (!String.IsNullOrEmpty(goCancel) && goCancel == "1") {
+        if (!String.IsNullOrEmpty(goCancel) && goCancel == "1")
           doNotDoAnything = true;
-        }
-        if (!doNotDoAnything) {
+        if (!doNotDoAnything)
           AdHocSettings.AdHocConfig.SetVolatileTemplate(templateName, saveData);
-        }
         string goBack = request["goback"];//save clicked
       }
       string delete = request["delete"];
-      if (!String.IsNullOrEmpty(delete) && delete == "1") {
+      if (!String.IsNullOrEmpty(delete) && delete == "1")
         AdHocSettings.AdHocConfig.DeleteTemplateInternal(templateName);
-      }
       string templateData = AdHocSettings.AdHocConfig.GetVolatileTemplate(templateName);
 
       StringBuilder sb = new StringBuilder();
@@ -111,13 +115,11 @@ namespace MVC3SK.Controllers {
         } catch {
           ver = 0;
         }
-        if (ver < 9) {
+        if (ver < 9)
           showMsg = true;
-        }
       }
-      if (showMsg) {
+      if (showMsg)
         message = "<br />The Forms Designer works requires at least Internet Exporer 9.0 an HTML5 compatible browser";
-      }
 
       sb.Append("<div id=\"editor\">" + templateData + "</div></form>" + message + "</body></html>");
 

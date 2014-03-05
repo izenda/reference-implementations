@@ -1,5 +1,8 @@
 bin
 Resources
 Reports
-App_Code
 App_Data
+packages
+obj
+*.user
+*.suo
