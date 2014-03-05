@@ -46,6 +46,7 @@ namespace MVC4Razor2 {
         result = result || requestUrl.Contains("jquery-ui-1.8.13.custom.min.js");
         result = result || requestUrl.Contains("elrte.full.js");
         result = result || requestUrl.Contains("elrte.ru.js");
+        result = result || requestUrl.Contains("fieldproperties.js");
       }
       if (extensionToBeRouted == "css") {
         result = result || requestUrl.Contains("tabs.css");

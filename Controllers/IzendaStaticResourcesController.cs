@@ -38,6 +38,9 @@ namespace MVC4Razor2.Controllers {
       if (rawUrl.EndsWith("elrte.ru.js")) {
         return File(Url.Content("~/Reporting/elrte/js/i18n/elrte.ru.js"), "application/x-javascript");
       }
+      if (rawUrl.EndsWith("fieldproperties.js")) {
+        return File(Url.Content("~/Resources/js/FieldProperties.js"), "application/x-javascript");
+      }
       if (rawUrl.EndsWith("tabs.css")) {
         return File(Url.Content("~/Resources/css/tabs.css"), "text/css");
       }
