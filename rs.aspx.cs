@@ -9,6 +9,5 @@ public partial class rs : Izenda.AdHoc.ResponseServer
   {
     if (System.Web.HttpContext.Current.Request.RawUrl.Contains("rs.aspx?copy="))
       System.Web.HttpContext.Current.Response.End();
-    ASP.global_asax.CustomAdHocConfig.InitializeReporting();
   }
 }
