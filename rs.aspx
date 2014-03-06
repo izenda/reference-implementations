@@ -1,1 +1,1 @@
-<%@ Page language="C#" AutoEventWireup="false" Inherits="Izenda.AdHoc.ResponseServer, Izenda.AdHoc"%>
+<%@ Page language="C#" AutoEventWireup="false" CodeFile="rs.aspx.cs" Inherits="rs"%>
