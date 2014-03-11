@@ -1,0 +1,154 @@
+﻿<!-- report viewer filter -->
+<script id="rvfFilterMainTemplate" type="text/x-jquery-tmpl">
+	<div id="filter-wrapper" class="cf">
+		<span class="filter-collapse open" data-collapse-summary=""><a href="#">Filter</a></span>
+		<div id="filter" aria-hidden="false" style="display: block;">
+			<div class="rvf-menu-content" style="height: auto;">
+				<div class="rvf-menu-content-regular"></div>
+				<div class="rvf-menu-content-additional"></div>
+			</div>
+			<div id="filter-collapse-inside">
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id="rvfLoadingTemplate" type="text/x-jquery-tmpl">
+	<div class="rvf-loading">
+        Loading...<br />
+        <img alt="" src="rs.aspx?image=loading.gif" />
+    </div>
+</script>
+
+<!-- report viewer filter items -->
+<script id="rvfAddFiltersTemplate" type="text/x-jquery-tmpl">
+	<div class="rvf-addfilters-tile">
+		<div class="rvf-addfilters-header">
+			<div class="rvf-addfilters-header-title">Add filters</div>
+		</div>
+		<div class="rvf-addfilters-body">
+			<table style="width:100%;">
+				<tr>
+					<td style="width: 50%;" class="rvf-addfilters-body-main"></td>
+					<td style="width: 50%; vertical-align: top;">
+						<div class="rvf-group-header">Misc</div>
+						<div class="rvf-addfilters-body-misc"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</script>
+
+<!-- report viewer filter items -->
+<script id="rvfGroupTemplate" type="text/x-jquery-tmpl">
+	<div class="rvf-group">
+		<div class="rvf-group-clear hidden">x</div>
+		<div class="rvf-group-header">${Description}</div>
+		<div class="rvf-group-body"></div>
+	</div>
+</script>
+
+<!-- report viewer filter misc items -->
+<script id="rvfGroupTemplateMisc" type="text/x-jquery-tmpl">
+	<div class="rvf-group-misc" uid="${Uid}"></div>
+</script>
+
+<script id="rvfGroupItemTemplate" type="text/x-jquery-tmpl">
+	<span class="rvf-group-item" Uid="${Uid}" title="${Description}">${Description}</span>
+</script>
+
+<script id="rvfGroupItemOptionTemplate" type="text/x-jquery-tmpl">
+	{%each Values%}
+	<div class="rvf-group-item-option">${$value}</div>
+	{%/each%}
+</script>
+
+<!-- Alex L filters -->
+
+<!-- report viewer refresh -->
+<script id="rvfRegularFiltersTemplate" type="text/x-jquery-tmpl">
+	<div id="rvf-regular-filters">
+		<div id="htmlFilters">
+		</div>
+	</div>
+</script>
+
+
+<!-- Block with filters with refresh button -->
+<script id="rvfRegularFilterBlocksTemplate" type="text/x-jquery-tmpl">
+	<table class="rvf-regular-filters-table">
+		<tr>
+			<td class="rvf-regular-filters-td">
+				<ul class="overview">
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 8px;">
+				<button id="updateBtnP" type="button" class="filter-SearchButton button">Refresh</button>
+			</td>
+		</tr>
+	</table>
+</script>
+
+<!-- Block with filters with refresh button -->
+<script id="rvfRegularFilterBlockTemplate" type="text/x-jquery-tmpl">
+	<div id="${Uid}" controlType="${ControlType}" class="rvf-regular-filter">
+		{%if DisplayCloseButton%}
+		<div class="rvf-regular-filter-close">x</div>
+		{%/if%}
+		<div class="rvf-regular-filter-desc">${Description}</div>
+	</div>
+</script>
+
+<!-- Filter content -->
+<script id="rvfRegularFilterContentTemplate" type="text/x-jquery-tmpl">
+	{%if ControlType == 1%}
+	<input style="margin: 8px;" type="text" id="ndbfc${index}" value="${Value}" onkeyup="${onKeyUpCmd}"/>
+	{%/if%}
+	{%if ControlType == 2%}
+	<input style="margin: 8px;" type="text" id="ndbfc${index}_l" value="${Values[0]}" onkeyup="${onKeyUpCmd}"/>
+	<input style="margin: 8px;" type="text" id="ndbfc${index}_r" value="${Values[1]}" onkeyup="${onKeyUpCmd}"/>
+	{%/if%}
+	{%if ControlType == 3%}
+	<select style="margin: 8px;" id="ndbfc${index}" onchange="${onChangeCmd}">
+		{%each(i, v) ExistingValues%}
+		{%if v == Value%}
+		<option value="${v}" selected="selected">${ExistingLabels[i]}</option>
+		{%else%}
+		<option value="${v}">${ExistingLabels[i]}</option>
+		{%/if}
+		{%/each%}
+	</select>
+	{%/if%}
+	{%if ControlType == 4%}
+	<select style="margin: 8px;" id="ndbfc${index}" onchange="${onChangeCmd}">
+		{%each(i, v) ExistingValues%}
+		{%if v == Value%}
+		<option value="${v}" selected="selected">${ExistingLabels[i]}</option>
+		{%else%}
+		<option value="${v}">${ExistingLabels[i]}</option>
+		{%/if}
+		{%/each%}
+	</select>
+	{%/if%}
+	{%if ControlType == 5%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 6%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 7%}
+	<textarea style="margin: 8px;" rows="2" id="ndbfc${index}" onkeyup="${onKeyUpCmd}">${Value}</textarea>
+	{%/if%}
+	{%if ControlType == 8%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 9%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 10%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+</script>

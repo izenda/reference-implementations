@@ -2,6 +2,7 @@
 <%@ Import Namespace="System" %>
 <%@ Import Namespace="Izenda.AdHoc" %>
 <%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Globalization" %>
 
 <script RunAt="server">
 	void Application_AcquireRequestState(object sender, EventArgs e)
@@ -16,9 +17,8 @@
 		{
 			if (HttpContext.Current.Session == null || HttpContext.Current.Session["ReportingInitialized"] != null)
 				return;
-			AdHocSettings.LicenseKey = ConfigurationManager.AppSettings["IzendaLicKey"];
-			//AdHocSettings.SqlServerConnectionString = "Server=66.29.211.132,41433;Database=duncan-02-17-2014;User ID=duncan;Password=ne-gheh-ghop;";
-			AdHocSettings.SqlServerConnectionString = @"server=PCPCPC\SQLEXPRESS2012;database=PEMS_test3;User Id=sa;Password=iddqd;";
+            AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
+            AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
 			AdHocSettings.DataCacheInterval = 0;
 			AdHocSettings.AdHocConfig = new CustomAdHocConfig();
 			AdHocSettings.ReportViewer = "ReportViewer";
@@ -27,6 +27,7 @@
 			AdHocSettings.ReportDesignerUrl = "ReportDesigner";
 			AdHocSettings.DashboardDesignerUrl = "DashboardDesigner";
 			AdHocSettings.ReportList = "ReportList";
+			AdHocSettings.Culture = new CultureInfo("en-AU");
 			AdHocSettings.FormDesignerUrl = "FormDesigner";
 			AdHocSettings.SettingsPageUrl = "Settings";
 			AdHocSettings.ParentSettingsUrl = "Settings";
@@ -48,7 +49,11 @@
 			AdHocSettings.PrintMode = PrintMode.Html2PdfAndHtml;
 			AdHocSettings.ShowPoweredByLogo = false;
 			AdHocSettings.SqlCommandTimeout = 120;
-			AdHocSettings.VisibleDataSources = new string[] { "ActiveAlarms_SP", "ActiveAlarmsV", "AssetEventListV", "HistoricalAlarmsV", "MaintenanceEventsV", "AssetOperationalStatusV", "EventsAllAlarmsV", "EventsCollectionCommEventV", "EventsCollectionCBRV", "EventsGSMConnectionLogsV", "EventsTransactionsV", "CollReconDetCBRCOMMSsubV", "CreditCardReconciliationV", "LastCollectioNDateTimeV", "CurrentMeterAmountsV", "CustomerPaymentTransactionV", "DailyFinancialTransactionV", "MeterUptimeV", "MSM_Sensor_Gateway_AttribStatExceptsSummV", "OccupancyRateSummaryV", "TotalIncomeSummaryV", "OccupancyRateSummary_SP", "A_EventsAlarmsTransactionsV", "A_LastCollectionAndGSMConnectionV" };
+			AdHocSettings.VisibleDataSources = new string[] { "ActiveAlarms_SP", "ActiveAlarmsV", "AssetEventListV", "HistoricalAlarmsV", "MaintenanceEventsV", "AssetOperationalStatusV",
+						"EventsAllAlarmsV", "EventsCollectionCommEventV", "EventsCollectionCBRV", "EventsGSMConnectionLogsV", "EventsTransactionsV", "CollReconDetCBRCOMMSsubV",
+						"CreditCardReconciliationV", "LastCollectioNDateTimeV", "CurrentMeterAmountsV", "CustomerPaymentTransactionV", "DailyFinancialTransactionV", "MeterUptimeV",
+						"MSM_Sensor_Gateway_AttribStatExceptsSummV", "OccupancyRateSummaryV", "TotalIncomeSummaryV", "OccupancyRateSummary_SP", "A_EventsAlarmsTransactionsV",
+						"A_LastCollectionAndGSMConnectionV" };
 			AdHocSettings.ExtendedFunctions = new string[] { "ufn_AllSpacesEvents" };
 			AdHocSettings.AllowEqualsSelectForStoredProcedures = true;
 

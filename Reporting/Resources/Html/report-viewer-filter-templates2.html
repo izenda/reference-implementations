@@ -1,0 +1,355 @@
+﻿<!-- report viewer filter -->
+<script id="rvfFilterMainTemplate" type="text/x-jquery-tmpl">
+	<div id="saveAsDialog" style="z-index: 500; top: 0px; left: 0px; width: 100%; background-color: #FFFFFF; position: fixed; display: none; text-align: center; vertical-align: middle;">
+		<table width="100%">
+			<tr>
+				<td width="50%" style="text-align: right; font-size:150%; padding-right: 8px;">Report Name:</td>
+				<td width="50%" style="text-align: left; font-size:150%;">
+					<input type="text" id="newReportName" style="width: 200px; margin: 0px;" value="" /></td>
+			</tr>
+			<tr>
+				<td width="50%" style="text-align: right; font-size:150%; padding-right: 8px;">Category Name:</td>
+				<td width="50%" style="text-align: left; font-size:150%;">
+					<select id="newCategoryName" style="width: 206px;"></select>
+					<input type="button" value="Create new" style="margin-left: 8px;" onclick="javascript: ShowNewCatDialog();" /></td>
+			</tr>
+			<tr>
+				<td width="100%" colspan="2" style="text-align: center; font-size:150%; ">
+					<input type="button" value="Save" onclick="SaveReportAs();" /></td>
+			</tr>
+		</table>
+	</div>
+	<div id="newCatDialog" style="z-index: 500; top: 0px; left: 0px; width: 100%; background-color: #FFFFFF; position: fixed; display: none; text-align: center; vertical-align: middle;">
+		<table width="100%">
+			<tr>
+				<td width="50%" style="text-align: right; font-size:150%; padding-right: 8px;">New Category Name:</td>
+				<td width="50%" style="text-align: left; font-size:150%;">
+					<input type="text" id="addedCatName" style="width: 200px; font-size:100%; margin-left: 8px; margin: 0px;" value="" />
+					<input type="button" style="margin-left: 8px;" value="Create" onclick="javascript: AddNewCategory();" /></td>
+			</tr>
+		</table>
+	</div>
+	<div id="content">
+		<table>
+			<tr>
+				<td>
+					<div class="btn-toolbar" style="margin: 4px 38px; position: relative; width: 50%; white-space: nowrap; top: -10px;">
+						<div class="btn-group">
+							<a class="btn" href="ReportList.aspx" title="Report list">
+								<img class="icon" src="img/icons/report-list.png" alt="Report lis" />
+								<span class="hide">Report list</span>
+							</a>
+						</div>
+						<div class="btn-group cool designer-only" id="saveControls">
+							<button class="btn" title="Save" onclick="javascript:SaveReportSet();">
+								<img class="icon" src="img/icons/floppy.png" alt="Save" />
+								<span class="hide">Save</span>
+							</button>
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0)" style="min-width: 18em;"
+								       onclick="javascript:SaveReportSet();">
+									    <img class="icon" src="img/icons/save-32.png" alt="Save changes" />
+									    <b>Save</b><br>
+									               Save changes to the report for everyone it is shared with
+								    </a></li>
+								<li><a href="javascript:void(0)"
+								       onclick="javascript:ShowSaveAsDialog();">
+									    <img class="icon" src="img/icons/save-as-32.png" alt="Save a copy" />
+									    <b>Save As</b><br>
+									                  Save a copy with a new name, keeping the original intact
+								    </a></li>
+							</ul>
+						</div>
+						<div class="btn-group cool">
+							<button class="btn" title="Print"
+							        onclick="filtersTrickBeforeUpdate();responseServer.OpenUrl('rs.aspx?p=htmlreport&print=1', 'aspnetForm', '');filtersTrickAfterUpdate();">
+								<img class="icon" src="img/icons/print.png" alt="Printer" />
+								<span class="hide">Print</span>
+							</button>
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0)" title="" style="min-width: 18em;"
+								       onclick="filtersTrickBeforeUpdate();responseServer.OpenUrl('rs.aspx?p=htmlreport&print=1', 'aspnetForm', '');filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/print-32.png" alt="" />
+									    <b>Print HTML</b><br>
+									                     Print directly from your browser, the fastest way for modern browsers
+								    </a></li>
+								<li><a href="javascript:void(0)" title="" onclick="filtersTrickBeforeUpdate();responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=PDF', 'aspnetForm', 'reportFrame');filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/html-to-pdf-32.png" alt="" />
+									    <b>HTML-powered PDF</b><br>
+									                           One-file compilation of all the report's pages
+								    </a></li>
+							</ul>
+						</div>
+						<div class="btn-group cool">
+							<button class="btn" title="Excel"
+							        onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=XLS(MIME)', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+								<img class="icon" src="img/icons/excel.png" alt="Get Excel file" />
+								<span class="hide">Export to Excel</span>
+							</button>
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0)" title="" style="min-width: 18em;"
+								       onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=XLS(MIME)', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/xls-32.png" alt="" />
+									    <b>Export to Excel</b><br>
+									                          File for Microsoft's spreadsheet application
+								    </a></li>
+								<li><a href="javascript:void(0)" title=""
+								       onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=DOC', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/word-32.png" alt="" />
+									    <b>Word document</b><br>
+									                        File for Microsoft's word processor, most widely-used office application
+								    </a></li>
+								<li><a href="javascript:void(0)" title=""
+								       onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=CSV', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/csv-32.png" alt="" />
+									    <b>CSV</b><br>
+									              Stores tabular data in text file, that can be used in Google Docs
+								    </a></li>
+								<li><a href="javascript:void(0)" title=""
+								       onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=XML', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/xml-32.png" alt="" />
+									    <b>XML</b><br>
+									              Both human-readable and machine-readable text file
+								    </a></li>
+								<li><a href="javascript:void(0)" title=""
+								       onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=RTF', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/rtf-32.png" alt="" />
+									    <b>RTF</b><br>
+									              File format for cross-platform document interchange
+								    </a></li>
+								<li><a href="javascript:void(0)" title=""
+								       onclick="filtersTrickBeforeUpdate(); responseServer.OpenUrlWithModalDialogNew('rs.aspx?output=ODT', 'aspnetForm', 'reportFrame'); filtersTrickAfterUpdate();">
+									    <img class="icon" src="img/icons/open-office-32.png" alt="" />
+									    <b>Open Office</b><br>
+									                      File for open-source office software suite 
+								    </a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<button class="btn" title="Send report"
+							        onclick="javascript:TB_EMailReport('Calculated+Freight+Costs+By+Country+and+City', '?subject=Calculated%20Freight%20Costs%20By%20Country%20and%20City&body=http%3a%2f%2fdev3.izenda.com%2fbi%2fReportViewer.aspx%3frn%3dCalculated%2bFreight%2bCosts%2bBy%2bCountry%2band%2bCity');">
+								<img class="icon" src="img/icons/mail.png" alt="Send report" />
+								<span class="hide">Send report</span>
+							</button>
+						</div>
+						<div class="btn-group cool" data-toggle="buttons-radio">
+							<button class="btn" title="Results per page" onclick="">
+								<img class="icon" id="resNumImg" src="img/icons/rows-100.png" alt="Results per page" />
+								<span class="hide">Results per page</span>
+							</button>
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li class="change-top" id="resNumLi0"><a href="javascript:void(0)" title="" style="min-width: 12em;">
+									                                                  <img class="icon" src="img/icons/result-1-32.png" alt="" />
+									                                                  <b>1 Result</b><br />
+									                                                  Ideal for large forms
+								                                                  </a></li>
+								<li class="change-top" id="resNumLi1"><a href="javascript:void(0)" title="">
+									                                                   <img class="icon" src="img/icons/results-10-32.png" alt="" />
+									                                                   <b>10 Results</b><br />
+									                                                   Good for single parameter reports
+								                                                   </a></li>
+								<li class="change-top" class="selected" id="resNumLi2"><a href="javascript:void(0)" title="">
+									                                                                     <img class="icon" src="img/icons/results-100-32.png" alt="" />
+									                                                                     <b>100 Results</b><br />
+									                                                                     Default and recommended value
+								                                                                     </a></li>
+								<li class="change-top" id="resNumLi3"><a href="javascript:void(0)" title="">
+									                                                     <img class="icon" src="img/icons/results-1000-32.png" alt="" />
+									                                                     <b>1000 Results</b><br />
+									                                                     Good for larger reports
+								                                                     </a></li>
+								<li class="divider"></li>
+								<li class="change-top" id="resNumLi4"><a href="javascript:void(0)" title="">
+									                                                   <img class="icon" src="img/icons/results-all-32.png" alt="" />
+									                                                   <b>Show all results</b><br>
+									                                                                          Use carefully as this may overload the browser
+								                                                   </a></li>
+							</ul>
+						</div>
+						<div class="btn-group">
+							<button class="btn designer-only" title="Open in designer" id="designerBtn">
+								<img class="icon" src="img/icons/design.png" alt="Open in designer" />
+								<span class="hide">Open in designer</span>
+							</button>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div id="page-title" class="cf">
+						
+					</div>
+				</td>
+			</tr>
+
+		</table>
+
+		<div id="filter-wrapper" class="cf">
+			<span class="filter-collapse open" data-collapse-summary=""><a href="#">Filter</a></span>
+			<div id="filter" aria-hidden="false" style="display: block;">
+				<div class="rvf-menu-content" style="height: auto;">
+					<div class="rvf-menu-content-regular"></div>
+					<div class="rvf-menu-content-additional"></div>
+				</div>
+				<div id="filter-collapse-inside">
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id="rvfLoadingTemplate" type="text/x-jquery-tmpl">
+	<div class="rvf-loading">
+        Loading...<br />
+        <img alt="" src="rs.aspx?image=loading.gif" />
+    </div>
+</script>
+
+<!-- report viewer filter items -->
+<script id="rvfAddFiltersTemplate" type="text/x-jquery-tmpl">
+	<div class="rvf-addfilters-tile">
+		<div class="rvf-addfilters-header">
+			<div class="rvf-addfilters-header-title">Add filters</div>
+		</div>
+		<div class="rvf-addfilters-body">
+			<table style="width:100%;">
+				<tr>
+					<td style="width: 50%;" class="rvf-addfilters-body-main"></td>
+					<td style="width: 50%; vertical-align: top;">
+						<div class="rvf-group-header">Misc</div>
+						<div class="rvf-addfilters-body-misc"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<hr />
+</script>
+
+<!-- report viewer filter items -->
+<script id="rvfGroupTemplate" type="text/x-jquery-tmpl">
+	<div class="rvf-group">
+		<div class="rvf-group-clear hidden">x</div>
+		<div class="rvf-group-header">${Description}</div>
+		<div class="rvf-group-body"></div>
+	</div>
+</script>
+
+<!-- report viewer filter misc items -->
+<script id="rvfGroupTemplateMisc" type="text/x-jquery-tmpl">
+	<div class="rvf-group-misc" uid="${Uid}"></div>
+</script>
+
+<script id="rvfGroupItemTemplate" type="text/x-jquery-tmpl">
+	<span class="rvf-group-item" Uid="${Uid}" title="${Description}">${Description}</span>
+</script>
+
+<script id="rvfGroupItemOptionTemplate" type="text/x-jquery-tmpl">
+	{%each Values%}
+	<div class="rvf-group-item-option">${$value}</div>
+	{%/each%}
+</script>
+
+<!-- Alex L filters -->
+
+<!-- report viewer refresh -->
+<script id="rvfRegularFiltersTemplate" type="text/x-jquery-tmpl">
+	<div id="rvf-regular-filters">
+		<div id="htmlFilters">
+		</div>
+	</div>
+</script>
+
+
+<!-- Block with filters with refresh button -->
+<script id="rvfRegularFilterBlocksTemplate" type="text/x-jquery-tmpl">
+	<table class="rvf-regular-filters-table">
+		<tr>
+			<td class="rvf-regular-filters-td">
+				<ul class="overview">
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding: 8px;">
+				<button id="updateBtnP" type="button" class="filter-SearchButton button">Refresh</button>
+				<!--<div id="updateBtnP" class="f-button" style="margin: 10px; margin-left: 8px;">
+					<a class="blue" href="javascript:void(0);">
+						<img src="img/icons/refresh-white.png" alt="Refresh" /><span class="text">Update results</span></a>
+				</div>-->
+			</td>
+		</tr>
+	</table>
+</script>
+
+<!-- Block with filters with refresh button -->
+<script id="rvfRegularFilterBlockTemplate" type="text/x-jquery-tmpl">
+	<div id="${Uid}" controlType="${ControlType}" class="rvf-regular-filter">
+		{%if DisplayCloseButton%}
+		<div class="rvf-regular-filter-close">x</div>
+		{%/if%}
+		<div class="rvf-regular-filter-desc">${Description}</div>
+	</div>
+</script>
+
+<!-- Filter content -->
+<script id="rvfRegularFilterContentTemplate" type="text/x-jquery-tmpl">
+	{%if ControlType == 1%}
+	<input style="margin: 8px;" type="text" id="ndbfc${index}" value="${Value}" onkeyup="${onKeyUpCmd}"/>
+	{%/if%}
+	{%if ControlType == 2%}
+	<input style="margin: 8px;" type="text" id="ndbfc${index}_l" value="${Values[0]}" onkeyup="${onKeyUpCmd}"/>
+	<input style="margin: 8px;" type="text" id="ndbfc${index}_r" value="${Values[1]}" onkeyup="${onKeyUpCmd}"/>
+	{%/if%}
+	{%if ControlType == 3%}
+	<select style="margin: 8px;" id="ndbfc${index}" onchange="${onChangeCmd}">
+		{%each(i, v) ExistingValues%}
+		{%if v == Value%}
+		<option value="${v}" selected="selected">${ExistingLabels[i]}</option>
+		{%else%}
+		<option value="${v}">${ExistingLabels[i]}</option>
+		{%/if}
+		{%/each%}
+	</select>
+	{%/if%}
+	{%if ControlType == 4%}
+	<select style="margin: 8px;" id="ndbfc${index}" onchange="${onChangeCmd}">
+		{%each(i, v) ExistingValues%}
+		{%if v == Value%}
+		<option value="${v}" selected="selected">${ExistingLabels[i]}</option>
+		{%else%}
+		<option value="${v}">${ExistingLabels[i]}</option>
+		{%/if}
+		{%/each%}
+	</select>
+	{%/if%}
+	{%if ControlType == 5%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 6%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 7%}
+	<textarea style="margin: 8px;" rows="2" id="ndbfc${index}" onkeyup="${onKeyUpCmd}">${Value}</textarea>
+	{%/if%}
+	{%if ControlType == 8%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 9%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+	{%if ControlType == 10%}
+	<span>equals popup - not implemented yet</span>
+	{%/if%}
+</script>

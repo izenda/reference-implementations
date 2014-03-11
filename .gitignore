@@ -1,8 +1,8 @@
 bin
-Resources
 Reports
 App_Data
 packages
 obj
 *.user
 *.suo
+/.nuget/NuGet.exe
