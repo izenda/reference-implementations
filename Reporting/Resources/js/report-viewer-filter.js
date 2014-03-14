@@ -1141,6 +1141,7 @@ function ReportViewerFilters() {
 	};
 
 	return {
-		initialize: initialize
+		initialize: initialize,
+		refreshFilters: _commitFiltersData
 	};
 }
