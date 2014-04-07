@@ -16,8 +16,7 @@ namespace MVC4Razor2.Reporting
 {
 	public class RsDuncan : Page
 	{
-		public static bool ProcessRequest(HttpRequest req, HttpResponse resp)
-		{
+		public static bool ProcessRequest(HttpRequest req, HttpResponse resp) {
 			var wsCommand = req.Params["wscmd"];
 			if (!String.IsNullOrEmpty(wsCommand)) {
 				var wsArgs = new List<string>();
@@ -55,8 +54,7 @@ namespace MVC4Razor2.Reporting
 			return false;
 		}
 
-		public static string ApplyFiltersFiltersNew(List<string> wsArgs)
-		{
+		public static string ApplyFiltersFiltersNew(List<string> wsArgs) {
 			var jss = new JavaScriptSerializer();
 			if (wsArgs.Count <= 0)
 				return jss.Serialize(new ResultStatus("Data not passed"));
@@ -66,7 +64,12 @@ namespace MVC4Razor2.Reporting
 
 				var reportName = wsArgs[1];
 				var reportSet = AdHocSettings.AdHocConfig.LoadFilteredReportSet(Utility.ReportWebNameToNormal(reportName));
-
+try {
+if (reportSet.ReportName != AdHocContext.CurrentReportSet.ReportName) {
+  AdHocContext.CurrentReportSet = AdHocSettings.AdHocConfig.LoadFilteredReportSet(Utility.ReportWebNameToNormal(reportName));
+}
+}
+catch {}
 				var newCollection = new FilterCollection();
 				var newAdditionalCollection = new FilterCollection();
 				foreach (DeserializedFilter deserializedFilter in newFilters) {
@@ -144,8 +147,7 @@ namespace MVC4Razor2.Reporting
 			return jss.Serialize(new ResultStatus("OK"));
 		}
 
-		public static string GetFiltersData()
-		{
+		public static string GetFiltersData() {
 			var jss = new JavaScriptSerializer();
 			var fc = new FilterCollection();
 			AddRangeSafe(fc, AdHocContext.CurrentReportSet.Filters);
@@ -154,15 +156,13 @@ namespace MVC4Razor2.Reporting
 			return jss.Serialize(filtersData);
 		}
 
-		public static void AddRangeSafe(FilterCollection filters, FilterCollection filtersToAdd)
-		{
+		public static void AddRangeSafe(FilterCollection filters, FilterCollection filtersToAdd) {
 			foreach (Filter filter in filtersToAdd) {
 				AddFilterSafe(filters, filter);
 			}
 		}
 
-		public static void AddFilterSafe(FilterCollection filters, Filter filterToAdd)
-		{
+		public static void AddFilterSafe(FilterCollection filters, Filter filterToAdd) {
 			if (filters == null)
 				throw new ArgumentNullException("filters");
 			if (filterToAdd == null)
@@ -182,8 +182,7 @@ namespace MVC4Razor2.Reporting
 			}
 		}
 
-		public static string GetActiveAdditionalFilters(List<string> wsArgs)
-		{
+		public static string GetActiveAdditionalFilters(List<string> wsArgs) {
 
 			var reportName = wsArgs[0];
 			var reportSet = AdHocSettings.AdHocConfig.LoadFilteredReportSet(Utility.ReportWebNameToNormal(reportName));
@@ -255,13 +254,11 @@ namespace MVC4Razor2.Reporting
 			return jss.Serialize(filtersData);
 		}
 
-		public RsDuncan()
-		{
+		public RsDuncan() {
 			this.Load += OnLoad;
 		}
 
-		private void OnLoad(object sender, EventArgs eventArgs)
-		{
+		private void OnLoad(object sender, EventArgs eventArgs) {
 			ProcessRequest(Request, Response);
 		}
 	}
