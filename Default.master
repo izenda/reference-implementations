@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="MasterPage1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="MasterPage1" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -26,7 +26,9 @@
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
-
+  <script type="text/javascript">
+    //htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+  </script>
   <!-- Page header injection -->
   <asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 
