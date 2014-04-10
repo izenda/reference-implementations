@@ -46,7 +46,7 @@
 			<div class="btn-toolbar" style="margin: 4px 8px; z-index: 6; position: absolute; top: 12px; width: 50%;">
 
 				<div class="btn-group">
-					<a class="btn" title="Refresh" runat="server" id="updateRef" href="#refresh">
+					<a class="btn" title="Refresh" runat="server" id="updateRef">
 						<img class="icon" src="rs.aspx?image=ModernImages.refresh-18.png" alt="Refresh" />
 						<span>Refresh</span>
 					</a>
@@ -107,7 +107,7 @@
 				</div>
 
 				<div class="btn-group designer-only">
-					<a id="designDbBtn" class="btn" title="Open in designer" href="DashboardDesigner.aspx">
+					<a id="designDbBtn" class="btn" title="Open in designer" href="DashboardDesigner">
 						<img class="icon" src="rs.aspx?image=ModernImages.design.png" alt="Open in designer" />
 						<span class="hide">Open in designer</span>
 					</a>
