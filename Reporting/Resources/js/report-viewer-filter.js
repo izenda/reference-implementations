@@ -745,9 +745,7 @@ function ReportViewerFilters() {
 					stepHour: 1,
 					stepMinute: 10,
 					onSelect: function (date, datepicker$) {
-						var timePicker$ = datepicker$.settings.timepicker;
-						var thisDate = new Date(datepicker$.selectedYear, datepicker$.selectedMonth, parseInt(datepicker$.selectedDay),
-						timePicker$.hour, timePicker$.minute, 0, 0);
+						var thisDate = Date.parse(datepicker$.input.val());
 						var currInput$ = $(this);
 						var nextInput$ = currInput$.parent().next('div').find('input');
 						var prevInput$ = currInput$.parent().prev('div').find('input');
