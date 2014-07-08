@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{607D6B82-0F31-475E-8D67-4E5F2D3EEE50}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVC4Razor2</RootNamespace>
+    <AssemblyName>MVC4Razor2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Izenda.AdHoc, Version=6.6.5011.32653, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Izenda.AdHoc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IzendaReportingController.cs" />
+    <Compile Include="Controllers\IzendaStaticResourcesController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AdditionalFilter.cs" />
+    <Compile Include="Models\AdditionalFiltersStorage.cs" />
+    <Compile Include="Models\FiltersReportSetEventWatcher.cs" />
+    <Compile Include="Models\RsDuncan.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\Resources\Html\Dashboards-Body.ascx.cs">
+      <DependentUpon>Dashboards-Body.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\Resources\Html\Dashboards-Body.ascx.designer.cs">
+      <DependentUpon>Dashboards-Body.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Reporting\elrte\css\elrte-inner.css" />
+    <Content Include="Reporting\elrte\css\elrte.full.css" />
+    <Content Include="Reporting\elrte\css\elrte.min.css" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Reporting\elrte\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Reporting\elrte\css\smoothness\jquery-ui-1.8.13.custom.css" />
+    <Content Include="Reporting\elrte\images\elrte-toolbar.png" />
+    <Content Include="Reporting\elrte\images\elrtebg.png" />
+    <Content Include="Reporting\elrte\images\google-maps.png" />
+    <Content Include="Reporting\elrte\images\iframe.png" />
+    <Content Include="Reporting\elrte\images\loading.gif" />
+    <Content Include="Reporting\elrte\images\media-director.png" />
+    <Content Include="Reporting\elrte\images\media-flash.png" />
+    <Content Include="Reporting\elrte\images\media-quicktime.png" />
+    <Content Include="Reporting\elrte\images\media-realaudio.png" />
+    <Content Include="Reporting\elrte\images\media-rutube.png" />
+    <Content Include="Reporting\elrte\images\media-vimeo.png" />
+    <Content Include="Reporting\elrte\images\media-winmedia.png" />
+    <Content Include="Reporting\elrte\images\media-youtube.png" />
+    <Content Include="Reporting\elrte\images\outline-div.png" />
+    <Content Include="Reporting\elrte\images\outline-p.png" />
+    <Content Include="Reporting\elrte\images\pagebreak.gif" />
+    <Content Include="Reporting\elrte\images\pixel.gif" />
+    <Content Include="Reporting\elrte\images\smileys\evilgrin.png" />
+    <Content Include="Reporting\elrte\images\smileys\grin.png" />
+    <Content Include="Reporting\elrte\images\smileys\happy.png" />
+    <Content Include="Reporting\elrte\images\smileys\smile.png" />
+    <Content Include="Reporting\elrte\images\smileys\surprised.png" />
+    <Content Include="Reporting\elrte\images\smileys\tongue.png" />
+    <Content Include="Reporting\elrte\images\smileys\unhappy.png" />
+    <Content Include="Reporting\elrte\images\smileys\waii.png" />
+    <Content Include="Reporting\elrte\images\smileys\wink.png" />
+    <Content Include="Reporting\elrte\images\yandex-maps.png" />
+    <Content Include="Reporting\elrte\js\elrte.full.js" />
+    <Content Include="Reporting\elrte\js\elrte.min.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.ar.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.ca.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.cs.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.da.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.de.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.en.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.es.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.fa.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.fr.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.hr.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.hu.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.it.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.jp.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.ko.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.lv.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.nl.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.pl.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.pt_BR.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.ru.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.sk.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.th.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.tr.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.uk.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.vi.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.YOUR_LANG.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.zh_CN.js" />
+    <Content Include="Reporting\elrte\js\i18n\elrte.zh_TW.js" />
+    <Content Include="Reporting\elrte\js\jquery-1.6.1.min.js" />
+    <Content Include="Reporting\elrte\js\jquery-ui-1.8.13.custom.min.js" />
+    <Content Include="Reporting\Reports\aaa_bbb_ccc_tdb.xml" />
+    <Content Include="Reporting\Reports\Accounting.xml" />
+    <Content Include="Reporting\Reports\cbs\test.xml" />
+    <Content Include="Reporting\Reports\Charts\CalculatedColumnChart-NoFunctions.xml" />
+    <Content Include="Reporting\Reports\Charts\CalculatedColumnChart.xml" />
+    <Content Include="Reporting\Reports\Charts\ChartBar 02-08-13.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Bar - Separator.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Pie - 3D View and Largest Slice.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Pie - Drilldown.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Pie - Percentages and Labels.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Pie - Separator.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Plot - Separator.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Trend - Separator 11-19.xml" />
+    <Content Include="Reporting\Reports\Charts\Complex Trend - Separator.xml" />
+    <Content Include="Reporting\Reports\Charts\Simple Bar.xml" />
+    <Content Include="Reporting\Reports\Charts\Simple Funnel.xml" />
+    <Content Include="Reporting\Reports\Charts\Simple Pie.xml" />
+    <Content Include="Reporting\Reports\Charts\Simple Plot.xml" />
+    <Content Include="Reporting\Reports\Charts\Simple Trend.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Create 1st Bill Orders Chart.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Create 1st Bill Orders Table With Counts.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Create 1st Bill Orders Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Hold Reason Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Entry Chart.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Entry Table - Drill Down Join.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Entry Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Details - Rep Complete.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Details - Rep.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Details.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Report - Complete Sales Rep.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Report - Complete.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Report - Filtered.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Report - Sales Rep.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Order Gap Report.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Sales Doc Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Sales Gap by Rep Complete.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Sales Gap by Rep.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Sales Person Trend.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Sales Total Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Service Delivery Chart.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Service Delivery Orders Table - Drilldown Lookup.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Service Delivery Orders Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Sold Doc Chart.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Update Billing Orders Chart.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Update Billing Orders Table with Counts.xml" />
+    <Content Include="Reporting\Reports\Dashboard Parts v2\Update Billing Orders Table.xml" />
+    <Content Include="Reporting\Reports\Dashboard V2\New dashboard.xml" />
+    <Content Include="Reporting\Reports\Dashboard V2\Quote to Bill Dashboard - v2.xml" />
+    <Content Include="Reporting\Reports\Dashboard with Map.xml" />
+    <Content Include="Reporting\Reports\Dashboard.xml" />
+    <Content Include="Reporting\Reports\dash_3filt.xml" />
+    <Content Include="Reporting\Reports\DBTest\TestDB.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Accounting.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Dashboard with Map.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Dashboard.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Finance.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Freight and Orders Map.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Human Resources.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Marketing.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Sales.xml" />
+    <Content Include="Reporting\Reports\Department Reports\Shipping.xml" />
+    <Content Include="Reporting\Reports\Finance.xml" />
+    <Content Include="Reporting\Reports\Finance_3filt.xml" />
+    <Content Include="Reporting\Reports\Forms\EMA.htm" />
+    <Content Include="Reporting\Reports\Forms\EMA.xml" />
+    <Content Include="Reporting\Reports\Forms\I9Form.htm" />
+    <Content Include="Reporting\Reports\Forms\I9Form.xml" />
+    <Content Include="Reporting\Reports\Forms\Invoice Report.htm" />
+    <Content Include="Reporting\Reports\Forms\Invoice Report.xml" />
+    <Content Include="Reporting\Reports\Forms\Invoice-Demo.xml" />
+    <Content Include="Reporting\Reports\Forms\Invoice.htm" />
+    <Content Include="Reporting\Reports\Forms\Invoice.xml" />
+    <Content Include="Reporting\Reports\Forms\W9Form.HTM" />
+    <Content Include="Reporting\Reports\Forms\W9Form.xml" />
+    <Content Include="Reporting\Reports\Freight and Orders Map.xml" />
+    <Content Include="Reporting\Reports\Human Resources.xml" />
+    <Content Include="Reporting\Reports\Marketing.xml" />
+    <Content Include="Reporting\Reports\new_test_db.xml" />
+    <Content Include="Reporting\Reports\Pivot Report With Subreport.xml" />
+    <Content Include="Reporting\Reports\Pivot.xml" />
+    <Content Include="Reporting\Reports\PivotSubreport.xml" />
+    <Content Include="Reporting\Reports\Pivots\Analysis Grid.xml" />
+    <Content Include="Reporting\Reports\Pivots\Simple Pivot - Orders by Country by YearQuarter.xml" />
+    <Content Include="Reporting\Reports\Product List.xml" />
+    <Content Include="Reporting\Reports\Quote to Bill Dashboard - v2.xml" />
+    <Content Include="Reporting\Reports\Sales by Date.xml" />
+    <Content Include="Reporting\Reports\Sales.xml" />
+    <Content Include="Reporting\Reports\Shipping.xml" />
+    <Content Include="Reporting\Reports\Subreports\allergies_subreport.xml" />
+    <Content Include="Reporting\Reports\Subreports\Categories Drill-Down Details.png" />
+    <Content Include="Reporting\Reports\Subreports\Categories Drill-Down Details.xml" />
+    <Content Include="Reporting\Reports\Subreports\DrillDown - Products.xml" />
+    <Content Include="Reporting\Reports\Subreports\guardian_subreport.xml" />
+    <Content Include="Reporting\Reports\Subreports\medicalcontacts_subreport.xml" />
+    <Content Include="Reporting\Reports\Subreports\othercontacts_subreport.xml" />
+    <Content Include="Reporting\Reports\Subreports\Product Quantity.xml" />
+    <Content Include="Reporting\Reports\Subreports\Top Products by State.xml" />
+    <Content Include="Reporting\Reports\TestDash\Test designer 1.xml" />
+    <Content Include="Reporting\Reports\TestDash\TestDB1.xml" />
+    <Content Include="Reporting\Reports\testDb\NewTest.xml" />
+    <Content Include="Reporting\Reports\testDb\Test SP Desc.xml" />
+    <Content Include="Reporting\Reports\test_db.xml" />
+    <Content Include="Reporting\Reports\Thumbnails\111.png" />
+    <Content Include="Reporting\Reports\Thumbnails\111_Chart%40Finance.png" />
+    <Content Include="Reporting\Reports\Thumbnails\111_Chart%40Marketing.png" />
+    <Content Include="Reporting\Reports\Thumbnails\111_Detail%40Charts\CalculatedColumnChart-NoFunctions.png" />
+    <Content Include="Reporting\Reports\Thumbnails\aaa_bbb_ccc_tdb.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Accounting.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Accounting_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Accounting_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Accounting_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Calculated Freight Costs By Country and City-12-09.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Calculated Freight Costs By Country and City.png" />
+    <Content Include="Reporting\Reports\Thumbnails\CalculatedColumnChartFeature\CalculatedColumnTest.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Categories Drill-Down Details.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Categories Drill-Down.png" />
+    <Content Include="Reporting\Reports\Thumbnails\cbs\test.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\CalculatedColumnChart-NoFunctions.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\CalculatedColumnChart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\ChartBar 02-08-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\Complex Bar - Separator.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\Complex Pie - Drilldown.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\Complex Pie - Percentages and Labels.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\Complex Plot - Separator.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Charts\Simple Trend.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard Parts v2\Order Entry Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard Parts v2\Order Entry Chart_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard Parts v2\Order Entry Table.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard Parts v2\Order Entry Table_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Chart%40Dashboard Parts v2\Create 1st Bill Orders Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Chart%40Dashboard Parts v2\Order Entry Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Chart%40Dashboard Parts v2\Service Delivery Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Chart%40Dashboard Parts v2\Sold Doc Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Chart%40Dashboard Parts v2\Update Billing Orders Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Summary%40Dashboard Parts v2\Create 1st Bill Orders Table.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Summary%40Dashboard Parts v2\Order Entry Table.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Summary%40Dashboard Parts v2\Sales Doc Table.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Summary%40Dashboard Parts v2\Service Delivery Orders Table.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard V2\Quote to Bill Dashboard - v2_Summary%40Dashboard Parts v2\Update Billing Orders Table.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard with Map.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard with Map_Chart%40Department Reports\Finance.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard with Map_Chart%40Department Reports\Marketing.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard with Map_Chart%40Department Reports\Sales.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard with Map_Maps%40Freight and Orders Map.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard with Map_Summary%40Product List.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Dashboard.png" />
+    <Content Include="Reporting\Reports\Thumbnails\dash\111.png" />
+    <Content Include="Reporting\Reports\Thumbnails\dash\1111111111111.png" />
+    <Content Include="Reporting\Reports\Thumbnails\dash\111_Detail%40Charts\CalculatedColumnChart-NoFunctions.png" />
+    <Content Include="Reporting\Reports\Thumbnails\dash\2222222.png" />
+    <Content Include="Reporting\Reports\Thumbnails\dash_3filt.png" />
+    <Content Include="Reporting\Reports\Thumbnails\dash_3filt_Detail%40Finance_3filt.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Accounting.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Dashboard with Map.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Dashboard.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Finance.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Freight and Orders Map.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Human Resources.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Marketing.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Sales.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Department Reports\Shipping.png" />
+    <Content Include="Reporting\Reports\Thumbnails\EmployeesOrdersK.png" />
+    <Content Include="Reporting\Reports\Thumbnails\EmptyCategory\deleteme.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Fields Report 02-14-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Fields Report 02-21-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Fields Report.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Fields Report_12-20.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Filter Required Test.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance_3filt.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance_3filt_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance_3filt_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Finance_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\ford9.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Forms\EMA.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Forms\I9Form.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Forms\Invoice Report.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Forms\Invoice-Demo.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Forms\Invoice.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Forms\W9Form.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Fraight and costs.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Freight and Costs Report.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Freight and Costs Report_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Freight and Orders Map.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Human Resources.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Marketing Report.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Marketing.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Marketing_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Marketing_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\Sub_Address.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\Sub_Cities.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\Sub_Countries.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\Tier1same.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\Tier2same.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\Tier3same.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\WO_Forms_Addresses.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\WO_Forms_Cities.png" />
+    <Content Include="Reporting\Reports\Thumbnails\NestingFormsTest\WO_Forms_Countries.png" />
+    <Content Include="Reporting\Reports\Thumbnails\new_test_db.png" />
+    <Content Include="Reporting\Reports\Thumbnails\OfficersCopy.png" />
+    <Content Include="Reporting\Reports\Thumbnails\OfficersCopy_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Pivot Report With Subreport.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Pivot Report With Subreport_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Pivot.png" />
+    <Content Include="Reporting\Reports\Thumbnails\PivotSubreport.png" />
+    <Content Include="Reporting\Reports\Thumbnails\PivotSubreport_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Pivots\Analysis Grid.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Pivots\Simple Pivot - Orders by Country by YearQuarter.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Pivot_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Product List.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Sales by Date.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Sales by Date_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Sales.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Shipping.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\allergies_subreport.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\DrillDown - Products.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\guardian_subreport.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\medicalcontacts_subreport.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\othercontacts_subreport.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\Product Quantity.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Subreports\Top Products by State.png" />
+    <Content Include="Reporting\Reports\Thumbnails\SubtotalTesting\Subtotals Issue.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Summary Add Deltas.png" />
+    <Content Include="Reporting\Reports\Thumbnails\TestDash\Test designer 1.png" />
+    <Content Include="Reporting\Reports\Thumbnails\TestDash\TestDB1.png" />
+    <Content Include="Reporting\Reports\Thumbnails\testDb\Test SP Desc.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar  03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar  03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar  03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar  03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar  03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar Show Pareto  03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar Show Pareto  03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar Show Pareto  03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar Show Pareto  03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Bar Show Pareto  03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut 03-20-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut 03-20-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut 03-20-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut Show Value Label                      03-20-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut Show Value Label                      03-20-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut Show Value Label                      03-20-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut Show Value Label 03-21-13                03-20-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut Show Value Label 03-21-13                03-20-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Douhnut Show Value Label 03-21-13                03-20-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Explode Largest Slice Pie 03-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Explode Largest Slice Pie 03-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Explode Largest Slice Pie 03-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Horizontal Bar  03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Horizontal Bar  03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Horizontal Bar  03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Horizontal Bar  03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Horizontal Bar  03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 03-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 03-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 03-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 3d 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 3d 03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 3d 03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 3d 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie 3d 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Expload Largest Slice  03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Expload Largest Slice  03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Expload Largest Slice  03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Expload Largest Slice  03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Expload Largest Slice  03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Explode Largest Slice  03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Explode Largest Slice  03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Explode Largest Slice  03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Explode Largest Slice  03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Pie Explode Largest Slice  03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-18-2013_Gauges.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-20-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-20-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot 03-20-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot Connect 03-20-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot Connect 03-20-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Plot Connect 03-20-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-19-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-20-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-20-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-20-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-21-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-21-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend 03-21-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend Title Bottom 03-20-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend Title Bottom 03-20-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend Title Bottom 03-20-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend Title Left 03-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend Title Left 03-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Smooth Trend Title Left 03-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-19-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\chart Trend 03-20-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-20-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend 03-20-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Bottom03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Bottom03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Bottom03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Bottom03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Bottom03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Left ERROR 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Left ERROR 03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Left ERROR 03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Left ERROR 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Label Title Left ERROR 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Left Bottom  03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Left Bottom  03-19-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Left Bottom  03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator 03-20-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator 03-20-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator 03-20-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Separator03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-18-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-18-2013_Chart2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-19-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Show Value 03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Title Bottom  03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Title Bottom  03-19-13_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Chart Trend Title Bottom  03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Add Subtotals 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Add Subtotals 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Report 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Report 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Report 03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Report 03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Report 03-20-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Fields Report 03-20-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Freight and Orders Map 03-19-13.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Freight and Orders Map 03-19-13_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Freight and Orders Map 03-19-13_Maps.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-18-2013_Gauges.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-20-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-20-2013_Chart.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-20-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Guage 03-20-2013_Gauges.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary Add Deltas 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary Add Deltas 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary Add Deltas 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary Add Subtotals 03-18-2013.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary Add Subtotals 03-18-2013_Detail.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Test\Summary Add Subtotals 03-18-2013_Summary.png" />
+    <Content Include="Reporting\Reports\Thumbnails\test_ccpi.png" />
+    <Content Include="Reporting\Reports\Thumbnails\test_db.png" />
+    <Content Include="Reporting\Reports\Thumbnails\test_db_Detail%40Finance.png" />
+    <Content Include="Reporting\Reports\Thumbnails\test_ec.png" />
+    <Content Include="Reporting\Reports\Thumbnails\test_fcs.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\Form - Tables  Repeater.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\Lesson 1-1.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\Lesson 1-2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\Lesson 4-1.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\TRDB1.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\TRDB2.png" />
+    <Content Include="Reporting\Reports\Thumbnails\Training\TRDB3.png" />
+    <Content Include="Reporting\Reports\Thumbnails\tttest.png" />
+    <Content Include="Reporting\Reports\Thumbnails\undefined.png" />
+    <Content Include="Reporting\Reports\Thumbnails\еуыеви.png" />
+    <Content Include="Reporting\Resources\css\base.css" />
+    <Content Include="Reporting\Resources\css\charts.css" />
+    <Content Include="Reporting\Resources\css\custom_dashboard.css" />
+    <Content Include="Reporting\Resources\css\data-sources.css" />
+    <Content Include="Reporting\Resources\css\duncan.css" />
+    <Content Include="Reporting\Resources\css\Filters.css" />
+    <Content Include="Reporting\Resources\css\fun.css" />
+    <Content Include="Reporting\Resources\css\jquery.bxslider.css" />
+    <Content Include="Reporting\Resources\css\main.css" />
+    <Content Include="Reporting\Resources\css\print.css" />
+    <Content Include="Reporting\Resources\css\report-list-modal.css" />
+    <Content Include="Reporting\Resources\css\report-viewer-filter.css" />
+    <Content Include="Reporting\Resources\css\Report.css" />
+    <Content Include="Reporting\Resources\css\reset2.css" />
+    <Content Include="Reporting\Resources\css\tabs.css" />
+    <Content Include="Reporting\Resources\fonts\futura.css" />
+    <Content Include="Reporting\Resources\Html\DashboardDesigner-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\DashboardDesigner-Head.ascx" />
+    <Content Include="Reporting\Resources\Html\Dashboards-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\Dashboards-Head.ascx" />
+    <Content Include="Reporting\Resources\Html\InstantReport-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\InstantReport-Head.ascx" />
+    <Content Include="Reporting\Resources\Html\report-viewer-filter-templates.html" />
+    <Content Include="Reporting\Resources\Html\report-viewer-filter-templates2.html" />
+    <Content Include="Reporting\Resources\Html\ReportDesigner-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\ReportDesigner-Head.ascx" />
+    <Content Include="Reporting\Resources\Html\ReportList-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\ReportList-Head.ascx" />
+    <Content Include="Reporting\Resources\Html\ReportViewer-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\ReportViewer-Head.ascx" />
+    <Content Include="Reporting\Resources\Html\Settings-Body.ascx" />
+    <Content Include="Reporting\Resources\Html\Settings-Head.ascx" />
+    <Content Include="Reporting\Resources\img\blue-gradient.png" />
+    <Content Include="Reporting\Resources\img\body-bg.gif" />
+    <Content Include="Reporting\Resources\img\bx_loader.gif" />
+    <Content Include="Reporting\Resources\img\controls.png" />
+    <Content Include="Reporting\Resources\img\duncan-logo.png" />
+    <Content Include="Reporting\Resources\img\edit-icon.png" />
+    <Content Include="Reporting\Resources\img\filter-collapse-arrow-bg.png" />
+    <Content Include="Reporting\Resources\img\filter-collapse-bg.png" />
+    <Content Include="Reporting\Resources\img\filter-collapse-inside-bg.png" />
+    <Content Include="Reporting\Resources\img\filter-refresh-bg.png" />
+    <Content Include="Reporting\Resources\img\filter-shadow-bottom.gif" />
+    <Content Include="Reporting\Resources\img\filter-shadow.gif" />
+    <Content Include="Reporting\Resources\img\filter-wrapper-bg.gif" />
+    <Content Include="Reporting\Resources\img\header-bg.gif" />
+    <Content Include="Reporting\Resources\img\header-bg2.jpg" />
+    <Content Include="Reporting\Resources\img\insert.png" />
+    <Content Include="Reporting\Resources\img\left.png" />
+    <Content Include="Reporting\Resources\img\print-bg %281%29.png" />
+    <Content Include="Reporting\Resources\img\print-bg.png" />
+    <Content Include="Reporting\Resources\img\print-icon.png" />
+    <Content Include="Reporting\Resources\img\remove-icon.png" />
+    <Content Include="Reporting\Resources\img\right.png" />
+    <Content Include="Reporting\Resources\img\search-gray.png" />
+    <Content Include="Reporting\Resources\img\template-icon.png" />
+    <Content Include="Reporting\Resources\js\additional-filters-config.js" />
+    <Content Include="Reporting\Resources\js\charts.js" />
+    <Content Include="Reporting\Resources\js\data-sources-preview.js" />
+    <Content Include="Reporting\Resources\js\data-sources.js" />
+    <Content Include="Reporting\Resources\js\datasources-search.js" />
+    <Content Include="Reporting\Resources\js\jquery-ui-timepicker.js" />
+    <Content Include="Reporting\Resources\js\jquery.bxslider.js" />
+    <Content Include="Reporting\Resources\js\jquery.bxslider.min.js" />
+    <Content Include="Reporting\Resources\js\jquery.tmpl.js" />
+    <Content Include="Reporting\Resources\js\main.js" />
+    <Content Include="Reporting\Resources\js\relative-time.js" />
+    <Content Include="Reporting\Resources\js\report-viewer-filter-settings.js" />
+    <Content Include="Reporting\Resources\js\report-viewer-filter.js" />
+    <Content Include="Reporting\Resources\js\ReportViewerFilters.js" />
+    <Content Include="Reporting\Resources\js\url-settings.js" />
+    <Content Include="Reporting\rs.aspx" />
+    <Content Include="Reporting\RsDuncan.aspx" />
+    <Content Include="Reporting\TempFiles\DundasMap8.js" />
+    <Content Include="Reporting\TempFiles\MapPic_000001.png" />
+    <Content Include="Reporting\TempFiles\MapPic_000002.png" />
+    <Content Include="Reporting\TempFiles\MapPic_000003.png" />
+    <Content Include="Reporting\TempFiles\MapPic_000004.png" />
+    <Content Include="Reporting\TempFiles\MapPic_000005.png" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Views\Reporting\_InstantReport-Body.ascx" />
+    <Content Include="Views\Reporting\_InstantReport-Head.ascx" />
+    <Content Include="Views\Reporting\_DashboardDesigner-Body.ascx" />
+    <Content Include="Views\Reporting\_DashboardDesigner-Head.ascx" />
+    <Content Include="Views\Reporting\_Dashboards-Body.ascx" />
+    <Content Include="Views\Reporting\_Dashboards-Head.ascx" />
+    <Content Include="Views\Reporting\_ReportDesigner-Body.ascx" />
+    <Content Include="Views\Reporting\_ReportDesigner-Head.ascx" />
+    <Content Include="Views\Reporting\_ReportList-Body.ascx" />
+    <Content Include="Views\Reporting\_ReportList-Head.ascx" />
+    <Content Include="Views\Reporting\_ReportViewer-Body.ascx" />
+    <Content Include="Views\Reporting\_ReportViewer-Head.ascx" />
+    <Content Include="Views\Reporting\_Settings-Body.ascx" />
+    <Content Include="Views\Reporting\_Settings-Head.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporting\DashboardDesigner.cshtml" />
+    <Content Include="Views\Reporting\Dashboards.cshtml" />
+    <Content Include="Views\Reporting\ReportDesigner.cshtml" />
+    <Content Include="Views\Reporting\ReportList.cshtml" />
+    <Content Include="Views\Reporting\ReportViewer.cshtml" />
+    <Content Include="Views\Reporting\Settings.cshtml" />
+    <Content Include="Views\Shared\_SiteLayout.cshtml" />
+    <Content Include="Views\Reporting\InstantReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>49352</DevelopmentServerPort>
+          <DevelopmentServerVPath>/DuncanFinal</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

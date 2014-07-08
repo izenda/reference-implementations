@@ -23,7 +23,7 @@ namespace MVC3SK.Controllers {
 
 
       if (HttpContext.Request != null && !String.IsNullOrEmpty(HttpContext.Request.RawUrl) && !HttpContext.Request.RawUrl.ToLower().Contains(AdHocSettings.ReportList.ToLower())) {
-        return RedirectToAction("ReportList", "Reporting");
+				return RedirectToAction("Index", "Home");
       }
       return View();
     }
