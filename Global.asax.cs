@@ -48,8 +48,18 @@ namespace MVC4Razor2 {
         result = result || requestUrl.Contains("elrte.full.js");
         result = result || requestUrl.Contains("elrte.ru.js");
         result = result || requestUrl.Contains("fieldproperties.js");
+				result = result || requestUrl.Contains("jquery-ui-timepicker.js");
+				result = result || requestUrl.Contains("jquery.tmpl.js");
+				result = result || requestUrl.Contains("jquery.bxslider.js");
+				result = result || requestUrl.Contains("url-settings.js");
+				result = result || requestUrl.Contains("report-viewer-filter.js");
+				result = result || requestUrl.Contains("report-viewer-filter-settings.js");
+				result = result || requestUrl.Contains("additional-filters-config.js");
+				result = result || requestUrl.Contains("relative-time.js");
       }
       if (extensionToBeRouted == "css") {
+				result = result || requestUrl.Contains("futura.css");
+				result = result || requestUrl.Contains("duncan.css");
         result = result || requestUrl.Contains("tabs.css");
         result = result || requestUrl.Contains("report.css");
         result = result || requestUrl.Contains("filters.css");
@@ -60,14 +70,27 @@ namespace MVC4Razor2 {
         result = result || requestUrl.Contains("jquery-ui-1.8.13.custom.css");
         result = result || requestUrl.Contains("elrte.min.css");
         result = result || requestUrl.Contains("elrte-inner.css");
+				result = result || requestUrl.Contains("jquery.bxslider.css");
+				result = result || requestUrl.Contains("report-viewer-filter.css");
       }
       if (extensionToBeRouted == "png") {
         result = result || requestUrl.Contains("elrtebg.png");
         result = result || requestUrl.Contains("elrte-toolbar.png");
+				result = result || requestUrl.Contains("filter-collapse-arrow-bg.png");
+				result = result || requestUrl.Contains("filter-collapse-bg.png");
+				result = result || requestUrl.Contains("filter-collapse-inside-bg.png");
+				result = result || requestUrl.Contains("filter-refresh-bg.png");
+				result = result || requestUrl.Contains("right.png");
+				result = result || requestUrl.Contains("left.png");
+				result = result || requestUrl.Contains("filter-shadow-bottom.gif");
       }
       if (extensionToBeRouted == "gif") {
         result = result || requestUrl.Contains("elrte/images/pixel.gif");
       }
+			if (extensionToBeRouted == "html") {
+				result = result || requestUrl.Contains("report-viewer-filter-templates.html");
+				result = result || requestUrl.Contains("report-viewer-filter-templates2.html");
+			}
       return result;
     }
 
@@ -81,6 +104,7 @@ namespace MVC4Razor2 {
   public class MvcApplication : System.Web.HttpApplication {
     protected void Application_Start() {
       RouteTable.Routes.MapPageRoute("rs.aspx", "{*aspx}", "~/Reporting/rs.aspx", false, null, new RouteValueDictionary { { "aspx", new SpecificFileRouterConstraint("aspx", "rs.aspx") } });
+			RouteTable.Routes.MapPageRoute("RsDuncan.aspx", "{*aspx}", "~/Reporting/RsDuncan.aspx", false, null, new RouteValueDictionary { { "aspx", new SpecificFileRouterConstraint("aspx", "RsDuncan.aspx") } });
       AreaRegistration.RegisterAllAreas();
       WebApiConfig.Register(GlobalConfiguration.Configuration);
       FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -95,9 +119,9 @@ namespace MVC4Razor2 {
       routes.MapRoute("IzendaCssResources", "{*css}",	new { controller = "IzendaStaticResources", action = "Index" },	new { irc = new IzendaResourceConstraint("css") });
       routes.MapRoute("IzendaPngResources", "{*png}", new { controller = "IzendaStaticResources", action = "Index" }, new { irc = new IzendaResourceConstraint("png") });
       routes.MapRoute("IzendaGifResources", "{*gif}", new { controller = "IzendaStaticResources", action = "Index" }, new { irc = new IzendaResourceConstraint("gif") });
-      routes.MapRoute("IzendaReporting", "{controller}/{action}/{id}", new { controller = "Reporting", id = UrlParameter.Optional });
-      routes.MapRoute("StarterKitDefault", "{controller}/{action}/{id}", new { controller = "Reporting", action = "ReportList", id = UrlParameter.Optional });
-      routes.MapRoute("HomeDefault", "{*pathInfo}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+			routes.MapRoute("IzendaHtmlResources", "{*html}", new { controller = "IzendaStaticResources", action = "Index" }, new { irc = new IzendaResourceConstraint("html") });
+			routes.MapRoute("IzendaReporting", "{city}/pems/{controller}/{action}/{id}", new { controller = "Reporting", id = UrlParameter.Optional });
+			routes.MapRoute("Default", "{*pathInfo}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
     }
   }
 }

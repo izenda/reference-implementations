@@ -1,0 +1,72 @@
+﻿@model System.Web.Mvc.ViewMasterPage
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+  <head runat="server">
+	<title>Izenda</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
+
+	<link rel="shortcut icon" href="~/img/report-icon.png" type='image/png' />
+	<script type="text/javascript" src="./Resources/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="Resources/js/main.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="Resources/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="Resources/css/bootstrap.css" rel="stylesheet">
+	<link href="Resources/css/bootstrap-modals.css" rel="stylesheet">
+	<link href="Resources/css/bootstrap-override.css" rel="stylesheet">
+
+	<script src="Resources/js/bootstrap-dropdown.js"></script>
+	<script src="Resources/js/bootstrap-tab.js"></script>
+	<script src="Resources/js/bootstrap-transition.js"></script>
+	<script src="Resources/js/bootstrap-modal.js"></script>
+
+    <link rel="stylesheet" href="http://use.typekit.net/c/295821/alternate-gothic-no-3-d:n4,futura-pt:i4:i7:n4:n7.TV5:J:2,SH9:J:2,SH6:J:2,Y5K:J:2,SH5:J:2/d?3bb2a6e53c9684ffdc9a99f01e5b2a623ad79e195c89f6d92bca17b16fcbc50f75bcccd1bf70585adeba1b8682b73760ece2f2b99537e613283dd94dadf7b79dc0b59f8634b983ab17642952fafe6c2939a7a8fd0e47d6c95bb90834ca4e5070ef80b7dea5d0690eea2b1dc2eeef7fce414b560cfebe973897b679bb5b58f2fa6caa78dea0b0f093953515393616ee053fe324199cfca85d22fbb5fa8ecdeb73bc7f5db8165b72f2328cd32c080eaf72a239f2a93587514463565a634d2a9aba49bc03b9d79498c6a9d63a46e8d6844e3fcf71352cdebf929cfd37ed0e2e31f003ed319b2330fa92ac3a3080d03e841fd0a5c988041504832668b6a3fb84a8361a6ac9c38e454fae89cc56cc7bec13540c19ce09ba8615f7a2c1f20f8eb62732f033ac359409fd371bda56809fef3c6e20959292df144830b87237211e88d94dd63f9c6ba4f30fe6eb58634a7c4cb76878c6dac1c6ae470a638d1c804af9499bf4feb0a2c2309ac968f77435">
+
+    @if (IsSectionDefined("header"))
+    {
+        @RenderSection("header")
+    }
+
+    @{if (HttpContext.Current != null && HttpContext.Current.Request != null && HttpContext.Current.Session != null) {Izenda.AdHoc.Utility.CheckLimitations(true);}}
+
+</head>
+
+<body style="margin:0px; padding:0px;-webkit-backface-visibility: hidden;">
+
+<div class="layout">
+	<script type="text/javascript">
+		function insertParam(key, value) {
+		  key = escape(key); value = escape(value);
+		  var kvp = document.location.search.substr(1).split('&');
+		  if (kvp.length == 1 && kvp[0] == '')
+			  kvp.length = 0;
+		  var i = kvp.length; var x; while (i--) {
+			x = kvp[i].split('=');
+			if (x[0] == key) {
+			  x[1] = value;
+			  kvp[i] = x.join('=');
+			  break;
+			}
+		  }
+		  if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
+		  document.location.search = kvp.join('&');
+		}
+	</script>
+
+
+	<div class="main-content" id="mainContentPh" style="position:relative;">
+		@RenderBody()
+	</div>
+
+
+
+</div>
+
+
+</body>
+</html>
