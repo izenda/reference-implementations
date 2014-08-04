@@ -3,6 +3,7 @@
 <%@ Import Namespace="Izenda.AdHoc"%>
 <%@ Import Namespace="System.IO"%>
 <%@ Import Namespace="Izenda.Fusion" %>
+<%@ Import Namespace="MVC4Razor2.Models" %>
 
 <script RunAt="server">
 	void Application_AcquireRequestState(object sender, EventArgs e)
@@ -17,9 +18,9 @@
 		{
       if (HttpContext.Current.Session == null || HttpContext.Current.Session["ReportingInitialized"] != null)
         return;
-			AdHocSettings.LicenseKey = ConfigurationManager.AppSettings["IzendaLicKey"];
-			AdHocSettings.SqlServerConnectionString = "Server=66.29.211.132,41433;Database=duncan;User ID=duncan;Password=ne-gheh-ghop;";
-			Izenda.Fusion.FusionDriver.AddSqlConnection("PEMRBAC", @"Server=66.29.211.132,41433;database=PEMRBAC;User Id=duncan;Password=ne-gheh-ghop;MultipleActiveResultSets=True;");
+			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
+			AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
+			Izenda.Fusion.FusionDriver.AddSqlConnection("INSERT_FUSION_CONNECTION_NAME_HERE", @"INSERT_FUSION_CONNECTION_STRING_HERE");
 			AdHocSettings.DataCacheInterval = 0;
 			AdHocSettings.AdHocConfig = new CustomAdHocConfig();
       AdHocSettings.ReportViewer = "ReportViewer";
