@@ -11,22 +11,22 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta name="robots" content="noindex, follow" />
   <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
-  <link rel="stylesheet" href="./Resources/css/reset2.css" type="text/css" />
-  <link rel="stylesheet" href="./Resources/css/print.css" type="text/css" media="print" />
-  <link rel="stylesheet" href="./Resources/css/fun.css" type="text/css" />
-  <link rel="stylesheet" href="./Resources/css/main.css" type="text/css" />
-  <link rel="shortcut icon" href="rs.aspx?image=ModernImages.report-icon.png" type='image/png' />
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
-  <script type="text/javascript" src="./Resources/js/main.js"></script>
+  <link rel="stylesheet" href="Resources/css/reset2.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/print.css" type="text/css" media="print" />
+  <link rel="stylesheet" href="Resources/css/fun.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/main.css" type="text/css" />
+  <link rel="shortcut icon" href="Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="Resources/js/main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
+  <link href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap.css" rel="stylesheet" />
+  <link href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-modals.css" rel="stylesheet" />
+  <link href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-override.css" rel="stylesheet" />
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-dropdown.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-tab.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-transition.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-modal.js"></script>
   <script type="text/javascript">
     //htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
   </script>
@@ -41,11 +41,11 @@
     <div class="header applyStyles" id="whiteHeader">
       <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
         <div class="left-logo">
-          <img src="rs.aspx?image=ModernImages.bi-logo.png" alt="Business intelligence" />
+          <img src="Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence" />
         </div>
         <div class="right-logo">
           <a href="http://izenda.com" style="position: relative; top: 4px;">
-            <img runat="server" id="rightLogo" src="rs.aspx?image=ModernImages.izenda-logo-4.gif" alt="Izenda Reports" /></a>
+            <img runat="server" ID="rightLogo" src="Resources/FromDLL/Resources/ModernImages/izenda-logo-4.gif" alt="Izenda Reports" /></a>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -103,7 +103,7 @@
           %>
             <li class="top-nav-item" style="float: right;">
               <a href="Settings.aspx" title="Settings">
-                <img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" />
+                <img class="icon" src="Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings" />
               </a>
             </li>
           <% } %>
