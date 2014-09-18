@@ -12,10 +12,10 @@
   <meta name="robots" content="noindex, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
-  <link rel="stylesheet" href="Resources/css/reset2.css" type="text/css" />
-  <link rel="stylesheet" href="Resources/css/print.css" type="text/css" media="print" />
-  <link rel="stylesheet" href="Resources/css/fun.css" type="text/css" />
   <link rel="shortcut icon" href="Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
+  <link rel="stylesheet" href="Resources/css/reset2.min.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/print.min.css" type="text/css" media="print" />
+  <link rel="stylesheet" href="Resources/css/fun.min.css" type="text/css" />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-responsive.css" />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap.css"  />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-modals.css"  />
