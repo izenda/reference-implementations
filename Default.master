@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="Resources/css/reset2.min.css" type="text/css" />
   <link rel="stylesheet" href="Resources/css/print.min.css" type="text/css" media="print" />
   <link rel="stylesheet" href="Resources/css/fun.min.css" type="text/css" />
-  <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-responsive.css" />
+  <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-responsive.min.css" />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap.css"  />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-modals.css"  />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-override.css"  />
