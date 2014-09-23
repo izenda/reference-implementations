@@ -24,7 +24,7 @@ public partial class TemplateDesigner : Page {
 		string browserType = "unknown";
 		if (Request.Browser.Browser.ToLower().StartsWith("ie"))
 			browserType = "ie";
-		else if (Request.Browser.Browser.ToLower().Contains("safari"))
+		else if (Request.Browser.Browser.ToLower().Contains("safari") || Request.Browser.Browser.ToLower().Contains("chrome"))
 			browserType = "chrome";
 		else if (Request.Browser.Browser.ToLower().Contains("firefox"))
 			browserType = "ff";
