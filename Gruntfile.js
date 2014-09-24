@@ -3,28 +3,22 @@ module.exports=function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      static_mappings: {
-        files: [
-          {src: 'Resources/css/main.css', dest: 'Resources/build/main.min.css'}
-        ],
-      },
-      dynamic_mappings: {
-        files: [
-          {
-            expand: true,
-            cwd: 'Resources/',
-            src: ['**/*.css'],
-            dest: 'build/',
-            ext: '.min.js',
-            extDot: 'first'
-          },
-        ],
-      },
-    },
+
+    //Tasks//
+    cssmin: {
+      css: {
+        files: [{
+          expand: true,
+          cwd: 'Resources/css/',
+          src: ['*.css','!*.min.css'],
+          dest: 'Resources/css/build/',
+          ext: '.min.css'
+        }]
+      }
+    }
   });
 
-  grunt.LoadNpmTasks('uglifycss');
-  grunt.registerTask('default', ['uglifycss']);
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.registerTask('default', ['cssmin']);
 };
 
