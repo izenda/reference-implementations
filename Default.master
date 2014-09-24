@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap.min.css"  />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-modals.min.css"  />
   <link rel="stylesheet" href="Resources/FromDLL/Resources/Styles/ModernStyles/bootstrap-override.min.css"  />c
-  <link rel="stylesheet" href="Resources/css/main.min.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/build/main.min.css" type="text/css" />
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-dropdown.js"></script>
