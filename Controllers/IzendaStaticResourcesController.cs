@@ -11,12 +11,16 @@ namespace MVC4Razor2.Controllers {
         return new EmptyResult();
       }
       string rawUrl = HttpContext.Request.RawUrl.ToLower();
+      if (HttpContext.Request.RawUrl.StartsWith("/Reporting/Resources")) {
+        string name = HttpContext.Request.RawUrl.Replace("/Reporting", "");
+        return File(name, MimeMapping.GetMimeMapping(name));
+      }
       if (rawUrl.EndsWith("reportviewerfilters.js")) {
         return File(Url.Content("~/Resources/js/ReportViewerFilters.js"), "application/x-javascript");
       }
-			if (rawUrl.EndsWith("reportlist.js")) {
-				return File(Url.Content("~/Resources/js/ReportList.js"), "application/x-javascript");
-			}
+      if (rawUrl.EndsWith("reportlist.js")) {
+        return File(Url.Content("~/Resources/js/ReportList.js"), "application/x-javascript");
+      }
       if (rawUrl.EndsWith("data-sources.js")) {
         return File(Url.Content("~/Resources/js/data-sources.js"), "application/x-javascript");
       }
