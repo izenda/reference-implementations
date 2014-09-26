@@ -38,7 +38,7 @@ namespace MVC4Razor2 {
       bool result = false;
       if (extensionToBeRouted == "js") {
         result = result || requestUrl.Contains("reportviewerfilters.js");
-				result = result || requestUrl.Contains("reportlist.js");
+        result = result || requestUrl.Contains("reportlist.js");
         result = result || requestUrl.Contains("data-sources.js");
         result = result || requestUrl.Contains("data-sources-preview.js");
         result = result || requestUrl.Contains("charts.js");
@@ -48,6 +48,7 @@ namespace MVC4Razor2 {
         result = result || requestUrl.Contains("elrte.full.js");
         result = result || requestUrl.Contains("elrte.ru.js");
         result = result || requestUrl.Contains("fieldproperties.js");
+        result = result || requestUrl.Contains("shrinkable-grid.js");
       }
       if (extensionToBeRouted == "css") {
         result = result || requestUrl.Contains("tabs.css");
@@ -60,6 +61,7 @@ namespace MVC4Razor2 {
         result = result || requestUrl.Contains("jquery-ui-1.8.13.custom.css");
         result = result || requestUrl.Contains("elrte.min.css");
         result = result || requestUrl.Contains("elrte-inner.css");
+        result = result || requestUrl.Contains("shrinkable-grid.css");
       }
       if (extensionToBeRouted == "png") {
         result = result || requestUrl.Contains("elrtebg.png");

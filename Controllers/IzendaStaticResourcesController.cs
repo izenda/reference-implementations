@@ -48,6 +48,9 @@ namespace MVC4Razor2.Controllers {
       if (rawUrl.EndsWith("fieldproperties.js")) {
         return File(Url.Content("~/Resources/js/FieldProperties.js"), "application/x-javascript");
       }
+      if (rawUrl.EndsWith("shrinkable-grid.js")) {
+        return File(Url.Content("~/Resources/js/shrinkable-grid.js"), "application/x-javascript");
+      }
       if (rawUrl.EndsWith("tabs.css")) {
         return File(Url.Content("~/Resources/css/tabs.css"), "text/css");
       }
@@ -77,6 +80,9 @@ namespace MVC4Razor2.Controllers {
       }
       if (rawUrl.EndsWith("elrte-inner.css")) {
         return File(Url.Content("~/Reporting/elrte/css/elrte-inner.css"), "text/css");
+      }
+      if (rawUrl.EndsWith("shrinkable-grid.css")) {
+        return File(Url.Content("~/Reporting/elrte/css/shrinkable-grid.css"), "text/css");
       }
       if (rawUrl.EndsWith("elrtebg.png")) {
         return File(Url.Content("~/Reporting/elrte/images/elrtebg.png"), "image/png");
