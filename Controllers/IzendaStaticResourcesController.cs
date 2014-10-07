@@ -11,8 +11,8 @@ namespace MVC4Razor2.Controllers {
         return new EmptyResult();
       }
       string rawUrl = HttpContext.Request.RawUrl.ToLower();
-      if (HttpContext.Request.RawUrl.StartsWith("/Reporting/Resources")) {
-        string name = HttpContext.Request.RawUrl.Replace("/Reporting", "");
+      if (HttpContext.Request.RawUrl.Contains("/Reporting/Resources")) {
+				string name = HttpContext.Request.RawUrl.Replace("/Reporting/Resources", "/Resources");
         return File(name, MimeMapping.GetMimeMapping(name));
       }
       if (rawUrl.EndsWith("reportviewerfilters.js")) {
