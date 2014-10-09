@@ -2,30 +2,30 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <html>
-  <head runat="server">
-	  <title>Izenda Reports</title>
-	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	  <meta http-equiv="Expires" content="0" />
-	  <meta http-equiv="Pragma" content="no-cache" />
+<head runat="server">
+    <title>Izenda Reports</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, follow" />
-  	<link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
-    <link rel="stylesheet" href="@Url.Content("~/Resources/css/reset2.css")" type="text/css" />
-	  <link rel="stylesheet" href="@Url.Content("~/Resources/css/print.css")" type="text/css" media="print" />
-	  <link rel="stylesheet" href="@Url.Content("~/Resources/css/fun.css")" type="text/css" />
-	  <link rel="stylesheet" href="@Url.Content("~/Resources/css/main.css")" type="text/css" />
-	  <link rel="shortcut icon" href="@Url.Content("~/Reporting/rs.aspx?image=ModernImages.report-icon.png")" type='image/png' />
-	  <script type="text/javascript" src="@Url.Content("~/Reporting/rs.aspx?js=ModernScripts.jquery-1.7.2.min")"></script>
-	  <script type="text/javascript" src="@Url.Content("~/Resources/js/main.js")"></script>
-	  <link href="@Url.Content("~/Reporting/rs.aspx?css=ModernStyles.bootstrap-responsive")" rel="stylesheet" />
-	  <link href="@Url.Content("~/Reporting/rs.aspx?css=ModernStyles.bootstrap")" rel="stylesheet" />
-	  <link href="@Url.Content("~/Reporting/rs.aspx?css=ModernStyles.bootstrap-modals")" rel="stylesheet" />
-	  <link href="@Url.Content("~/Reporting/rs.aspx?css=ModernStyles.bootstrap-override")" rel="stylesheet" />
-	  <script type="text/javascript" src="@Url.Content("~/Reporting/rs.aspx?js=ModernScripts.bootstrap-dropdown")"></script>
-	  <script type="text/javascript" src="@Url.Content("~/Reporting/rs.aspx?js=ModernScripts.bootstrap-tab")"></script>
-	  <script type="text/javascript" src="@Url.Content("~/Reporting/rs.aspx?js=ModernScripts.bootstrap-transition")"></script>
-	  <script type="text/javascript" src="@Url.Content("~/Reporting/rs.aspx?js=ModernScripts.bootstrap-modal")"></script>
+    <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
+    <link rel="stylesheet" href="~/Resources/css/reset2.css" type="text/css" />
+    <link rel="stylesheet" href="~/Resources/css/print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="~/Resources/css/fun.css" type="text/css" />
+    <link rel="stylesheet" href="~/Resources/css/main.css" type="text/css" />
+    <link rel="shortcut icon" href="~/Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
+    <script type="text/javascript" src="~/Resources/FromDLL/Scripts/ModernScripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/Resources/js/main.js"></script>
+    <link href="~/Resources/css/ModernStyles/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="~/Resources/css/ModernStyles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Resources/css/ModernStyles/bootstrap-modals.css" rel="stylesheet" />
+    <link href="~/Resources/css/ModernStyles/bootstrap-override.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Resources/FromDLL/Scripts/ModernScripts/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="~/Resources/FromDLL/Scripts/ModernScripts/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="~/Resources/FromDLL/Scripts/ModernScripts/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="~/Resources/FromDLL/Scripts/ModernScripts/bootstrap-modal.js"></script>
 
 
     @if (IsSectionDefined("header"))
@@ -33,101 +33,102 @@
         @RenderSection("header")
     }
 
-    @{if (HttpContext.Current != null && HttpContext.Current.Request != null && HttpContext.Current.Session != null) {Izenda.AdHoc.Utility.CheckLimitations(true);}}
+    @{if (HttpContext.Current != null && HttpContext.Current.Request != null && HttpContext.Current.Session != null) { Izenda.AdHoc.Utility.CheckLimitations(true); }}
 
-  </head>
+</head>
 
 <body style="margin:0px; padding:0px;">
 
-  <div class="layout">
-	  <div class="header applyStyles" id="whiteHeader">
-		  <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
-		  <div class="left-logo">
-			  <img src="@Url.Content("~/Reporting/rs.aspx?image=ModernImages.bi-logo.png")" alt="Business intelligence" />
-		  </div>
-		  <div class="right-logo">
-			  <a href="http://izenda.com" style="position: relative; top: 4px;"><img runat="server" ID="rightLogo" src="@Url.Content("~/Reporting/rs.aspx?image=ModernImages.izenda-logo-4.gif")" alt="Izenda Reports" /></a>
-		  </div>
-		  <div class="clearfix"></div>
-		  </div>
-	  </div>
+    <div class="layout">
+        <div class="header applyStyles" id="whiteHeader">
+            <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
+                <div class="left-logo">
+                    <img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence" />
+                </div>
+                <div class="right-logo">
+                    <a href="http://izenda.com" style="position: relative; top: 4px;"><img runat="server" ID="rightLogo" src="~/Resources/FromDLL/Resources/ModernImages/izenda-logo-4.gif" alt="Izenda Reports" /></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 
-	  <script type="text/javascript">
-		  function insertParam(key, value) {
-		    key = escape(key); value = escape(value);
-		    var kvp = document.location.search.substr(1).split('&');
-		    if (kvp.length == 1 && kvp[0] == '')
-			    kvp.length = 0;
-		    var i = kvp.length; var x; while (i--) {
-			  x = kvp[i].split('=');
-			  if (x[0] == key) {
-			    x[1] = value;
-			    kvp[i] = x.join('=');
-			    break;
-			    }
-		    }
-		    if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
-		    document.location.search = kvp.join('&');
-		  }
+        <script type="text/javascript">
+            function insertParam(key, value) {
+                key = escape(key); value = escape(value);
+                var kvp = document.location.search.substr(1).split('&');
+                if (kvp.length == 1 && kvp[0] == '')
+                    kvp.length = 0;
+                var i = kvp.length; var x; while (i--) {
+                    x = kvp[i].split('=');
+                    if (x[0] == key) {
+                        x[1] = value;
+                        kvp[i] = x.join('=');
+                        break;
+                    }
+                }
+                if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
+                document.location.search = kvp.join('&');
+            }
 
-		  function ShowRlToDbLoading() {
-		    document.getElementById('mainContentDiv').style.display = 'none';
-		    var dld = document.getElementById('dashLoadingVg');
-		    dld.style.height = document.body.scrollHeight + 'px';
-		    dld.style.display = '';		  
-		    var limg = document.getElementById('limgDb');
-		    var lw = document.getElementById('loadingWordDb');
-		    var vSize = document.body.offsetHeight;
-		    lw.style.paddingTop = (3 + vSize / 3) + 'px';
-		  }
-	  </script>
+            function ShowRlToDbLoading() {
+                document.getElementById('mainContentDiv').style.display = 'none';
+                var dld = document.getElementById('dashLoadingVg');
+                dld.style.height = document.body.scrollHeight + 'px';
+                dld.style.display = '';
+                var limg = document.getElementById('limgDb');
+                var lw = document.getElementById('loadingWordDb');
+                var vSize = document.body.offsetHeight;
+                lw.style.paddingTop = (3 + vSize / 3) + 'px';
+            }
+        </script>
 
-	  <div class="top-nav applyStyles" id="blueHeader">
-		  <div class="page">
-		    <ul id="topnav" style="margin:0px;padding:0px;">
-			    <li class="top-nav-item">@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
-			    <li class="top-nav-item">@Html.ActionLink("Dashboards", "Dashboards", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, new { onclick = "ShowRlToDbLoading();" })</li>
-			    <li class="top-nav-item designer-only btn-group">
-				    <a class="btn" href="@Url.Action("ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" })"><span class="plus">+</span> New</a>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-					    <span class="caret"></span>
-				    </button>				
-				      <ul class="dropdown-menu">
-					      <li>@Html.ActionLink("Report", "ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources"}, null)</li>  
-					      <li>@Html.ActionLink("Instant Report", "InstantReport", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>  
-					      <li>@Html.ActionLink("Dashboard", "DashboardDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, null)</li>
-				      </ul>  
-			      </li>
-  @if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton) {
-  <li class="top-nav-item" style="float: right;"><a href="@Url.Action("Settings", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())" title="Settings"><img class="icon" src="@Url.Content("~/Reporting/rs.aspx?image=ModernImages.settings.png")" alt="Settings" /></a></li>
-  }		    
-                
+        <div class="top-nav applyStyles" id="blueHeader">
+            <div class="page">
+                <ul id="topnav" style="margin:0px;padding:0px;">
+                    <li class="top-nav-item">@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
+                    <li class="top-nav-item">@Html.ActionLink("Dashboards", "Dashboards", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, new { onclick = "ShowRlToDbLoading();" })</li>
+                    <li class="top-nav-item designer-only btn-group">
+                        <a class="btn" href="@Url.Action("ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" })"><span class="plus">+</span> New</a>
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Report", "ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" }, null)</li>
+                            <li>@Html.ActionLink("Instant Report", "InstantReport", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
+                            <li>@Html.ActionLink("Dashboard", "DashboardDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, null)</li>
+                        </ul>
+                    </li>
+                    @if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
+                    {
+                        <li class="top-nav-item" style="float: right;"><a href="@Url.Action("Settings", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())" title="Settings"><img class="icon" src="~/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings" /></a></li>
+                    }
 
-		    </ul>
-		    <div class="clearfix"></div>
-		  </div>
-	  </div>
 
-    <div id="dashLoadingVg" style="text-align: center; width:100%; height:100%; top:130px; left:0px; background-color: #FFFFFF; z-index: 8000; display: none;">
-	    <div id="loadingWordDb" style="font-size: 20px;margin-left: 70px;font-size: 20px;color:#1D5987;font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:normal !important;font-size: 20px; font-style: normal;">Loading...</div>
-	    <img id="limgDb" style="margin-left: 70px; margin-top:40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt="" />
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div id="dashLoadingVg" style="text-align: center; width:100%; height:100%; top:130px; left:0px; background-color: #FFFFFF; z-index: 8000; display: none;">
+            <div id="loadingWordDb" style="font-size: 20px;margin-left: 70px;font-size: 20px;color:#1D5987;font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:normal !important;font-size: 20px; font-style: normal;">Loading...</div>
+            <img id="limgDb" style="margin-left: 70px; margin-top:40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt="" />
+        </div>
+
+        <div class="main-content" id="mainContentDiv">
+            @RenderBody()
+        </div>
+
+        <div class="footer applyStyles">
+            <div class="line"></div>
+            <div class="page">
+                <p>
+                    Copyright 2013 Izenda, LLC<br />
+                    <a href="http://izenda.com">Home</a> <em style="margin: 0 .25em;">·</em>@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()) <em style="margin: 0 .25em;">·</em> <a href="http://blog.izenda.com">Blog</a>
+                </p>
+            </div>
+        </div>
+
     </div>
-
-	  <div class="main-content" id="mainContentDiv">
-		  @RenderBody()
-	  </div>
-
-	  <div class="footer applyStyles">
-		  <div class="line"></div>
-		  <div class="page">
-			  <p>
-				  Copyright 2013 Izenda, LLC<br />
-				  <a href="http://izenda.com">Home</a> <em style="margin: 0 .25em;">·</em>@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()) <em style="margin: 0 .25em;">·</em> <a href="http://blog.izenda.com">Blog</a>
-			  </p>
-		  </div>
-	  </div>
-
-  </div>
 </body>
 
 </html>
