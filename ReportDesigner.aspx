@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
-  <link rel="stylesheet" type="text/css" href="./Resources/css/Filters.css" />
+  <link rel="stylesheet" type="text/css" href="./Resources/css/Filters.min.css" />
   <script type="text/javascript">
     jq$(document).ready(function() {
       var fieldWithRn = document.getElementById('reportNameFor2ver');

@@ -10,23 +10,24 @@
   <meta http-equiv="Expires" content="0" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta name="robots" content="noindex, follow" />
-  <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
-  <link rel="stylesheet" href="./Resources/css/reset2.css" type="text/css" />
-  <link rel="stylesheet" href="./Resources/css/print.css" type="text/css" media="print" />
-  <link rel="stylesheet" href="./Resources/css/fun.css" type="text/css" />
-  <link rel="stylesheet" href="./Resources/css/main.css" type="text/css" />
-  <link rel="shortcut icon" href="rs.aspx?image=ModernImages.report-icon.png" type='image/png' />
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
-  <script type="text/javascript" src="./Resources/js/main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
+  <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
+  <link rel="shortcut icon" href="Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
+  <link rel="stylesheet" href="Resources/css/reset2.min.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/print.min.css" type="text/css" media="print" />
+  <link rel="stylesheet" href="Resources/css/fun.min.css" type="text/css" />
+ <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap.min.css"  />
+  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-modals.min.css"  />
+  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-override.min.css"  />
+  <link rel="stylesheet" href="Resources/css/main.min.css" type="text/css" />
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-dropdown.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-tab.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-transition.js"></script>
+  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-modal.js"></script>
+  <script type="text/javascript" src="Resources/js/main.js"></script>
   <script type="text/javascript">
     //htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
   </script>
@@ -41,11 +42,11 @@
     <div class="header applyStyles" id="whiteHeader">
       <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
         <div class="left-logo">
-          <img src="rs.aspx?image=ModernImages.bi-logo.png" alt="Business intelligence" />
+          <img src="Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence" />
         </div>
         <div class="right-logo">
           <a href="http://izenda.com" style="position: relative; top: 4px;">
-            <img runat="server" id="rightLogo" src="rs.aspx?image=ModernImages.izenda-logo-4.gif" alt="Izenda Reports" /></a>
+            <img runat="server" ID="rightLogo" src="Resources/FromDLL/Resources/ModernImages/izenda-logo-4.gif" alt="Izenda Reports" /></a>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -103,7 +104,7 @@
           %>
             <li class="top-nav-item" style="float: right;">
               <a href="Settings.aspx" title="Settings">
-                <img class="icon" src="rs.aspx?image=ModernImages.settings.png" alt="Settings" />
+                <img class="icon" src="Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings" />
               </a>
             </li>
           <% } %>
@@ -114,7 +115,7 @@
 
     <div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
       <div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
-      <img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="rs.aspx?image=loading.gif" alt="" />
+      <img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="Resources/FromDLL/Resources/loading.gif" alt="" />
     </div>
     <div class="main-content" id="mainContentDiv">
       <asp:ContentPlaceHolder ID="PlaceHolder" runat="server"></asp:ContentPlaceHolder>

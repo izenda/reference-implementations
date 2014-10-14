@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head id="Head1" runat="server">
-    <link rel="stylesheet" type="text/css" href="./rs.aspx?css=DashboardViewer" />
+    <link rel="stylesheet" type="text/css" href="./Resources/css/build/dashboard-viewer.min.css" />
     <script type="text/javascript" src="./rs.aspx?js=jQuery.DashboardViewer"></script>
     <script type="text/javascript" src="./rs.aspx?js=jQuery.NewDashboardControls"></script>
     <title>Izenda AdHoc - Dashboard Viewer</title>

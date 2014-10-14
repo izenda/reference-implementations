@@ -9,5 +9,8 @@ rm izenda.adhoc.zip
 mkdir -p Reports
 touch Izenda.config
 mkdir -p "${RI}"
+npm update
+npm install grunt-cli
+grunt
 find . \( -path "./.git" -o -path "./Forms/elrte/.git" -o -path "./${RI}" \) -prune -o -print | cpio -mpvd "${RI}"
 zip -r ${RI}.zip ${RI}
