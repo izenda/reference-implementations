@@ -14,16 +14,6 @@ module.exports=function(grunt) {
           dest: 'Resources/css/',
           ext: '.min.css'
         }]
-      },
-      
-      css: {
-        files : [{
-          expand: true,
-          cwd:    'Resources/css/ModernStyles/',
-          src:    ['*.css', '!*.min.css'],
-          dest:   'Resources/css/ModernStyles/',
-          ext:    '.min.css'
-        }]
       }
     }
   });
