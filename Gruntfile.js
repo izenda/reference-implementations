@@ -17,7 +17,7 @@ module.exports=function(grunt) {
       },
       
       css: {
-        [{
+        files : [{
           expand: true,
           cwd:    'Resources/css/ModernStyles/',
           src:    ['*.css', '!*.min.css'],
