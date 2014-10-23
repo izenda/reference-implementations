@@ -16,17 +16,17 @@
   <link rel="stylesheet" href="Resources/css/reset2.min.css" type="text/css" />
   <link rel="stylesheet" href="Resources/css/print.min.css" type="text/css" media="print" />
   <link rel="stylesheet" href="Resources/css/fun.min.css" type="text/css" />
- <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-responsive.min.css" />
   <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap.min.css"  />
   <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-modals.min.css"  />
   <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-override.min.css"  />
   <link rel="stylesheet" href="Resources/css/main.min.css" type="text/css" />
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/jquery-1.7.2.min.js"></script>
-  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-dropdown.js"></script>
-  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-tab.js"></script>
-  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-transition.js"></script>
-  <script type="text/javascript" src="Resources/FromDLL/Scripts/ModernScripts/bootstrap-modal.js"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
   <script type="text/javascript" src="Resources/js/main.js"></script>
   <script type="text/javascript">
     //htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
