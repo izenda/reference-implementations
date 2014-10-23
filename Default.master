@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="Resources/css/reset2.min.css" type="text/css" />
   <link rel="stylesheet" href="Resources/css/print.min.css" type="text/css" media="print" />
   <link rel="stylesheet" href="Resources/css/fun.min.css" type="text/css" />
-  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-responsive.min.css" />
-  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap.min.css"  />
-  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-modals.min.css"  />
-  <link rel="stylesheet" href="Resources/css/ModernStyles/bootstrap-override.min.css"  />
+  <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
+  <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
+  <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
+  <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
   <link rel="stylesheet" href="Resources/css/main.min.css" type="text/css" />
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
