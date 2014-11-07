@@ -34,27 +34,29 @@
       </table>
 
       <script runat="server">
-        bool AuthenticateUser(string userName, string password, out bool isAdmin) {
-          isAdmin = false;
-          if (userName.ToLower() == "admin" || userName.ToLower() == "administrator")
-            isAdmin = true;
-          return true;
-        }
+          Function AuthenticateUser(userName As String, password As String, ByRef isAdmin As Boolean) As Boolean
+              isAdmin = False
+              If userName.ToLower() = "admin" OrElse userName.ToLower() = "administrator" Then
+                  isAdmin = True
+              End If
+              Return True
+          End Function
 
-        void Button1_Click(object sender, EventArgs args) {
-          loginValidator.IsValid = true;
-          bool isAdmin;
-          if (AuthenticateUser(userNameTextbox.Text, userPassword.Value, out isAdmin)) {
-            HttpContext.Current.Session["UserName"] = userNameTextbox.Text;
-            if (isAdmin)
-              HttpContext.Current.Session["Role"] = "Administrator";
-            else
-              HttpContext.Current.Session["Role"] = "RegularUser";
-            FormsAuthentication.RedirectFromLoginPage(userNameTextbox.Text, false);
-            return;
-          }
-          loginValidator.IsValid = false;
-        }
+          Sub Button1_Click(sender As Object, args As EventArgs) Handles Button1.Click
+              loginValidator.IsValid = True
+              Dim isAdmin As Boolean = False
+              If AuthenticateUser(userNameTextbox.Text, userPassword.Value, isAdmin) Then
+                  HttpContext.Current.Session("UserName") = userNameTextbox.Text
+                  If isAdmin Then
+                      HttpContext.Current.Session("Role") = "Administrator"
+                  Else
+                      HttpContext.Current.Session("Role") = "RegularUser"
+                      FormsAuthentication.RedirectFromLoginPage(userNameTextbox.Text, False)
+                      Return
+                  End If
+              End If
+              loginValidator.IsValid = False
+          End Sub
       </script>
 
       <div style="text-align: center;">
