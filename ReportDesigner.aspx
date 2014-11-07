@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
   <link rel="stylesheet" type="text/css" href="./Resources/css/Filters.css" />
   <script type="text/javascript">
-    $(document).ready(function() {
+    jq$(document).ready(function() {
       var fieldWithRn = document.getElementById('reportNameFor2ver');
       if (fieldWithRn != undefined && fieldWithRn != null) {
         var frn = decodeURIComponent(fieldWithRn.value.replace(/\\'/g, "'"));
