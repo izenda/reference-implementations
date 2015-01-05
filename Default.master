@@ -1,4 +1,4 @@
-<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Default.master.vb" Inherits="MasterPage1" %>
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Default.master.vb" Inherits="MasterPage1" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -42,7 +42,7 @@
         </div>
         <div class="right-logo">
           <a href="http://izenda.com" style="position: relative; top: 4px;">
-            <img runat="server" id="rightLogo" src="rs.aspx?image=ModernImages.izenda-logo-4.gif" alt="Izenda Reports" /></a>
+            <img runat="server" class="right-logo" src="Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
         </div>
         <div class="clearfix"></div>
       </div>
