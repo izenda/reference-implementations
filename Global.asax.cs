@@ -49,6 +49,7 @@ namespace MVC4Razor2 {
         result = result || requestUrl.Contains("elrte.ru.js");
         result = result || requestUrl.Contains("fieldproperties.js");
         result = result || requestUrl.Contains("shrinkable-grid.js");
+				result = result || requestUrl.Contains("richeditorpopup.js");
       }
       if (extensionToBeRouted == "css") {
         result = result || requestUrl.Contains("tabs.css");
