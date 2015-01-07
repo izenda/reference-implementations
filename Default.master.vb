@@ -4,9 +4,9 @@ Partial Class MasterPage1
   Inherits MasterPage
   Protected Overrides Sub OnInit(ByVal e As System.EventArgs)
     ASP.global_asax.CustomAdHocConfig.InitializeReporting()
-    If (Not String.IsNullOrEmpty(AdHocSettings.ApplicationHeaderImageUrl)) Then
-      rightLogo.Src = AdHocSettings.ApplicationHeaderImageUrl
-    End If
+        'If (Not String.IsNullOrEmpty(AdHocSettings.ApplicationHeaderImageUrl)) Then
+        '  rightLogo.Src = AdHocSettings.ApplicationHeaderImageUrl
+        'End If
     If (AdHocSettings.ShowDesignLinks = False) Then
       Dim script As String
       script = "<script type=""text/javascript"" language=""javascript"">"
