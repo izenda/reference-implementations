@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default-New.master.cs" Inherits="Default_New" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <title>Izenda</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Expires" content="0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <link rel="shortcut icon" href="Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
+  <link rel="stylesheet" href="Resources/css/reset2.css" type="text/css"/>
+  <link rel="stylesheet" href="Resources/css/print.css" type="text/css" media="print"/>
+  <link rel="stylesheet" href="Resources/css/fun.css" type="text/css"/>
+  <link rel="stylesheet" href="rs.aspx?css=ModernStyles.jquery-ui" type="text/css"/>
+  <link rel="stylesheet" href="rs.aspx?css=ModernStyles.bootstrap.min" type="text/css"/>
+  <link rel="stylesheet" href="Resources/css/main.css" type="text/css"/>
+
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.modernizr-2.8.3.min"></script>
+  <script type="text/javascript" src="./rs.aspx?js=jQuery.jq"></script>
+  <script type="text/javascript" src="./rs.aspx?js=jQuery.jqui"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
+  <script type="text/javascript" src="Resources/js/main.js"></script>
+  <script type="text/javascript">
+    //htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+  </script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="./rs.aspx?js=ModernScripts.html5shiv.min"></script>
+      <script type="text/javascript" src="./rs.aspx?js=ModernScripts.respond.min"></script>
+    <![endif]-->
+
+  <asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body class="izenda">
+  <div class="container-fluid">
+    <div class="row">
+      <header>
+        <nav class="navbar white-background" role="navigation">
+          <div class="container-fluid">
+            <div class="row" id="whiteHeader">
+              <div class="col-xs-4 col-md-4 left-logo">
+                <img src="rs.aspx?image=ModernImages.bi-logo.png" alt="Business intelligence" />
+              </div>
+              <div class="col-xs-8 col-md-8 right-logo">
+                <div class="right-logo pull-right">
+                  <a href="http://izenda.com">
+                    <img runat="server" class="right-logo img-responsive" id="rightLogo" style="height: 60px;" 
+                      src="Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="row">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="izenda-menu collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="ReportList.aspx" title="Open report list">Reports</a></li>
+            <li><a href="Dashboards.aspx?clear=1" title="Open dashboards" onclick="ShowIzendaSplashScreen();">Dashboards</a></li>
+            <li class="dropdown">
+              <a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" class="dropdown-toggle"
+                data-toggle="dropdown"><span class="plus">+</span> New <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" title="Create new report">Report</a></li>
+                <li><a href="InstantReport.aspx" title="Create new report instantly">Instant Report</a></li>
+                <li><a href="DashboardDesigner.aspx?clear=1" title="Create new dashboard">Dashboard</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton) { %>
+            <li>
+              <a title="Settings" href="Settings.aspx">
+                <img class="icon" src="./rs.aspx?image=ModernImages.settings.png" alt="Settings" />
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="row">
+      <asp:ContentPlaceHolder ID="PlaceHolder" runat="server"></asp:ContentPlaceHolder>
+    </div>
+  </div>
+</body>
+</html>

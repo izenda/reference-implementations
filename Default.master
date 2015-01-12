@@ -13,14 +13,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
   <link rel="shortcut icon" href="Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
-  <link rel="stylesheet" href="Resources/css/reset2.min.css" type="text/css" />
-  <link rel="stylesheet" href="Resources/css/print.min.css" type="text/css" media="print" />
-  <link rel="stylesheet" href="Resources/css/fun.min.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/reset2.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/print.css" type="text/css" media="print" />
+  <link rel="stylesheet" href="Resources/css/fun.css" type="text/css" />
   <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
   <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
   <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
   <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
-  <link rel="stylesheet" href="Resources/css/main.min.css" type="text/css" />
+  <link rel="stylesheet" href="Resources/css/main.css" type="text/css" />
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>

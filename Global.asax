@@ -12,6 +12,7 @@
       AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
       AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
       AdHocSettings.GenerateThumbnails = true;
+      AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
       AdHocSettings.DashboardViewer = "Dashboards.aspx";
       AdHocSettings.ShowSimpleModeViewer = true;
       AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$";
