@@ -54,6 +54,36 @@ namespace MVC4Razor2.Reporting
 			return false;
 		}
 
+		public static OperatorTypes GetOperatorType(int controlType)
+		{
+			switch (controlType) {
+				case 1:
+					return OperatorTypes.Like;
+				case 2:
+					return OperatorTypes.Between;
+				case 3:
+					return OperatorTypes.Equals_Select;
+				case 4:
+					return OperatorTypes.InTimePeriod;
+				case 5:
+					return OperatorTypes.BetweenTwoDates;
+				case 6:
+					return OperatorTypes.EqualsPopup;
+				case 7:
+					return OperatorTypes.Equals_TextArea;
+				case 8:
+					return OperatorTypes.Equals_CheckBoxes;
+				case 9:
+					return OperatorTypes.EqualsCalendar;
+				case 10:
+					return OperatorTypes.Equals_Multiple;
+				case 100:
+					return OperatorTypes.Equals_Autocomplete;
+				default:
+					return OperatorTypes.Like;
+			}
+		}
+
 		public static string ApplyFiltersFiltersNew(List<string> wsArgs) {
 			var jss = new JavaScriptSerializer();
 			if (wsArgs.Count <= 0)
@@ -89,7 +119,7 @@ catch {}
 						selectedFilter.Column = columnName;
 						selectedFilter.Description = deserializedFilter.Description;
 						selectedFilter.Not = deserializedFilter.Not;
-						selectedFilter.Operator = FilterData.GetOperatorType(deserializedFilter.Operator);
+						selectedFilter.Operator = GetOperatorType(deserializedFilter.Operator);
 						selectedFilter.LinkedColumns = deserializedFilter.LinkedColumns;
 						if (!string.IsNullOrEmpty(deserializedFilter.OperatorFriendlyName)) {
 							string operatorFriendlyName = deserializedFilter.OperatorFriendlyName;
