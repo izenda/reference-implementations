@@ -38,6 +38,7 @@ namespace MVC4Razor2 {
       bool result = false;
       if (extensionToBeRouted == "js") {
         result = result || requestUrl.Contains("reportviewerfilters.js");
+				result = result || requestUrl.Contains("contentrefreshintervals.js");
         result = result || requestUrl.Contains("reportlist.js");
         result = result || requestUrl.Contains("data-sources.js");
         result = result || requestUrl.Contains("data-sources-preview.js");
