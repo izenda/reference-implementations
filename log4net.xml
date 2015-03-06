@@ -1,0 +1,16 @@
+﻿<log4net>
+    <appender name="rollingFile" type="log4net.Appender.RollingFileAppender,log4net">
+        <file value="" />
+			  <param name="AppendToFile" value="true"/>
+			  <param name="RollingStyle" value="Date"/>
+			  <param name="DatePattern" value="MM-dd-yyyy'-FATAL.log'"/>
+			  <param name="StaticLogFileName" value="false"/>
+        <layout type="log4net.Layout.PatternLayout">
+            <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+        </layout>
+    </appender>
+    <root>
+        <level value="FATAL" />
+        <appender-ref ref="rollingFile" />
+    </root>
+</log4net>
