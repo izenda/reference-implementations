@@ -24,6 +24,8 @@
       AdHocSettings.ReportCssUrl = "Resources/css/Report.css"
       AdHocSettings.ShowBetweenDateCalendar = True
       AdHocSettings.AdHocConfig = New CustomAdHocConfig()
+      AdHocSettings.PrintMode = PrintMode.Html2PdfAndHtml;
+      AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
       'Initialize User
       'AdHocSettings.VisibleDataSources=
       'AdHocSettings.CurrentUserName=
