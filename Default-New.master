@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default-New.master.cs" Inherits="Default_New" %>
+<%@ Import Namespace="Izenda.AdHoc" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
@@ -28,18 +29,13 @@
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
   <script type="text/javascript" src="Resources/js/main.js"></script>
-  <script type="text/javascript">
-    //htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
-  </script>
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-      <script type="text/javascript" src="./rs.aspx?js=ModernScripts.html5shiv.min"></script>
-      <script type="text/javascript" src="./rs.aspx?js=ModernScripts.respond.min"></script>
-    <![endif]-->
+    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.html5shiv.min"></script>
+    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.respond.min"></script>
+  <![endif]-->
 
   <asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+
 </head>
 
 <body class="izenda">
@@ -88,7 +84,7 @@
               <ul class="dropdown-menu">
                 <li><a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" title="Create new report">Report</a></li>
                 <li><a href="InstantReport.aspx" title="Create new report instantly">Instant Report</a></li>
-                <li><a href="DashboardDesigner.aspx?clear=1" title="Create new dashboard">Dashboard</a></li>
+                <li><a href="<%=AdHocSettings.DashboardDesignerUrl%>#?new" title="Create new dashboard">Dashboard</a></li>
               </ul>
             </li>
           </ul>
