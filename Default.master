@@ -17,8 +17,12 @@
   <link rel="stylesheet" href="Resources/css/reset2.css" type="text/css" />
   <link rel="stylesheet" href="Resources/css/print.css" type="text/css" media="print" />
   <link rel="stylesheet" href="Resources/css/fun.css" type="text/css" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
+
+  <asp:ContentPlaceHolder ID="BootstrapCSSLink" runat="server">
+    <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
+    <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
+  </asp:ContentPlaceHolder>
+
   <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
   <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
   <link rel="stylesheet" href="Resources/css/main.css" type="text/css" />
@@ -39,7 +43,7 @@
 
 <body style="margin: 0px; padding: 0px;">
 
-  <div class="layout">
+  <div class="layout container-fluid" style="margin: 0px; padding: 0px;">
     <div class="header applyStyles" id="whiteHeader">
       <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
         <div class="left-logo">
@@ -54,45 +58,45 @@
     </div>
 
     <script type="text/javascript">
-      function insertParam(key, value) {
-        key = escape(key); value = escape(value);
-        var kvp = document.location.search.substr(1).split('&');
-        if (kvp.length == 1 && kvp[0] == '')
-          kvp.length = 0;
-        var i = kvp.length; var x; while (i--) {
-          x = kvp[i].split('=');
-          if (x[0] == key) {
-            x[1] = value;
-            kvp[i] = x.join('=');
-            break;
-          }
+        function insertParam(key, value) {
+            key = escape(key); value = escape(value);
+            var kvp = document.location.search.substr(1).split('&');
+            if (kvp.length == 1 && kvp[0] == '')
+                kvp.length = 0;
+            var i = kvp.length; var x; while (i--) {
+                x = kvp[i].split('=');
+                if (x[0] == key) {
+                    x[1] = value;
+                    kvp[i] = x.join('=');
+                    break;
+                }
+            }
+            if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
+            document.location.search = kvp.join('&');
         }
-        if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
-        document.location.search = kvp.join('&');
-      }
 
-      function ShowRlToDbLoading() {
-        document.getElementById('mainContentDiv').style.display = 'none';
-        var dld = document.getElementById('dashLoadingVg');
-        dld.style.height = document.body.scrollHeight + 'px';
-        dld.style.display = '';
-        var limg = document.getElementById('limgDb');
-        var lw = document.getElementById('loadingWordDb');
-        var vSize = document.body.offsetHeight;
-        lw.style.paddingTop = (3 + vSize / 3) + 'px';
-      }
+        function ShowRlToDbLoading() {
+            document.getElementById('mainContentDiv').style.display = 'none';
+            var dld = document.getElementById('dashLoadingVg');
+            dld.style.height = document.body.scrollHeight + 'px';
+            dld.style.display = '';
+            var limg = document.getElementById('limgDb');
+            var lw = document.getElementById('loadingWordDb');
+            var vSize = document.body.offsetHeight;
+            lw.style.paddingTop = (3 + vSize / 3) + 'px';
+        }
     </script>
 
 
     <div class="top-nav applyStyles" id="blueHeader">
       <div class="page">
         <ul id="topnav" style="margin: 0px; padding: 0px;">
-          <li class="top-nav-item"><a href="ReportList.aspx">Reports</a></li>
-          <li class="top-nav-item"><a href="Dashboards.aspx?clear=1" onclick="ShowRlToDbLoading();">Dashboards</a></li>
+          <li class="top-nav-item" style="vertical-align: top;"><a href="ReportList.aspx">Reports</a></li>
+          <li class="top-nav-item" style="vertical-align: top;"><a href="Dashboards.aspx?clear=1" onclick="ShowRlToDbLoading();">Dashboards</a></li>
           <li class="top-nav-item designer-only btn-group">
-            <a class="btn" href="ReportDesigner.aspx?clear=1&tab=Data+Sources"><span class="plus">+</span> New</a>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
+            <a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
+            <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px;" data-toggle="dropdown">
+              <span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
             </button>
             <ul class="dropdown-menu">
               <li><a href="ReportDesigner.aspx?clear=1&tab=Data+Sources">Report</a></li>
