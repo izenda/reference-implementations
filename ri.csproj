@@ -265,4 +265,9 @@
   <Target Name="AfterBuild">
   </Target> -->
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST "$(ProjectDir)Reporting\Resources" (
+		cmd /C mklink /D /J "$(ProjectDir)Reporting\Resources" "$(ProjectDir)Resources\"
+	)</PostBuildEvent>
+  </PropertyGroup>
 </Project>
