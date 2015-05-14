@@ -21,10 +21,10 @@
   <asp:ContentPlaceHolder ID="BootstrapCSSLink" runat="server">
     <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
     <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
+    <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
+    <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
   </asp:ContentPlaceHolder>
 
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
-  <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
   <link rel="stylesheet" href="Resources/css/main.css" type="text/css" />
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
@@ -95,7 +95,7 @@
           <li class="top-nav-item" style="vertical-align: top;"><a href="Dashboards.aspx?clear=1" onclick="ShowRlToDbLoading();">Dashboards</a></li>
           <li class="top-nav-item designer-only btn-group">
             <a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
-            <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px;" data-toggle="dropdown">
+            <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important; " data-toggle="dropdown">
               <span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
             </button>
             <ul class="dropdown-menu">
