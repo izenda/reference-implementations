@@ -1,0 +1,18 @@
+@{
+  ViewBag.Title = "Dashboards";
+  Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@section changeableheader {
+  <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.jquery-ui" />
+  <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap.min" />
+  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.modernizr-2.8.3.min"></script>
+  <script type="text/javascript" src="./rs.aspx?js=jQuery.jq"></script>
+  <script type="text/javascript" src="./rs.aspx?js=jQuery.jqui"></script>
+}
+
+@section header { 
+  @Html.Partial("_Dashboards-New-Head-Angular")
+}
+
+@Html.Partial("_Dashboards-New-Body-Angular")

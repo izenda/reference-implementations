@@ -14,42 +14,44 @@ namespace MVC3SK.Controllers {
   public class ReportingController : Controller {
     [ValidateInput(false)]
     public ActionResult ReportDesigner() {
-
-
       return View();
     }
+
     [ValidateInput(false)]
     public ActionResult ReportList() {
-
-
       if (HttpContext.Request != null && !String.IsNullOrEmpty(HttpContext.Request.RawUrl) && !HttpContext.Request.RawUrl.ToLower().Contains(AdHocSettings.ReportList.ToLower())) {
         return RedirectToAction("ReportList", "Reporting");
       }
       return View();
     }
+
     [ValidateInput(false)]
     public ActionResult Settings() {
       return View();
     }
+
+    [ValidateInput(false)]
+    public ActionResult Dash()
+    {
+        return View();
+    }
+
     [ValidateInput(false)]
     public ActionResult Dashboards() {
-
-
       return View();
     }
+
     [ValidateInput(false)]
     public ActionResult ReportViewer() {
-
-
       AdHocSettings.ShowSimpleModeViewer = true;
       return View();
     }
+
     [ValidateInput(false)]
     public ActionResult InstantReport() {
-
-
       return View();
     }
+
     [ValidateInput(false)]
     public ActionResult DashboardDesigner() {
       return View();

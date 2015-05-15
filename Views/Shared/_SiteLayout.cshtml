@@ -10,18 +10,27 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, follow" />
-    <link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
-    <link rel="stylesheet" href="~/Resources/css/reset2.css" type="text/css" />
-    <link rel="stylesheet" href="~/Resources/css/print.css" type="text/css" media="print" />
-    <link rel="stylesheet" href="~/Resources/css/fun.css" type="text/css" />
-    <link rel="stylesheet" href="~/Resources/css/main.css" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" href="" title="Team Blog - RSS" />
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/reset2.css" />
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/print.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/fun.css" />
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/main.css" />
     <link rel="shortcut icon" href="~/Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
-    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
+
+    @if (IsSectionDefined("changeableheader"))
+    {
+        @RenderSection("changeableheader");
+    }
+    else
+    {
+        <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap-responsive" />
+        <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap" />
+        <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap-modals" />
+        <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap-override" />
+        <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
+    }
+
     <script type="text/javascript" src="~/Resources/js/main.js"></script>
-    <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
-    <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
-    <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
-    <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
     <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
     <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
     <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
@@ -45,19 +54,21 @@
 
 <body style="margin:0px; padding:0px;">
 
-    <div class="layout">
+    <div class="layout container-fluid" style="margin: 0px; padding: 0px;">
         <div class="header applyStyles" id="whiteHeader">
             <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
                 <div class="left-logo">
                     <img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence" />
                 </div>
                 <div class="right-logo">
-                    @if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl)) {
+                    @if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl))
+                    {
                         <text>
                             <a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="@Html.Raw(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl)" alt="Izenda Reports" /></a>
-                            ></text>
+                        </text>
                     }
-                    else {
+                    else
+                    {
                         <text>
                             <a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="~/Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
                         </text>
@@ -66,7 +77,6 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-
         <script type="text/javascript">
             function insertParam(key, value) {
                 key = escape(key); value = escape(value);
@@ -96,21 +106,20 @@
                 lw.style.paddingTop = (3 + vSize / 3) + 'px';
             }
         </script>
-
         <div class="top-nav applyStyles" id="blueHeader">
             <div class="page">
-                <ul id="topnav" style="margin:0px;padding:0px;">
-                    <li class="top-nav-item">@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
-                    <li class="top-nav-item">@Html.ActionLink("Dashboards", "Dashboards", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, new { onclick = "ShowRlToDbLoading();" })</li>
+                <ul id="topnav" style="margin: 0px; padding: 0px;">
+                    <li class="top-nav-item" style="vertical-align: top;">@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
+                    <li class="top-nav-item" style="vertical-align: top;">@Html.ActionLink("Dashboards", "Dashboards", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, new { onclick = "ShowRlToDbLoading();" })</li>
                     <li class="top-nav-item designer-only btn-group">
-                        <a class="btn" href="@Url.Action("ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" })"><span class="plus">+</span> New</a>
-                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
+                        <a href="@Url.Action("ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" })"><span class="plus">+</span> New</a>
+                        <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
+                            <span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
                         </button>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Report", "ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" }, null)</li>
                             <li>@Html.ActionLink("Instant Report", "InstantReport", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
-                            <li>@Html.ActionLink("Dashboard", "DashboardDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, null)</li>
+                            <li>@Html.ActionLink("Dashboard", Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null, "?new", null, null)</li>
                         </ul>
                     </li>
                     @if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
@@ -118,21 +127,17 @@
                         <li class="top-nav-item" style="float: right;"><a href="@Url.Action("Settings", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())" title="Settings"><img class="icon" src="~/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings" /></a></li>
                     }
 
-
                 </ul>
                 <div class="clearfix"></div>
             </div>
         </div>
-
         <div id="dashLoadingVg" style="text-align: center; width:100%; height:100%; top:130px; left:0px; background-color: #FFFFFF; z-index: 8000; display: none;">
             <div id="loadingWordDb" style="font-size: 20px;margin-left: 70px;font-size: 20px;color:#1D5987;font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:normal !important;font-size: 20px; font-style: normal;">Loading...</div>
             <img id="limgDb" style="margin-left: 70px; margin-top:40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt="" />
         </div>
-
         <div class="main-content" id="mainContentDiv">
             @RenderBody()
         </div>
-
         <div class="footer applyStyles">
             <div class="line"></div>
             <div class="page">
@@ -142,7 +147,6 @@
                 </p>
             </div>
         </div>
-
     </div>
 </body>
 
