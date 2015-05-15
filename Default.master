@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="MasterPage1" %>
-<%@ Import Namespace="Izenda.AdHoc" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -18,7 +17,7 @@
   <link rel="stylesheet" href="Resources/css/print.css" type="text/css" media="print" />
   <link rel="stylesheet" href="Resources/css/fun.css" type="text/css" />
 
-  <asp:ContentPlaceHolder ID="BootstrapCSSLink" runat="server">
+  <asp:ContentPlaceHolder ID="ChangeableHeader" runat="server">
     <link href="./rs.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
     <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
     <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
@@ -95,13 +94,13 @@
           <li class="top-nav-item" style="vertical-align: top;"><a href="Dashboards.aspx?clear=1" onclick="ShowRlToDbLoading();">Dashboards</a></li>
           <li class="top-nav-item designer-only btn-group">
             <a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
-            <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important; " data-toggle="dropdown">
+            <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
               <span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
             </button>
             <ul class="dropdown-menu">
               <li><a href="ReportDesigner.aspx?clear=1&tab=Data+Sources">Report</a></li>
               <li runat="server" id="irItem"><a href="InstantReport.aspx">Instant Report</a></li>
-              <li><a href="<%=AdHocSettings.DashboardDesignerUrl%>#?new">Dashboard</a></li>
+              <li><a href="<%=Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl%>#?new">Dashboard</a></li>
             </ul>
           </li>
           <% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
