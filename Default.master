@@ -100,7 +100,7 @@
             <ul class="dropdown-menu">
               <li><a href="ReportDesigner.aspx?clear=1&tab=Data+Sources">Report</a></li>
               <li runat="server" id="irItem"><a href="InstantReport.aspx">Instant Report</a></li>
-              <li><a href="<%=Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl%>#?new">Dashboard</a></li>
+              <li><a href="<%=Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl%>?clear=1">Dashboard</a></li>
             </ul>
           </li>
           <% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
