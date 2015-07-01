@@ -118,7 +118,7 @@
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Report", "ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" }, null)</li>
                             <li>@Html.ActionLink("Instant Report", "InstantReport", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
-                            <li>@Html.ActionLink("Dashboard", Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null, "?new", null, null)</li>
+                            <li>@Html.ActionLink("Dashboard", Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, null)</li>
                         </ul>
                     </li>
                     @if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
