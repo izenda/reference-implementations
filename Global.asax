@@ -13,14 +13,12 @@
       AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
       AdHocSettings.GenerateThumbnails = true;
       AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
-      AdHocSettings.DashboardViewer = "Dashboards.aspx";
       AdHocSettings.ShowSimpleModeViewer = true;
       AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$";
       AdHocSettings.TabsCssUrl = "Resources/css/tabs.css";
       AdHocSettings.ReportCssUrl = "Resources/css/Report.css";
       AdHocSettings.ShowBetweenDateCalendar = true;
       AdHocSettings.AdHocConfig = new CustomAdHocConfig();
-      AdHocSettings.PdfPrintMode = PdfMode.EOPDF;
       AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
       // AdHocSettings.ShowHtmlButton = true;
       //AdHocSettings.ShowPDFButton = true;
@@ -30,6 +28,16 @@
       //AdHocSettings.HiddenFilters["Field"] = new string [] {"value1","value2"};
       //Success!
       HttpContext.Current.Session["ReportingInitialized"] = true;
+
+      AdHocSettings.DashboardDateSliderMode = DashboardDateSliderMode.None;
+
+      AdHocSettings.DashboardViewer = "Dash.aspx";
+      AdHocSettings.DashboardDesignerUrl = "Dash.aspx";
+
+      //EOPDF uses a DLL that converts HTML
+      //AdHocSettings.PdfPrintMode = PdfMode.EOPDF;
+      //PhantomJS PDF uses an EXE on the web server that produces the export
+      AdHocSettings.PdfPrintMode = PdfMode.PhantomJs;
     }
     public override void ProcessDataSet(System.Data.DataSet ds, string reportPart) {
       base.ProcessDataSet(ds, reportPart);
