@@ -20,22 +20,29 @@
       AdHocSettings.TabsCssUrl = "/Resources/css/tabs.css";
       AdHocSettings.ReportCssUrl = "../Resources/css/Report.css";
       AdHocSettings.ShowBetweenDateCalendar = true;
-      AdHocSettings.DashboardViewer = "Dashboards";
       AdHocSettings.ReportViewer = "ReportViewer";
       AdHocSettings.InstantReport = "InstantReport";
       AdHocSettings.ReportDesignerUrl = "ReportDesigner";
-      AdHocSettings.DashboardDesignerUrl = "DashboardDesigner";
       AdHocSettings.ReportList = "ReportList";
       AdHocSettings.SettingsPageUrl = "Settings";
       AdHocSettings.ParentSettingsUrl = "Settings";
       AdHocSettings.ResponseServer = "rs.aspx";
       AdHocSettings.ReportsPath = Path.Combine(HttpContext.Current.Server.MapPath("~/"), "Reports");
-      AdHocSettings.PdfPrintMode = PdfMode.EOPDF;
       AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
       //AdHocSettings.ShowHtmlButton = true;
       //AdHocSettings.ShowPDFButton = true;
       AdHocSettings.AdHocConfig = new CustomAdHocConfig();
       HttpContext.Current.Session["ReportingInitialized"] = true;
+
+      AdHocSettings.DashboardDateSliderMode = DashboardDateSliderMode.None;
+
+      AdHocSettings.DashboardViewer = "Dash";
+      AdHocSettings.DashboardDesignerUrl = "Dash";
+
+      //EOPDF uses a DLL that converts HTML
+      //AdHocSettings.PdfPrintMode = PdfMode.EOPDF;
+      //PhantomJS PDF uses an EXE on the web server that produces the export
+      AdHocSettings.PdfPrintMode = PdfMode.PhantomJs;
     }
   }
 </script>
