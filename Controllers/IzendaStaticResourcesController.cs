@@ -51,6 +51,9 @@ namespace MVC4Razor2.Controllers {
       if (rawUrl.EndsWith("shrinkable-grid.js")) {
         return File(Url.Content("~/Resources/js/shrinkable-grid.js"), "application/x-javascript");
       }
+			if (rawUrl.EndsWith("richeditorpopup.js")) {
+				return File(Url.Content("~/Resources/js/richeditorpopup.js"), "application/x-javascript");
+			}
       if (rawUrl.EndsWith("tabs.css")) {
         return File(Url.Content("~/Resources/css/tabs.css"), "text/css");
       }
