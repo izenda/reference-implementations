@@ -10,7 +10,7 @@ using Izenda.AdHoc;
 using System.Configuration;
 using System.Web.Compilation;
 
-namespace MVC4Razor2 {
+namespace MVC5Razor3 {
   public class SpecificFileRouterConstraint : IRouteConstraint {
     private string extensionToBeRouted = null;
     private string fileToBeRouted = null;

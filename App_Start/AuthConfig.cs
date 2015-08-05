@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MVC4Razor2.Models;
+using MVC5Razor3.Models;
 
-namespace MVC4Razor2 {
+namespace MVC5Razor3 {
   public static class AuthConfig {
     public static void RegisterAuth() {
       // To let users of this site log in using their accounts from other sites such as Microsoft, Facebook, and Twitter,

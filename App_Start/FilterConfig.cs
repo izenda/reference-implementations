@@ -1,7 +1,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVC4Razor2 {
+namespace MVC5Razor3 {
   public class FilterConfig {
     public static void RegisterGlobalFilters(GlobalFilterCollection filters) {
       filters.Add(new HandleErrorAttribute());

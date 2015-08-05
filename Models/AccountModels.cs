@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace MVC4Razor2.Models {
+namespace MVC5Razor3.Models {
   public class UsersContext : DbContext {
     public UsersContext()
     : base("DefaultConnection") {

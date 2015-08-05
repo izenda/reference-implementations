@@ -1,4 +1,4 @@
-<%@ Application Codebehind="Global.asax.cs" Inherits="MVC4Razor2.MvcApplication" Language="C#" %>
+<%@ Application Codebehind="Global.asax.cs" Inherits="MVC5Razor3.MvcApplication" Language="C#" %>
 <%@ Import Namespace="Izenda.AdHoc"%>
 <%@ Import Namespace="System.IO"%>
 

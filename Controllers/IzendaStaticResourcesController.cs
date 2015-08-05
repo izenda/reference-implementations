@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVC4Razor2.Controllers {
+namespace MVC5Razor3.Controllers {
   public class IzendaStaticResourcesController : Controller {
     public ActionResult Index() {
       if (HttpContext == null || HttpContext.Request == null || String.IsNullOrEmpty(HttpContext.Request.RawUrl)) {

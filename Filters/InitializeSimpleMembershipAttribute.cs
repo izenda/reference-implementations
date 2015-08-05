@@ -3,9 +3,9 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
-using MVC4Razor2.Models;
+using MVC5Razor3.Models;
 
-namespace MVC4Razor2.Filters {
+namespace MVC5Razor3.Filters {
   [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
   public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute {
     private static SimpleMembershipInitializer _initializer;
