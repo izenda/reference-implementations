@@ -5,6 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MVC4Razor2.Controllers {
+
+	public class MimeMappingWrapper
+	{
+		static System.Reflection.MethodInfo getMimeMappingMethod;
+		static MimeMappingWrapper()
+		{
+			System.Reflection.Assembly ass = System.Reflection.Assembly.Load("System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
+			Type t = ass.GetType("System.Web.MimeMapping");
+			getMimeMappingMethod = t.GetMethod("GetMimeMapping");
+		}
+		public static string GetMimeMapping(string fileName)
+		{
+			return (string) getMimeMappingMethod.Invoke(null, new string[] { fileName });
+		}
+	}
+
   public class IzendaStaticResourcesController : Controller {
     public ActionResult Index() {
       if (HttpContext == null || HttpContext.Request == null || String.IsNullOrEmpty(HttpContext.Request.RawUrl)) {
@@ -13,7 +29,7 @@ namespace MVC4Razor2.Controllers {
       string rawUrl = HttpContext.Request.RawUrl.ToLower();
       if (HttpContext.Request.RawUrl.Contains("/Reporting/Resources")) {
 				string name = HttpContext.Request.RawUrl.Replace("/Reporting/Resources", "/Resources");
-        return File(name, MimeMapping.GetMimeMapping(name));
+				return File(name, MimeMappingWrapper.GetMimeMapping(name));
       }
       if (rawUrl.EndsWith("reportviewerfilters.js")) {
         return File(Url.Content("~/Resources/js/ReportViewerFilters.js"), "application/x-javascript");
