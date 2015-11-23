@@ -37,6 +37,7 @@
 			AdHocSettings.ReportsPath = Path.Combine(HttpContext.Current.Server.MapPath("~/"), "Reports");
 			AdHocSettings.ShowHelpButton = true;
 			AdHocSettings.AllowMultilineHeaders = true;
+      AdHocSettings.ShowModifiedReportMessage = false;
 			AdHocSettings.ReportViewerDefaultPreviewResults = 1000;
 			AdHocSettings.DefaultPreviewResults = 1000;
 			AdHocSettings.Formats["AU Date"] = "{0:dd/MM/yyyy}";
