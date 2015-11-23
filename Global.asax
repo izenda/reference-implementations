@@ -24,6 +24,7 @@
       AdHocSettings.ReportCssUrl = "Resources/css/Report.css";
       AdHocSettings.ShowBetweenDateCalendar = true;
       AdHocSettings.AdHocConfig = new CustomAdHocConfig();
+      AdHocSettings.ShowModifiedReportMessage = false;
       //Initialize User
       //AdHocSettings.VisibleDataSources=
       //AdHocSettings.CurrentUserName=
