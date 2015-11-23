@@ -32,6 +32,7 @@
       AdHocSettings.DashboardDesignerUrl = "DashboardDesigner";
       AdHocSettings.ReportList = "ReportList";
       AdHocSettings.FormDesignerUrl = "FormDesigner";
+      AdHocSettings.ShowModifiedReportMessage = false;
       AdHocSettings.SettingsPageUrl = "Settings";
       AdHocSettings.ParentSettingsUrl = "Settings";
       AdHocSettings.ResponseServer = "rs.aspx";
