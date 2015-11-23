@@ -29,6 +29,7 @@
       AdHocSettings.ResponseServer = "rs.aspx";
       AdHocSettings.ReportsPath = Path.Combine(HttpContext.Current.Server.MapPath("~/"), "Reports");
       AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
+      AdHocSettings.ShowModifiedReportMessage = false;
       //AdHocSettings.ShowHtmlButton = true;
       //AdHocSettings.ShowPDFButton = true;
       AdHocSettings.AdHocConfig = new CustomAdHocConfig();
