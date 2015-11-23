@@ -26,6 +26,7 @@
       AdHocSettings.AdHocConfig = New CustomAdHocConfig()
       AdHocSettings.PdfPrintMode = PdfMode.EOPDF
       AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart
+      AdHocSettings.ShowModifiedReportMessage = False
       'AdHocSettings.ShowHtmlButton = true
       'AdHocSettings.ShowPDFButton = true
       'Initialize User
