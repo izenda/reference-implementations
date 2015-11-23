@@ -33,6 +33,7 @@
       AdHocSettings.SettingsPageUrl = "Settings";
       AdHocSettings.ParentSettingsUrl = "Settings";
       AdHocSettings.ResponseServer = "rs.aspx";
+      AdHocSettings.ShowModifiedReportMessage = false;
 			AdHocSettings.ReportsPath = Path.Combine(HttpContext.Current.Server.MapPath("~/"), "Reports");
 			AdHocSettings.ShowHelpButton = true;
 			AdHocSettings.AllowMultilineHeaders = true;
