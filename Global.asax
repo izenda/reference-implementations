@@ -37,7 +37,7 @@
 			AdHocSettings.AllowMultilineHeaders = true;
 			AdHocSettings.ReportViewerDefaultPreviewResults = 1000;
 			AdHocSettings.DefaultPreviewResults = 1000;
-			AdHocSettings.Formats["AU Date"] = "{0:dd/MM/yyyy}";
+	AdHocSettings.ShowModifiedReportMessage = false;		AdHocSettings.Formats["AU Date"] = "{0:dd/MM/yyyy}";
 			AdHocSettings.Formats["AU Datetime"] = "{0:dd/MM/yyy hh:mm:ss tt}";
 			AdHocSettings.ShowSideHelp = true;
 			AdHocSettings.GenerateThumbnails = true;
