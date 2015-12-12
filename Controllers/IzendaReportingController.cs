@@ -42,6 +42,12 @@ namespace MVC3SK.Controllers {
 			return View();
 		}
 
+		public ActionResult InstantReportNew()
+		{
+			ValidateRequest();
+			return View();
+		}
+
 		public ActionResult Dash(){
 			ValidateRequest();
 			return View();

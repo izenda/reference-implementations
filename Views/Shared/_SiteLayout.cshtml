@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="~/Resources/css/reset2.css" />
     <link rel="stylesheet" type="text/css" href="~/Resources/css/print.css" media="print" />
     <link rel="stylesheet" type="text/css" href="~/Resources/css/fun.css" />
-    <link rel="stylesheet" type="text/css" href="~/Resources/css/main.css" />
     <link rel="shortcut icon" href="~/Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
 
     @if (IsSectionDefined("changeableheader"))
@@ -27,13 +26,13 @@
         <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap-modals" />
         <link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.bootstrap-override" />
         <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
+        <script type="text/javascript" src="~/Resources/js/main.js"></script>
+        <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
+        <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
+        <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
+        <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
     }
-
-    <script type="text/javascript" src="~/Resources/js/main.js"></script>
-    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
-    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
-    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
-    <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
+    <link rel="stylesheet" type="text/css" href="~/Resources/css/main.css"/>
 
     @if (IsSectionDefined("header"))
     {
@@ -51,102 +50,93 @@
 
 </head>
 
-<body style="margin:0px; padding:0px;">
-
-    <div class="layout container-fluid" style="margin: 0px; padding: 0px;"> 
-        <div class="header applyStyles" id="whiteHeader">
-            <div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
-                <div class="left-logo">
-                    <img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence" />
-                </div>
-                <div class="right-logo">
-                    @if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl))
-                    {
-                        <text>
-                            <a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="@Html.Raw(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl)" alt="Izenda Reports" /></a>
-                        </text>
-                    }
-                    else
-                    {
-                        <text>
-                            <a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="~/Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
-                        </text>
-                    }
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            function insertParam(key, value) {
-                key = escape(key); value = escape(value);
-                var kvp = document.location.search.substr(1).split('&');
-                if (kvp.length == 1 && kvp[0] == '')
-                    kvp.length = 0;
-                var i = kvp.length; var x; while (i--) {
-                    x = kvp[i].split('=');
-                    if (x[0] == key) {
-                        x[1] = value;
-                        kvp[i] = x.join('=');
-                        break;
-                    }
-                }
-                if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
-                document.location.search = kvp.join('&');
-            }
-
-            function ShowRlToDbLoading() {
-                document.getElementById('mainContentDiv').style.display = 'none';
-                var dld = document.getElementById('dashLoadingVg');
-                dld.style.height = document.body.scrollHeight + 'px';
-                dld.style.display = '';
-                var limg = document.getElementById('limgDb');
-                var lw = document.getElementById('loadingWordDb');
-                var vSize = document.body.offsetHeight;
-                lw.style.paddingTop = (3 + vSize / 3) + 'px';
-            }
-        </script>
-        <div class="top-nav applyStyles" id="blueHeader">
-            <div class="page">
-                <ul id="topnav" style="margin: 0px; padding: 0px;">
-                    <li class="top-nav-item" style="vertical-align: top;">@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
-                    <li class="top-nav-item" style="vertical-align: top;">@Html.ActionLink("Dashboards", "Dashboards", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, new { onclick = "ShowRlToDbLoading();" })</li>
-                    <li class="top-nav-item designer-only btn-group">
-                        <a href="@Url.Action("ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" })"><span class="plus">+</span> New</a>
-                        <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
-                            <span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Report", "ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1, tab = "Data Sources" }, null)</li>
-                            <li>@Html.ActionLink("Instant Report", "InstantReport", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
-                            <li>@Html.ActionLink("Dashboard", Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new { clear = 1 }, null)</li>
-                        </ul>
-                    </li>
-                    @if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
-                    {
-                        <li class="top-nav-item" style="float: right;"><a href="@Url.Action("Settings", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())" title="Settings"><img class="icon" src="~/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings" /></a></li>
-                    }
-
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div id="dashLoadingVg" style="text-align: center; width:100%; height:100%; top:130px; left:0px; background-color: #FFFFFF; z-index: 8000; display: none;">
-            <div id="loadingWordDb" style="font-size: 20px;margin-left: 70px;font-size: 20px;color:#1D5987;font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:normal !important;font-size: 20px; font-style: normal;">Loading...</div>
-            <img id="limgDb" style="margin-left: 70px; margin-top:40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt="" />
-        </div>
-        <div class="main-content" id="mainContentDiv">
-            @RenderBody()
-        </div>
-        <div class="footer applyStyles">
-            <div class="line"></div>
-            <div class="page">
-                <p>
-                    Copyright 2015 Izenda, Inc.<br />
-                    <a href="http://izenda.com">Home</a> <em style="margin: 0 .25em;">·</em>@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()) <em style="margin: 0 .25em;">·</em> <a href="http://blog.izenda.com">Blog</a>
-                </p>
-            </div>
-        </div>
+<body>
+<div class="izenda-layout-wrapper layout">
+  <!-- header -->
+  <div id="whiteHeader" class="izenda-layout-header header">
+    <div class="page" style="font-family: Segoe UI, Tahoma, Verdana, Arial, Helvetica, sans-serif">
+      <div class="left-logo">
+        <img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence"/>
+      </div>
+      <div class="right-logo">
+        @if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl))
+        {
+          <text>
+            <a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="@Html.Raw(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl)" alt="Izenda Reports"/></a>
+          </text>
+        }
+        else
+        {
+          <text>
+            <a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="~/Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports"/></a>
+          </text>
+        }
+      </div>
+      <div class="clearfix"></div>
     </div>
+  </div>
+  <div class="izenda-layout-middle">
+    <div class="izenda-layout-container">
+      <div class="top-nav applyStyles" id="blueHeader">
+        <div class="page">
+          <ul id="topnav" style="margin: 0px; padding: 0px;">
+            <li class="top-nav-item" style="vertical-align: top;">@Html.ActionLink("Reports", "ReportList", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
+            <li class="top-nav-item" style="vertical-align: top;">@Html.ActionLink("Dashboards", "Dashboards", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new
+                                                                  {
+                                                                    clear = 1
+                                                                  }, new
+                                                                  {
+                                                                    onclick = "ShowRlToDbLoading();"
+                                                                  })</li>
+            @if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks)
+            {
+              <li class="top-nav-item designer-only btn-group">
+                <a href="@Url.Action("ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new
+                         {
+                           clear = 1, tab = "Data Sources"
+                         })"><span class="plus">+</span> New</a>
+                <button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
+                  <span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>@Html.ActionLink("Report", "ReportDesigner", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new
+                      {
+                        clear = 1, tab = "Data Sources"
+                      }, null)</li>
+                  <li>@Html.ActionLink("Instant Report", Izenda.AdHoc.AdHocSettings.InstantReport, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null)</li>
+                  <li>@Html.ActionLink("Dashboard", Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new
+                      {
+                        clear = 1
+                      }, null)</li>
+                </ul>
+              </li>
+            }
+            @if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
+            {
+              <li class="top-nav-item" style="float: right;"><a href="@Url.Action("Settings", @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString())" title="Settings"><img class="icon" src="~/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings"/></a></li>
+            }
+
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <!-- splashscreen -->
+      <div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
+        <div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
+        <img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt=""/>
+      </div>
+      <!-- content -->
+      <div class="main-content" id="mainContentDiv">
+        @RenderBody()
+      </div>
+    </div>
+  </div>
+  
+  <!-- footer -->
+  <div class="izenda-layout-footer">
+    <small class="copyright">Copyright 2015 Izenda, Inc.</small>
+  </div>
+</div>
 </body>
 
 </html>
