@@ -1,0 +1,1 @@
+Here must be all files from "bin" folder from downloadable archive with izenda build.

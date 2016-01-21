@@ -32,6 +32,7 @@ wget http://archives.izenda.us/core/${CORE_TYPE}/izenda.adhoc.zip
 exitOnFailure
 unzip izenda.adhoc.zip
 rm izenda.adhoc.zip
+cp -a bin/. Libs/
 "/cygdrive/c/Program Files (x86)/MSBuild/12.0/Bin/amd64/MSBuild.exe" ri.csproj
 exitOnFailure
 mkdir -p Reports
