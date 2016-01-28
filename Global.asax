@@ -13,7 +13,7 @@
 	{
 		public static void InitializeReporting() 
 		{
-			if (HttpContext.Current.Session == null || HttpContext.Current.Session["ReportingInitialized"] != null)
+			if (AdHocContext.Initialized)
 				return;
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
 			AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
@@ -45,7 +45,7 @@
 			//the default mode for AdHocSettings.CurrentUserIsAdmin is set to TRUE 
 			AdHocSettings.CurrentUserIsAdmin = true;
 			
-			HttpContext.Current.Session["ReportingInitialized"] = true;
+			AdHocContext.Initialized = true;
 		}
 	}
 </script>
