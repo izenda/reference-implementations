@@ -41,6 +41,9 @@
 			//AdHocSettings.PdfPrintMode = PdfMode.EOPDF;
 			//PhantomJS PDF uses an EXE on the web server that produces the export
 			AdHocSettings.PdfPrintMode = PdfMode.PhantomJs;
+			//Please note that for new Izenda Reference Implementations 
+			//the default mode for AdHocSettings.CurrentUserIsAdmin is set to TRUE 
+			AdHocSettings.CurrentUserIsAdmin = true;
 			
 			HttpContext.Current.Session["ReportingInitialized"] = true;
 		}
