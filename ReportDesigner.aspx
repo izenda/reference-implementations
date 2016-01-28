@@ -6,6 +6,8 @@
   <script type="text/javascript" src="./Resources/js/RichEditorPopup.js"></script>
   <script type="text/javascript">
     jq$(document).ready(function() {
+      if (typeof reportLoadError != 'undefined' && reportLoadError == true)
+        return;
       var fieldWithRn = document.getElementById('reportNameFor2ver');
       if (fieldWithRn != undefined && fieldWithRn != null) {
         var frn = decodeURIComponent(fieldWithRn.value.replace(/\\'/g, "'"));
