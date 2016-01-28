@@ -8,7 +8,7 @@
 		public static void InitializeReporting() 
 		{
 			//Check to see if we've already initialized.
-			if (HttpContext.Current.Session == null || HttpContext.Current.Session["ReportingInitialized"] != null)
+			if (AdHocContext.Initialized)
 				return;
 			//Initialize System
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
@@ -37,7 +37,7 @@
 			//AdHocSettings.CurrentUserName=
 			//AdHocSettings.HiddenFilters["Field"] = new string [] {"value1","value2"};
 			//Success!
-			HttpContext.Current.Session["ReportingInitialized"] = true; 
+			AdHocContext.Initialized = true;
 		}
 		public override void ProcessDataSet(System.Data.DataSet ds, string reportPart) 
 		{
