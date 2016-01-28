@@ -10,7 +10,7 @@
 		Inherits FileSystemAdHocConfig
 		Public Shared Sub InitializeReporting()
 			'Check to see if we've already initialized.
-			If (HttpContext.Current.Session Is Nothing OrElse (Not (HttpContext.Current.Session("ReportingInitialized") Is Nothing))) Then
+			If (AdHocContext.Initialized) Then
 				Return
 			End If
 			'Initialize System
@@ -40,7 +40,7 @@
 			'AdHocSettings.CurrentUserName=
 			'AdHocSettings.HiddenFilters["Field"] = new string [] {"value1","value2"};
 			'Success!
-			HttpContext.Current.Session("ReportingInitialized") = True
+			AdHocContext.Initialized = True
 		End Sub
 	End Class
 </script>
