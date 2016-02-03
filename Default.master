@@ -61,7 +61,7 @@
           <div class="page">
             <ul id="topnav" style="margin: 0px; padding: 0px;">
               <li class="top-nav-item" style="vertical-align: top;"><a href="ReportList.aspx">Reports</a></li>
-              <li class="top-nav-item" style="vertical-align: top;"><a href="Dashboards.aspx?clear=1">Dashboards</a></li>
+              <li class="top-nav-item" style="vertical-align: top;"><a href="<%=Izenda.AdHoc.AdHocSettings.DashboardViewer%>">Dashboards</a></li>
               <% if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks) { %>
               <li class="top-nav-item designer-only btn-group">
                 <a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
