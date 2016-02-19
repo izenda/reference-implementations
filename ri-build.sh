@@ -14,3 +14,4 @@ npm install grunt-cli
 grunt
 find . \( -path "./.git" -o -path "./Forms/elrte/.git" -o -path "./${RI}" \) -prune -o -print | cpio -mpvd "${RI}"
 zip -r ${RI}.zip ${RI}
+zip -d ${RI}.zip "${RI}/ri-build.sh"
