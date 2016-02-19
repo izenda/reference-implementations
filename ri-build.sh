@@ -41,3 +41,4 @@ mkdir -p "${RI}"
 ${FIND} . \( -path "./.git" -o -path "./packages" -o -path "./Reporting/elrte/.git" -o -path "./${RI}" \) -prune -o -print | cpio -mpvd "${RI}"
 zip -r ${RI}.zip ${RI}
 exitOnFailure
+zip -d ${RI}.zip "${RI}/ri-build.sh"
