@@ -8,3 +8,4 @@ touch Izenda.config
 mkdir -p "${RI}"
 find . \( -path "./.git" -o -path "./${RI}" \) -prune -o -print | cpio -mpvd "${RI}"
 zip -r ${RI}.zip ${RI}
+zip -d ${RI}.zip "${RI}/ri-build.sh"
