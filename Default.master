@@ -22,6 +22,7 @@
     <link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
     <link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
     <link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
     <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
     <script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
