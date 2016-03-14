@@ -37,10 +37,12 @@
 			AdHocSettings.DashboardViewer = "Dash";
 			AdHocSettings.DashboardDesignerUrl = "Dash";
 			AdHocSettings.DashboardDateSliderMode = DashboardDateSliderMode.None;
+			AdHocSettings.ShowJoinDropDown = true;
+			AdHocSettings.InstantReport = "InstantReportNew";
 			//EOPDF uses a DLL that converts HTML
 			//AdHocSettings.PdfPrintMode = PdfMode.EOPDF;
 			//PhantomJS PDF uses an EXE on the web server that produces the export
-			AdHocSettings.PdfPrintMode = PdfMode.PhantomJs;
+			AdHocSettings.PdfPrintMode = PdfMode.EvoPdf;
 			//Please note that for new Izenda Reference Implementations 
 			//the default mode for AdHocSettings.CurrentUserIsAdmin is set to TRUE 
 			AdHocSettings.CurrentUserIsAdmin = true;
