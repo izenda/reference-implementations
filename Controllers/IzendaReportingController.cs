@@ -30,6 +30,7 @@ namespace MVC3SK.Controllers {
 		}
 
 		public ActionResult ReportList() {
+			Izenda.AdHoc.Utility.CheckUserName();
 			Request.ValidateInput();
 			if (HttpContext.Request != null && !String.IsNullOrEmpty(HttpContext.Request.RawUrl) && !HttpContext.Request.RawUrl.ToLower().Contains(AdHocSettings.ReportList.ToLower())) {
 				return RedirectToAction("ReportList", "Reporting");
@@ -39,32 +40,38 @@ namespace MVC3SK.Controllers {
 
 		public ActionResult InstantReportNew()
 		{
+			Izenda.AdHoc.Utility.CheckUserName();
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult Settings() {
+			Izenda.AdHoc.Utility.CheckUserName();
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult Dash(){
+			Izenda.AdHoc.Utility.CheckUserName();
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult Dashboards() {
+			Izenda.AdHoc.Utility.CheckUserName();
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult ReportViewer() {
+			Izenda.AdHoc.Utility.CheckUserName();
 			ValidateRequest();
 			AdHocSettings.ShowSimpleModeViewer = true;
 			return View();
 		}
 
 		public ActionResult InstantReport() {
+			Izenda.AdHoc.Utility.CheckUserName();
 			ValidateRequest();
 			return View();
 		}
