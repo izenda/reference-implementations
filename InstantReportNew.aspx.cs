@@ -10,6 +10,7 @@ public partial class InstantReportNew : Page
 	protected override void OnPreInit(System.EventArgs e)
 	{
 		ASP.global_asax.CustomAdHocConfig.InitializeReporting();
+		Izenda.AdHoc.Utility.CheckUserName();
 	}
 
 	protected override void OnLoad(EventArgs e)
