@@ -30,7 +30,9 @@ namespace MVC3SK.Controllers {
 		}
 
 		public ActionResult ReportList() {
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			Request.ValidateInput();
 			if (HttpContext.Request != null && !String.IsNullOrEmpty(HttpContext.Request.RawUrl) && !HttpContext.Request.RawUrl.ToLower().Contains(AdHocSettings.ReportList.ToLower())) {
 				return RedirectToAction("ReportList", "Reporting");
@@ -40,43 +42,61 @@ namespace MVC3SK.Controllers {
 
 		public ActionResult InstantReportNew()
 		{
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult Settings() {
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult Dash(){
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult Dashboards() {
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult ReportViewer() {
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			ValidateRequest();
 			AdHocSettings.ShowSimpleModeViewer = true;
 			return View();
 		}
 
 		public ActionResult InstantReport() {
-			Izenda.AdHoc.Utility.CheckUserName();
+			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
+			if (redirection != null)
+				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
 			ValidateRequest();
 			return View();
 		}
 
 		public ActionResult DashboardDesigner() {
+			ValidateRequest();
+			return View();
+		}
+
+		public ActionResult Login()
+		{
 			ValidateRequest();
 			return View();
 		}

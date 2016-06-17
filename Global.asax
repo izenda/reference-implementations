@@ -30,6 +30,7 @@
 			AdHocSettings.ReportList = "ReportList";
 			AdHocSettings.SettingsPageUrl = "Settings";
 			AdHocSettings.ParentSettingsUrl = "Settings";
+			AdHocSettings.LoginUrl = "Login";
 			AdHocSettings.ResponseServer = "rs.aspx";
 			AdHocSettings.ReportsPath = Path.Combine(HttpContext.Current.Server.MapPath("~/"), "Reports");
 			AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
