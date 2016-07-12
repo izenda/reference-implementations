@@ -13,7 +13,7 @@ using System.Reflection;
 namespace MVC3SK.Controllers {
 	public class ReportingController : Controller {
 
-		private void ValidateRequest()
+		private void ValidateDataRequest()
 		{
 			// Force standard request validation
 			Request.ValidateInput();
@@ -25,7 +25,7 @@ namespace MVC3SK.Controllers {
 		}
 
 		public ActionResult ReportDesigner() {
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
@@ -44,7 +44,7 @@ namespace MVC3SK.Controllers {
 			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
 			if (redirection != null)
 				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
@@ -53,7 +53,7 @@ namespace MVC3SK.Controllers {
 			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
 			if (redirection != null)
 				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
@@ -61,7 +61,7 @@ namespace MVC3SK.Controllers {
 			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
 			if (redirection != null)
 				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
@@ -69,7 +69,7 @@ namespace MVC3SK.Controllers {
 			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
 			if (redirection != null)
 				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
@@ -77,7 +77,7 @@ namespace MVC3SK.Controllers {
 			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
 			if (redirection != null)
 				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
-			ValidateRequest();
+			ValidateDataRequest();
 			AdHocSettings.ShowSimpleModeViewer = true;
 			return View();
 		}
@@ -86,18 +86,18 @@ namespace MVC3SK.Controllers {
 			Tuple<string, string> redirection = Izenda.AdHoc.Utility.CheckUserNameMVC();
 			if (redirection != null)
 				return String.IsNullOrEmpty(redirection.Item2) ? RedirectToAction(redirection.Item1, "Reporting") : RedirectToAction(redirection.Item1, "Reporting", new { ReturnUrl = redirection.Item2 });
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
 		public ActionResult DashboardDesigner() {
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 
 		public ActionResult Login()
 		{
-			ValidateRequest();
+			ValidateDataRequest();
 			return View();
 		}
 	}
