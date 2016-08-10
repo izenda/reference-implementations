@@ -21,7 +21,6 @@
 			AdHocSettings.GenerateThumbnails = true;
 			AdHocSettings.ShowSimpleModeViewer = true;
 			AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$";
-			AdHocSettings.TabsCssUrl = "/Resources/css/tabs.css";
 			AdHocSettings.ReportCssUrl = "../Resources/css/Report.css";
 			AdHocSettings.ShowBetweenDateCalendar = true;
 			AdHocSettings.ReportViewer = "ReportViewer";
