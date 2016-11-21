@@ -5,11 +5,11 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder" Runat="Server">
-<div class="report-page">
-  <form id="form1" runat="server">
-    <cc1:SettingsControl runat="server" ID="settingscontrol"></cc1:SettingsControl>
-  </form>
-</div>
+	<div class="report-page">
+		<form id="form1" runat="server">
+			<cc1:SettingsControl runat="server" ID="settingscontrol"></cc1:SettingsControl>
+		</form>
+	</div>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="TrackerPlaceHolder" Runat="Server">
