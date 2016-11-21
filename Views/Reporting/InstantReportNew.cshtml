@@ -1,22 +1,22 @@
 @{
-  ViewBag.Title = "Instant Report";
-  Layout = "~/Views/Shared/_SiteLayout.cshtml";
+	ViewBag.Title = "Instant Report";
+	Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
 @section changeableheader
 {
-  <link rel="stylesheet" type="text/css" href="~/Resources/components/vendor/bootstrap/css/bootstrap.min.css"/>
-  <script type="text/javascript" src="./rs.aspx?js=ModernScripts.modernizr-2.8.3.min"></script>
-  <script type="text/javascript" src="~/Resources/components/vendor/jquery/jquery-1.11.3.min.js"></script>
-  <script type="text/javascript" src="~/Resources/components/vendor/jquery/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="~/Resources/components/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-    window.jq$ = jQuery.noConflict();
-  </script>
+	<link rel="stylesheet" type="text/css" href="~/Resources/components/vendor/bootstrap/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="./rs.aspx?js=ModernScripts.modernizr-2.8.3.min"></script>
+	<script type="text/javascript" src="~/Resources/components/vendor/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="~/Resources/components/vendor/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="~/Resources/components/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		window.jq$ = jQuery.noConflict();
+	</script>
 }
 
 @section header { 
-  @Html.Partial("_InstantReport-Head-Angular")
+	@Html.Partial("_InstantReport-Head-Angular")
 }
 
 @Html.Partial("_InstantReport-Body-Angular")
