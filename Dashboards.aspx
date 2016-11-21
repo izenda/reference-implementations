@@ -3,9 +3,9 @@
 <%@ Register Src="~/Resources/html/Dashboards-Body.ascx" TagName="ccn2" TagPrefix="ccp2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
-  <ccp1:ccn1 runat="server" />
+	<ccp1:ccn1 runat="server" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="PlaceHolder" runat="Server">
-  <ccp2:ccn2 runat="server" />
+	<ccp2:ccn2 runat="server" />
 </asp:Content>
