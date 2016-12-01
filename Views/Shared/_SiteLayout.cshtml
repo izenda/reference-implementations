@@ -37,7 +37,7 @@
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
 		}
-		<link rel="stylesheet" type="text/css" href="~/Resources/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="~/Resources/css/main.css"/>
 
 		@if (IsSectionDefined("header"))
 		{
@@ -52,33 +52,28 @@
 			script += "</script>";
 			@Html.Raw(script);
 		}
-
 	</head>
 
 	<body>
 		<div class="izenda-layout-wrapper layout">
 			<!-- header -->
 			<div id="whiteHeader" class="izenda-layout-header header">
-				<div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
+				<div class="page" style="font-family: Segoe UI, Tahoma, Verdana, Arial, Helvetica, sans-serif">
 					<div class="left-logo">
-						<img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence" />
+						<img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence"/>
 					</div>
 					<div class="right-logo">
 						@if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl))
 						{
-						<text>
-							<a href="http://izenda.com" style="position: relative; top: 4px;">
-								<img class="right-logo" src="@Html.Raw(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl)" alt="Izenda Reports"/>
-							</a>
-						</text>
+							<text>
+								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="@Html.Raw(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl)" alt="Izenda Reports"/></a>
+							</text>
 						}
 						else
 						{
-						<text>
-							<a href="http://izenda.com" style="position: relative; top: 4px;">
-								<img class="right-logo" src="~/Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports" />
-							</a>
-						</text>
+							<text>
+								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="~/Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports"/></a>
+							</text>
 						}
 					</div>
 					<div class="clearfix"></div>
@@ -89,25 +84,24 @@
 					<div class="top-nav applyStyles" id="blueHeader">
 						<div class="page">
 							<ul id="topnav" style="margin: 0px; padding: 0px;">
-								<li class="top-nav-item" style="vertical-align: top;"><a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.ReportList))">Reports</a></li>
-								<li class="top-nav-item" style="vertical-align: top;"><a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.DashboardViewer))" onclick="ShowRlToDbLoading();">Dashboards</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.ReportList, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))">Reports</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.DashboardViewer, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1}, null))" onclick="ShowRlToDbLoading();">Dashboards</a></li>
 								@if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks)
 								{
-								<li class="top-nav-item designer-only btn-group">
-									<a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources"))"><span class="plus">+</span> New</a>
+								<li class="top-nav-item designer-only btn-group"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1, tab = "Data Sources"}))"><span class="plus">+</span> New</a>
 									<button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
 										<span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources"))">Report</a></li>
-										<li><a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.InstantReport))">Instant Report</a></li>
-										<li><a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.DashboardDesignerUrlWithDelimiter + "clear=1"))">Dashboard</a></li>
+										<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1, tab = "Data Sources"}, null))">Report</a></li>
+										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.InstantReport, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))">Instant Report</a></li>
+										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1}, null))">Dashboard</a></li>
 									</ul>
 								</li>
 								}
 								@if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
 								{
-									<li class="top-nav-item" style="float: right;"><a href="@(Izenda.AdHoc.Utility.AppendIzPidParameter("/" + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() + "/" + Izenda.AdHoc.AdHocSettings.SettingsPageUrl))" title="Settings"><img class="icon" src="/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings"></a></li>
+									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.SettingsPageUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))" title="Settings"><img class="icon" src="/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings"></a></li>
 								}
 							</ul>
 							<div class="clearfix"></div>
@@ -115,8 +109,8 @@
 					</div>
 					<!-- splashscreen -->
 					<div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
-						<div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
-						<img id="limgDb" style="margin-left: 70px; margin-top:40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt="" />
+						<div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
+						<img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="@Url.Content("~/Reporting/rs.aspx?image=loading.gif")" alt=""/>
 					</div>
 					<!-- content -->
 					<div class="main-content" id="mainContentDiv">
@@ -124,6 +118,7 @@
 					</div>
 				</div>
 			</div>
+
 			<!-- footer -->
 			<div class="izenda-layout-footer">
 				<small class="copyright">Copyright 2015 Izenda, Inc.</small>
