@@ -24,7 +24,6 @@
 			AdHocSettings.ReportCssUrl = "../Resources/css/Report.css";
 			AdHocSettings.ShowBetweenDateCalendar = true;
 			AdHocSettings.ReportViewer = "ReportViewer";
-			AdHocSettings.InstantReport = "InstantReport";
 			AdHocSettings.ReportDesignerUrl = "ReportDesigner";
 			AdHocSettings.ReportList = "ReportList";
 			AdHocSettings.SettingsPageUrl = "Settings";
