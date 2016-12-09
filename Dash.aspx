@@ -4,12 +4,12 @@
 <%@ Register Src="~/Resources/html/Dashboards-New-Body-Angular.ascx" TagName="ccn2" TagPrefix="ccp2" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ChangeableHeader" runat="server">
-	<link rel="stylesheet" type="text/css" href="Resources/components/vendor/bootstrap/css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="Resources/components/vendor/jquery/jquery-ui.css"/>
+	<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=components.vendor.bootstrap.css.bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=components.vendor.jquery.jquery-ui.css" />
 	<script type="text/javascript" src="./rs.aspx?js=ModernScripts.modernizr-2.8.3.min"></script>
-	<script type="text/javascript" src="Resources/components/vendor/jquery/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="Resources/components/vendor/jquery/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="Resources/components/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./rs.aspx?extres=components.vendor.jquery.jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./rs.aspx?extres=components.vendor.jquery.jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./rs.aspx?extres=components.vendor.bootstrap.js.bootstrap.min.js"></script>
 	<script type="text/javascript">
 		window.jQ = window.jq$ = jQuery.noConflict();
 	</script>
