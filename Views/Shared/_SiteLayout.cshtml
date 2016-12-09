@@ -2,7 +2,7 @@
 
 <html>
 	<head runat="server">
-		<script type="text/javascript" src="Resources/js/main.js"></script>
+		<script type="text/javascript" src="./rs.aspx?extres=js.main.js"></script>
 		<script type="text/javascript">
 			ensureIzPidProcessed();
 		</script>
@@ -14,10 +14,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex, follow" />
 		<link rel="alternate" type="application/rss+xml" href="" title="Team Blog - RSS" />
-		<link rel="stylesheet" type="text/css" href="~/Resources/css/reset2.css" />
-		<link rel="stylesheet" type="text/css" href="~/Resources/css/print.css" media="print" />
-		<link rel="stylesheet" type="text/css" href="~/Resources/css/fun.css" />
-		<link rel="shortcut icon" href="~/Resources/FromDLL/Resources/ModernImages/report-icon.png" type='image/png' />
+		<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=css.reset2.css" />
+		<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=css.print.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=css.fun.css" />
+		<link rel="shortcut icon" href="./rs.aspx?image=ModernImages.report-icon.png" type='image/png' />
 
 		@if (IsSectionDefined("changeableheader"))
 		{
@@ -36,7 +36,7 @@
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-transition"></script>
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
 		}
-		<link rel="stylesheet" type="text/css" href="~/Resources/css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=css.main.css" />
 
 		@if (IsSectionDefined("header"))
 		{
@@ -59,7 +59,7 @@
 			<div id="whiteHeader" class="izenda-layout-header header">
 				<div class="page" style="font-family: Segoe UI, Tahoma, Verdana, Arial, Helvetica, sans-serif">
 					<div class="left-logo">
-						<img src="~/Resources/FromDLL/Resources/ModernImages/bi-logo.png" alt="Business intelligence"/>
+						<img src="./rs.aspx?image=ModernImages.bi-logo.png" alt="Business intelligence" />
 					</div>
 					<div class="right-logo">
 						@if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl))
@@ -71,7 +71,7 @@
 						else
 						{
 							<text>
-								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="~/Resources/FromDLL/Resources/ModernImages/IzendaNewLogoBlue.png" alt="Izenda Reports"/></a>
+								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="./rs.aspx?image=ModernImages.IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
 							</text>
 						}
 					</div>
@@ -100,7 +100,7 @@
 								}
 								@if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
 								{
-									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.SettingsPageUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))" title="Settings"><img class="icon" src="~/Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings"></a></li>
+									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.SettingsPageUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))" title="Settings"><img class="icon" src="./rs.aspx?image=ModernImages.settings.png" alt="Settings"></a></li>
 								}
 							</ul>
 							<div class="clearfix"></div>
