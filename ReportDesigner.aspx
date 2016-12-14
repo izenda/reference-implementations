@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
 	<link rel="stylesheet" type="text/css" href="./Resources/css/Filters.css" />
+	<link rel="stylesheet" type="text/css" href="rs.aspx?css=ModernStyles.jquery-ui" />
 	<script type="text/javascript" src="./Resources/js/RichEditorPopup.js"></script>
 	<script type="text/javascript">
 		jq$(document).ready(function() {
