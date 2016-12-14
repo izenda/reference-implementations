@@ -1,8 +1,13 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="MasterPage1" %>
 
 <!DOCTYPE html>
+
 <html>
 	<head runat="server">
+		<script type="text/javascript" src="Resources/js/main.js"></script>
+		<script type="text/javascript">
+			ensureIzPidProcessed();
+		</script>
 		<title>Izenda</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,7 +26,7 @@
 			<link href="./rs.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
 			<link href="./rs.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
 			<link href="./rs.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
-			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script type="text/javascript" src="./rs.aspx?js=jQuery.jq1_12_1.min"></script>
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-dropdown"></script>
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-tab"></script>
@@ -29,7 +34,6 @@
 			<script type="text/javascript" src="./rs.aspx?js=ModernScripts.bootstrap-modal"></script>
 		</asp:ContentPlaceHolder>
 		<link rel="stylesheet" href="Resources/css/main.css" type="text/css" />
-		<script type="text/javascript" src="Resources/js/main.js"></script>
 		<!-- <script type="text/javascript">
 			htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
 		</script> -->
@@ -60,26 +64,26 @@
 					<div class="top-nav applyStyles" id="blueHeader">
 						<div class="page">
 							<ul id="topnav" style="margin: 0px; padding: 0px;">
-								<li class="top-nav-item" style="vertical-align: top;"><a href="ReportList.aspx">Reports</a></li>
-								<li class="top-nav-item" style="vertical-align: top;"><a href="Dashboards.aspx?clear=1">Dashboards</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportList)%>">Reports</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.DashboardViewer)%>">Dashboards</a></li>
 								<% if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks)
 								{ %>
 								<li class="top-nav-item designer-only btn-group">
-									<a href="ReportDesigner.aspx?clear=1&tab=Data+Sources" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
+									<a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources")%>" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
 									<button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
 										<span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a href="ReportDesigner.aspx?clear=1&tab=Data+Sources">Report</a></li>
-										<li runat="server" id="irItem"><a href="<%=Izenda.AdHoc.AdHocSettings.InstantReport%>">Instant Report</a></li>
-										<li><a href="<%=Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl%>?clear=1">Dashboard</a></li>
+										<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources")%>">Report</a></li>
+										<li runat="server" id="irItem"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.InstantReport)%>">Instant Report</a></li>
+										<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrlWithDelimiter + "clear=1")%>">Dashboard</a></li>
 									</ul>
 								</li>
 								<% } %>
 								<% if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
 								{ %>
 								<li class="top-nav-item" style="float: right;">
-									<a href="Settings.aspx" title="Settings">
+									<a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.SettingsPageUrl)%>" title="Settings">
 										<img class="icon" src="Resources/FromDLL/Resources/ModernImages/settings.png" alt="Settings" />
 									</a>
 								</li>
