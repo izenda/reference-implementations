@@ -1,0 +1,17 @@
+{
+  "name": "reference-implementations",
+  "version": "1.0.0",
+  "description": "automated js and css tasks via grunt",
+  "main": "Default.master",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//izenda/reference-implementations.git"
+  },
+  "author": "Nigel J.",
+  "license": "ISC",
+  "devDependencies": {
+  }
+}
