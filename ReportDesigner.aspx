@@ -2,9 +2,9 @@
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
-	<link rel="stylesheet" type="text/css" href="./Resources/css/Filters.css" />
-	<link rel="stylesheet" type="text/css" href="rs.aspx?css=ModernStyles.jquery-ui" />
-	<script type="text/javascript" src="./Resources/js/RichEditorPopup.js"></script>
+	<link rel="stylesheet" type="text/css" href="./rs.aspx?extres=css.Filters.css" />
+	<link rel="stylesheet" type="text/css" href="./rs.aspx?css=ModernStyles.jquery-ui" />
+	<script type="text/javascript" src="./rs.aspx?extres=js.RichEditorPopup.js"></script>
 	<script type="text/javascript">
 		jq$(document).ready(function() {
 			if (typeof reportLoadError != 'undefined' && reportLoadError == true)
