@@ -4,7 +4,7 @@
 
 <html>
 	<head runat="server">
-		<script type="text/javascript" src="./rs.aspx?extres=js.main.js"></script>
+		<script type="text/javascript" src="./rs.aspx?js=AdHocQuery"></script>
 		<script type="text/javascript">
 			ensureIzPidProcessed();
 		</script>
