@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 	<head id="Head1" runat="server">
-		<link rel="stylesheet" type="text/css" href="./rs.aspx?css=DashboardViewer" />
-		<script type="text/javascript" src="./rs.aspx?js=jQuery.DashboardViewer"></script>
-		<script type="text/javascript" src="./rs.aspx?js=jQuery.NewDashboardControls"></script>
+		<link rel="stylesheet" type="text/css" href="./rp.aspx?css=DashboardViewer" />
+		<script type="text/javascript" src="./rp.aspx?js=jQuery.DashboardViewer"></script>
+		<script type="text/javascript" src="./rp.aspx?js=jQuery.NewDashboardControls"></script>
 		<title>Izenda AdHoc - Dashboard Viewer</title>
 	</head>
 	<body>
