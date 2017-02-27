@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-	<UseGlobalApplicationHostFile>true</UseGlobalApplicationHostFile>
+    <UseGlobalApplicationHostFile>true</UseGlobalApplicationHostFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
     <WebGreaseLibPath>packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
@@ -268,6 +268,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporting\Dash.cshtml" />
+    <Content Include="Views\Reporting\InstantReportNew.cshtml" />
+    <Content Include="Views\Reporting\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <RestorePackages>true</RestorePackages>
