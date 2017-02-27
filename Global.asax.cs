@@ -84,6 +84,7 @@ namespace MVC4Razor2 {
   public class MvcApplication : System.Web.HttpApplication {
     protected void Application_Start() {
       RouteTable.Routes.MapPageRoute("rs.aspx", "{*aspx}", "~/Reporting/rs.aspx", false, null, new RouteValueDictionary { { "aspx", new SpecificFileRouterConstraint("aspx", "rs.aspx") } });
+			RouteTable.Routes.MapPageRoute("rp.aspx", "{*aspx}", "~/Reporting/rp.aspx", false, null, new RouteValueDictionary { { "aspx", new SpecificFileRouterConstraint("aspx", "rp.aspx") } });
       AreaRegistration.RegisterAllAreas();
       FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
       RegisterRoutes(RouteTable.Routes);
