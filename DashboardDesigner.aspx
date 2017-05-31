@@ -1,4 +1,4 @@
-<%@ Page Title="Dashboard designer" Language="VB" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="DashboardDesigner.aspx.vb" Inherits="DashboardDesigner" %>
+<%@ Page Title="Dashboard designer" Language="VB" MasterPageFile="Izenda.master" AutoEventWireup="true" CodeFile="DashboardDesigner.aspx.vb" Inherits="DashboardDesigner" %>
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">

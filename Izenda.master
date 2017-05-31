@@ -1,0 +1,112 @@
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Izenda.master.vb" Inherits="MasterPage1" %>
+
+<!DOCTYPE html>
+<html>
+	<head runat="server">
+		<script type="text/javascript" src="./rp.aspx?js=AdHocQuery"></script>
+		<script type="text/javascript">
+			ensureIzPidProcessed();
+		</script>
+		<title>Izenda</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta name="robots" content="noindex, follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="alternate" href="" title="Team Blog - RSS" type="application/rss+xml" />
+		<link rel="shortcut icon" href="./rp.aspx?image=ModernImages.report-icon.png" type='image/png' />
+
+		<link rel="stylesheet" href="./rp.aspx?extres=css.reset2.css" type="text/css" />
+		<link rel="stylesheet" href="./rp.aspx?extres=css.print.css" type="text/css" media="print" />
+		<link rel="stylesheet" href="./rp.aspx?extres=css.fun.css" type="text/css" />
+		<asp:ContentPlaceHolder ID="ChangeableHeader" runat="server">
+			<link href="./rp.aspx?css=ModernStyles.bootstrap-responsive" rel="stylesheet" />
+			<link href="./rp.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
+			<link href="./rp.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
+			<link href="./rp.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
+			<script type="text/javascript" src="./rp.aspx?js=jQuery.jq1_12_1.min"></script>
+			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
+			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-dropdown"></script>
+			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-tab"></script>
+			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-transition"></script>
+			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-modal"></script>
+		</asp:ContentPlaceHolder>
+		<link rel="stylesheet" href="./rp.aspx?extres=css.main.css" type="text/css" />
+		<!-- <script type="text/javascript">
+			htmlChartColors = ['#ff0000', '#00ff00', '#0000ff', '#910000', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+		</script> -->
+		<!-- Page header injection -->
+		<asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+	</head>
+
+	<body>
+		<div class="izenda-layout-wrapper layout">
+			<!-- header -->
+			<div id="whiteHeader" class="izenda-layout-header header">
+				<div class="page" style="font-family: Segoe UI,Tahoma,Verdana,Arial,Helvetica,sans-serif">
+					<div class="left-logo">
+						<img src="./rp.aspx?image=ModernImages.bi-logo.png" alt="Business intelligence" />
+					</div>
+					<div class="right-logo">
+						<a href="http://izenda.com" style="position: relative; top: 4px;">
+							<img runat="server" class="right-logo" id="rightLogo" src="./rp.aspx?image=ModernImages.IzendaNewLogoBlue.png" alt="Izenda Reports" />
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="izenda-layout-middle">
+				<div class="izenda-layout-container">
+					<!-- menu -->
+					<div class="top-nav applyStyles" id="blueHeader">
+						<div class="page">
+							<ul id="topnav" style="margin: 0px; padding: 0px;">
+								<li class="top-nav-item" style="vertical-align: top;"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportList)%>">Reports</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.DashboardViewer)%>">Dashboards</a></li>
+								<% If (Izenda.AdHoc.AdHocSettings.ShowDesignLinks) Then%>
+								<li class="top-nav-item designer-only btn-group">
+									<a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources")%>" style="padding-right: 8px!important;"><span class="plus">+</span> New</a>
+									<button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
+										<span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources")%>">Report</a></li>
+										<li runat="server" id="irItem"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.InstantReport)%>">Instant Report</a></li>
+										<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrlWithDelimiter + "clear=1")%>">Dashboard</a></li>
+									</ul>
+								</li>
+								<% End If%>
+								<% If (Izenda.AdHoc.AdHocSettings.ShowSettingsButton) Then%>
+								<li class="top-nav-item" style="float: right;">
+									<a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.SettingsPageUrl)%>" title="Settings">
+										<img class="icon" src="./rp.aspx?image=ModernImages.settings.png" alt="Settings" />
+									</a>
+								</li>
+								<% End If%>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<!-- splashscreen -->
+					<div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
+						<div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
+						<img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="./rp.aspx?image=loading.gif" alt="" />
+					</div>
+					<!-- content -->
+					<asp:ContentPlaceHolder ID="PlaceHolder" runat="server"></asp:ContentPlaceHolder>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer -->
+		<div class="izenda-layout-footer">
+			<small class="copyright">Copyright 2015 Izenda, Inc.</small>
+		</div>
+
+		<!-- For Google analytics -->
+		<asp:ContentPlaceHolder ID="TrackerPlaceHolder" runat="server">
+		</asp:ContentPlaceHolder>
+	</body>
+</html>
