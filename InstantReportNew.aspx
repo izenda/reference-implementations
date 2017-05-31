@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="InstantReportNew.aspx.cs" Inherits="InstantReportNew" %>
-<%@ Register Src="~/Resources/html/InstantReport-Head-Angular.ascx" TagName="ccn1" TagPrefix="ccp1" %>
-<%@ Register Src="~/Resources/html/InstantReport-Body-Angular.ascx" TagName="ccn2" TagPrefix="ccp2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Izenda.master" AutoEventWireup="true" CodeFile="InstantReportNew.aspx.cs" Inherits="InstantReportNew" %>
+<%@ Register Src="Resources/html/InstantReport-Head-Angular.ascx" TagName="ccn1" TagPrefix="ccp1" %>
+<%@ Register Src="Resources/html/InstantReport-Body-Angular.ascx" TagName="ccn2" TagPrefix="ccp2" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ChangeableHeader" runat="server">
 	<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=components.vendor.bootstrap.css.bootstrap.min.css" />

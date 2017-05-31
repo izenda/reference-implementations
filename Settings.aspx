@@ -1,4 +1,4 @@
-<%@ Page Title="Settings" Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="Settings" %>
+<%@ Page Title="Settings" Language="C#" MasterPageFile="Izenda.master" AutoEventWireup="true" CodeFile="Settings.aspx.cs" Inherits="Settings" %>
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" Runat="Server">
