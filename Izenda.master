@@ -25,7 +25,6 @@
 			<link href="./rp.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
 			<link href="./rp.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
 			<link href="./rp.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
-			<script type="text/javascript" src="./rp.aspx?js=jQuery.jq1_12_1.min"></script>
 			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
 			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-dropdown"></script>
 			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-tab"></script>
