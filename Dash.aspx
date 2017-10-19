@@ -5,14 +5,12 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ChangeableHeader" runat="server">
 	<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=components.vendor.bootstrap.css.bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=components.vendor.jquery.jquery-ui.css"/>
+	<link rel="stylesheet" type="text/css" href="./rp.aspx?css=jQueryUi.jquery-ui"/>
+	<link rel="stylesheet" type="text/css" href="./rp.aspx?css=jQueryUi.jquery-ui.theme"/>
 	<script type="text/javascript" src="./rp.aspx?js=ModernScripts.modernizr-2.8.3.min"></script>
-	<script type="text/javascript" src="./rp.aspx?extres=components.vendor.jquery.jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="./rp.aspx?extres=components.vendor.jquery.jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./rp.aspx?js=jQuery.jquery.min"></script>
+	<script type="text/javascript" src="./rp.aspx?js=jQuery.jquery-ui.min"></script>
 	<script type="text/javascript" src="./rp.aspx?extres=components.vendor.bootstrap.js.bootstrap.min.js"></script>
-	<script type="text/javascript">
-		window.jQ = window.jq$ = jQuery.noConflict();
-	</script>
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">

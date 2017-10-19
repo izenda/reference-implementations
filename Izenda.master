@@ -26,7 +26,7 @@
 			<link href="./rp.aspx?css=ModernStyles.bootstrap" rel="stylesheet" />
 			<link href="./rp.aspx?css=ModernStyles.bootstrap-modals" rel="stylesheet" />
 			<link href="./rp.aspx?css=ModernStyles.bootstrap-override" rel="stylesheet" />
-			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
+			<script type="text/javascript" src="./rp.aspx?js=jQuery.jquery.min"></script>
 			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-dropdown"></script>
 			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-tab"></script>
 			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-transition"></script>
@@ -40,7 +40,7 @@
 		<asp:ContentPlaceHolder ID="HeadPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 	</head>
 
-	<body>
+	<body class="iz">
 		<div class="izenda-layout-wrapper layout">
 			<!-- header -->
 			<div id="whiteHeader" class="izenda-layout-header header">

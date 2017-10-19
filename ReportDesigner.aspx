@@ -4,7 +4,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
 	<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=css.Filters.min.css" />
-	<link rel="stylesheet" type="text/css" href="./rp.aspx?css=ModernStyles.jquery-ui" />
+	<link rel="stylesheet" type="text/css" href="./rp.aspx?css=jQueryUi.jquery-ui" />
+	<link rel="stylesheet" type="text/css" href="./rp.aspx?css=jQueryUi.jquery-ui.theme" />
 	<script type="text/javascript" src="./rp.aspx?extres=js.RichEditorPopup.js"></script>
 	<script type="text/javascript">
 		jq$(document).ready(function() {
