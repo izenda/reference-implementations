@@ -3,7 +3,7 @@
 
 <html>
 	<head runat="server">
-		<script type="text/javascript" src="./rp.aspx?js=AdHocQuery"></script>
+		<script type="text/javascript" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)js=AdHocQuery"></script>
 		<script type="text/javascript">
 			ensureIzPidProcessed();
 		</script>
@@ -15,10 +15,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex, follow" />
 		<link rel="alternate" type="application/rss+xml" href="" title="Team Blog - RSS" />
-		<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=css.reset2.css" />
-		<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=css.print.css" media="print" />
-		<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=css.fun.css" />
-		<link rel="shortcut icon" href="./rp.aspx?image=ModernImages.report-icon.png" type='image/png' />
+		<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)extres=css.reset2.css" />
+		<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)extres=css.print.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)extres=css.fun.css" />
+		<link rel="shortcut icon" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)image=ModernImages.report-icon.png" type='image/png' />
 
 		@if (IsSectionDefined("changeableheader"))
 		{
@@ -26,17 +26,17 @@
 		}
 		else
 		{
-			<link rel="stylesheet" type="text/css" href="./rp.aspx?css=ModernStyles.bootstrap-responsive" />
-			<link rel="stylesheet" type="text/css" href="./rp.aspx?css=ModernStyles.bootstrap" />
-			<link rel="stylesheet" type="text/css" href="./rp.aspx?css=ModernStyles.bootstrap-modals" />
-			<link rel="stylesheet" type="text/css" href="./rp.aspx?css=ModernStyles.bootstrap-override" />
-			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.jquery-1.7.2.min"></script>
-			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-dropdown"></script>
-			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-tab"></script>
-			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-transition"></script>
-			<script type="text/javascript" src="./rp.aspx?js=ModernScripts.bootstrap-modal"></script>
+			<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)css=ModernStyles.bootstrap-responsive" />
+			<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)css=ModernStyles.bootstrap" />
+			<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)css=ModernStyles.bootstrap-modals" />
+			<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)css=ModernStyles.bootstrap-override" />
+			<script type="text/javascript" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)js=ModernScripts.jquery-1.7.2.min"></script>
+			<script type="text/javascript" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)js=ModernScripts.bootstrap-dropdown"></script>
+			<script type="text/javascript" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)js=ModernScripts.bootstrap-tab"></script>
+			<script type="text/javascript" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)js=ModernScripts.bootstrap-transition"></script>
+			<script type="text/javascript" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)js=ModernScripts.bootstrap-modal"></script>
 		}
-		<link rel="stylesheet" type="text/css" href="./rp.aspx?extres=css.main.css" />
+		<link rel="stylesheet" type="text/css" href="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)extres=css.main.css" />
 
 		@if (IsSectionDefined("header"))
 		{
@@ -59,7 +59,7 @@
 			<div id="whiteHeader" class="izenda-layout-header header">
 				<div class="page" style="font-family: Segoe UI, Tahoma, Verdana, Arial, Helvetica, sans-serif">
 					<div class="left-logo">
-						<img src="./rp.aspx?image=ModernImages.bi-logo.png" alt="Business intelligence" />
+						<img src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)image=ModernImages.bi-logo.png" alt="Business intelligence" />
 					</div>
 					<div class="right-logo">
 						@if (!String.IsNullOrEmpty(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl))
@@ -71,7 +71,7 @@
 						else
 						{
 							<text>
-								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="./rp.aspx?image=ModernImages.IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
+								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)image=ModernImages.IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
 							</text>
 						}
 					</div>
@@ -100,7 +100,7 @@
 								}
 								@if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
 								{
-									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.SettingsPageUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))" title="Settings"><img class="icon" src="./rp.aspx?image=ModernImages.settings.png" alt="Settings"></a></li>
+									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.SettingsPageUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))" title="Settings"><img class="icon" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)image=ModernImages.settings.png" alt="Settings"></a></li>
 								}
 							</ul>
 							<div class="clearfix"></div>
@@ -109,7 +109,7 @@
 					<!-- splashscreen -->
 					<div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
 						<div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
-						<img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="@Url.Content("./rp.aspx?image=loading.gif")" alt=""/>
+						<img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="@Url.Content("./" + Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl + "image=loading.gif")" alt=""/>
 					</div>
 					<!-- content -->
 					<div class="main-content" id="mainContentDiv">
