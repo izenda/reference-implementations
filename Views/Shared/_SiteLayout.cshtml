@@ -70,7 +70,7 @@
 						else
 						{
 							<text>
-								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="./@(Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl)image=ModernImages.IzendaNewLogoBlue.png" alt="Izenda Reports" /></a>
+								<a href="http://izenda.com" style="position: relative; top: 4px;"><img class="right-logo" src="@(Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl ?? String.Format("./{0}image=ModernImages.IzendaNewLogoBlue.png", Izenda.AdHoc.Toolkits.StaticResourceToolkit.ResourcesProviderUrl))" alt="Izenda Reports" /></a>
 							</text>
 						}
 					</div>
