@@ -57,7 +57,7 @@
 					</div>
 					<div class="right-logo">
 						<a href="http://izenda.com" style="position: relative; top: 4px;">
-							<img runat="server" class="right-logo" id="rightLogo" src="./rp.aspx?image=ModernImages.IzendaNewLogoBlue.png" alt="Izenda Reports" />
+							<img class="right-logo" id="rightLogo" src="<%If (Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl = Nothing) Then%> <%=String.Format("./{0}image=ModernImages.IzendaNewLogoBlue.png", StaticResourceToolkit.ResourcesProviderUrl)%> <%Else%> <%=Izenda.AdHoc.AdHocSettings.ApplicationHeaderImageUrl%> <%End If %>" alt="Izenda Reports" />
 						</a>
 					</div>
 					<div class="clearfix"></div>
