@@ -9,9 +9,6 @@ public partial class MasterPage1 : MasterPage
   protected override void OnInit(EventArgs e)
 	{
     ASP.global_asax.CustomAdHocConfig.InitializeReporting();
-		rightLogo.Src = String.Format("./{0}image={1}",
-			StaticResourceToolkit.ResourcesProviderUrl,
-			AdHocSettings.ApplicationHeaderImageUrl ?? "ModernImages.IzendaNewLogoBlue.png");
 		if (!AdHocSettings.ShowDesignLinks)
 		{
 			string script = "<script type=\"text/javascript\" language=\"javascript\">";
