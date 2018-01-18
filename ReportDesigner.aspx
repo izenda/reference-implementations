@@ -1,12 +1,12 @@
 <%@ Page Title="Report Designer" Language="VB" MasterPageFile="Izenda.master" AutoEventWireup="true" CodeFile="ReportDesigner.aspx.vb" Inherits="ReportDesigner" %>
-<%@ Import namespace="Izenda.AdHoc.Toolkits" %>
+<%@ Import namespace="Izenda.AdHoc" %>
 
 <%@ Register TagPrefix="cc1" Namespace="Izenda.Web.UI" Assembly="Izenda.AdHoc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadPlaceHolder" runat="Server">
-	<link rel="stylesheet" type="text/css" href="./<%=StaticResourceToolkit.ResourcesProviderUrl%>extres=css.Filters.css" />
-	<link rel="stylesheet" type="text/css" href="./<%=StaticResourceToolkit.ResourcesProviderUrl%>css=ModernStyles.jquery-ui" />
-	<script type="text/javascript" src="./<%=StaticResourceToolkit.ResourcesProviderUrl%>extres=js.RichEditorPopup.js"></script>
+	<link rel="stylesheet" type="text/css" href="./<%=AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter%>extres=css.Filters.css" />
+	<link rel="stylesheet" type="text/css" href="./<%=AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter%>css=ModernStyles.jquery-ui" />
+	<script type="text/javascript" src="./<%=AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter%>extres=js.RichEditorPopup.js"></script>
 	<script type="text/javascript">
 		jq$(document).ready(function() {
 			if (typeof reportLoadError != 'undefined' && reportLoadError == true)
