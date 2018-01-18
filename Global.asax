@@ -17,7 +17,7 @@
 			AdHocSettings.GenerateThumbnails = true;
 			AdHocSettings.ShowSimpleModeViewer = true;
 			AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$";
-			AdHocSettings.ReportCssUrl = AdHocSettings.ResourcesProviderWithDelimiter + "extres=css.Report.css";
+			AdHocSettings.ReportCssUrl = AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter + "extres=css.Report.css";
 			AdHocSettings.ShowBetweenDateCalendar = true;
 			AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart;
 			AdHocSettings.ShowModifiedReportMessage = false;
