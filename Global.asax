@@ -11,13 +11,14 @@
 	[Serializable]
 	public class CustomAdHocConfig : FileSystemAdHocConfig 
 	{
+		public static AdHocConfig InstantiateMySelf() { return new CustomAdHocConfig(); }
 		public static void InitializeReporting() 
 		{
 			if (AdHocContext.Initialized)
 				return;
+			CustomConfigFactory = InstantiateMySelf;
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
 			AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
-			AdHocSettings.AdHocConfig = new CustomAdHocConfig();
 			AdHocSettings.GenerateThumbnails = true;
 			AdHocSettings.ShowSimpleModeViewer = true;
 			AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$";
