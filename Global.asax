@@ -5,15 +5,16 @@
 	[Serializable]
 	public class CustomAdHocConfig : FileSystemAdHocConfig 
 	{
+		public static AdHocConfig InstantiateMySelf() { return new CustomAdHocConfig(); }
 		public static void InitializeReporting() 
 		{
 			//Check to see if we've already initialized.
 			if (AdHocContext.Initialized)
 				return;
 			//Initialize System
+			CustomConfigFactory = InstantiateMySelf;
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
 			AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
-			AdHocSettings.AdHocConfig = new CustomAdHocConfig();
 			AdHocSettings.GenerateThumbnails = true;
 			AdHocSettings.ShowSimpleModeViewer = true;
 			AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$";
