@@ -8,20 +8,23 @@
 
 	<Serializable()> Public Class CustomAdHocConfig
 		Inherits FileSystemAdHocConfig
+		Public Shared Function InstantiateMySelf() As AdHocConfig
+			Return New CustomAdHocConfig()
+		End Function
 		Public Shared Sub InitializeReporting()
 			'Check to see if we've already initialized.
 			If (AdHocContext.Initialized) Then
 				Return
 			End If
 			'Initialize System
+			CustomConfigFactory = New AdHocConfigFactory(AddressOf InstantiateMySelf)
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE"
 			AdHocSettings.SqlServerConnectionString = "INSERT_CONNECTION_STRING_HERE"
-			AdHocSettings.AdHocConfig = New CustomAdHocConfig()
 			AdHocSettings.GenerateThumbnails = True
 			AdHocSettings.ShowSimpleModeViewer = True
 			AdHocSettings.IdentifiersRegex = "^.*[iI][Dd]$"
 			AdHocSettings.ReportCssUrl = AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter & "extres=css.Report.css"
-			AdHocSettings.ShowBetweenDateCalendar = True	
+			AdHocSettings.ShowBetweenDateCalendar = True
 			AdHocSettings.ChartingEngine = ChartingEngine.HtmlChart
 			AdHocSettings.ShowModifiedReportMessage = False
 			AdHocSettings.DashboardViewer = "Dash.aspx"
