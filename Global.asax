@@ -16,6 +16,15 @@
 		{
 			if (AdHocContext.Initialized)
 				return;
+
+			//Uncomment following block of code to engage izenda built-in user authentication
+			/*AdHocSettings.RequireLogin = true;
+			AdHocSettings.LoginUrl = "Login";
+			if (HttpContext.Current.Session["UserName"] is string)
+				AdHocSettings.CurrentUserName = (string) HttpContext.Current.Session["UserName"];
+			else
+				return;*/
+
 			CustomConfigFactory = InstantiateMySelf;
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE";
 			AdHocSettings.SqlServerConnectionString = @"INSERT_CONNECTION_STRING_HERE";
