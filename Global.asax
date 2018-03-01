@@ -16,6 +16,16 @@
 			If (AdHocContext.Initialized) Then
 				Return
 			End If
+
+			'Uncomment following block of code to engage izenda built-in user authentication
+			'AdHocSettings.RequireLogin = True
+			'AdHocSettings.LoginUrl = "Login.aspx"
+			'If (TypeOf HttpContext.Current.Session("UserName") Is String) Then
+			'AdHocSettings.CurrentUserName = DirectCast(HttpContext.Current.Session("UserName"), String)
+			'Else
+			'Return
+			'End If
+
 			'Initialize System
 			CustomConfigFactory = New AdHocConfigFactory(AddressOf InstantiateMySelf)
 			AdHocSettings.LicenseKey = "INSERT_LICENSE_KEY_HERE"
