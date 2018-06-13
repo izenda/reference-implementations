@@ -1,5 +1,21 @@
 ﻿<!DOCTYPE html>
 
+@functions {
+	private string GetIzendaActionUrl(string pageUrl, params string[] additionalParams)
+	{
+		var allParams = new List<string>(additionalParams ?? new string[0]);
+		var pageUrlNodes = pageUrl.Split(new[] { '?' }, StringSplitOptions.RemoveEmptyEntries);
+		if (pageUrlNodes.Length > 1)
+			foreach (string paramNode in pageUrlNodes[1].Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries))
+				allParams.AddRange(paramNode.Split(new[] { '=' }));
+		var rv = new RouteValueDictionary();
+		for (int index = 1; index < allParams.Count; index += 2)
+			rv[allParams[index - 1]] = allParams[index];
+		string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+		return Url.Action(pageUrlNodes[0], controller, rv, null);
+	}
+}
+
 <html>
 	<head runat="server">
 		<script type="text/javascript" src="./@(Izenda.AdHoc.AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter)js=AdHocQuery"></script>
@@ -82,24 +98,24 @@
 					<div class="top-nav applyStyles" id="blueHeader">
 						<div class="page">
 							<ul id="topnav" style="margin: 0px; padding: 0px;">
-								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.ReportList, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))">Reports</a></li>
-								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.DashboardViewer, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1}, null))" onclick="ShowRlToDbLoading();">Dashboards</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportList))">Reports</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardViewer, "clear", "1"))" onclick="ShowRlToDbLoading();">Dashboards</a></li>
 								@if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks)
 								{
-								<li class="top-nav-item designer-only btn-group"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1, tab = "Data Sources"}))"><span class="plus">+</span> New</a>
+								<li class="top-nav-item designer-only btn-group"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources" ))"><span class="plus">+</span> New</a>
 									<button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
 										<span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
 									</button>
 									<ul class="dropdown-menu">
-										<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1, tab = "Data Sources"}, null))">Report</a></li>
-										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.InstantReport, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))">Instant Report</a></li>
-										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), new {clear = 1}, null))">Dashboard</a></li>
+										<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources"))">Report</a></li>
+										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.InstantReport))">Instant Report</a></li>
+										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, "clear", "1"))">Dashboard</a></li>
 									</ul>
 								</li>
 								}
 								@if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
 								{
-									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(Url.Action(Izenda.AdHoc.AdHocSettings.SettingsPageUrl, HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString(), null, null))" title="Settings"><img class="icon" src="./@(Izenda.AdHoc.AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter)image=ModernImages.settings.png" alt="Settings"></a></li>
+									<li class="top-nav-item" style="float: right;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.SettingsPageUrl))" title="Settings"><img class="icon" src="./@(Izenda.AdHoc.AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter)image=ModernImages.settings.png" alt="Settings"></a></li>
 								}
 							</ul>
 							<div class="clearfix"></div>
