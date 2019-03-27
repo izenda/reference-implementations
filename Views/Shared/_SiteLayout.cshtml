@@ -100,7 +100,7 @@
 						<div class="page">
 							<ul id="topnav" style="margin: 0px; padding: 0px;">
 								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportList))">@Izenda.AdHoc.Utility.GetLocalizedString("Reports")</a></li>
-								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardViewer, "clear", "1"))" onclick="ShowRlToDbLoading();">@Izenda.AdHoc.Utility.GetLocalizedString("Dashboards")</a></li>
+								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardViewer, "clear", "1"))">@Izenda.AdHoc.Utility.GetLocalizedString("Dashboards")</a></li>
 								@if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks)
 								{
 								<li class="top-nav-item designer-only btn-group"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources" ))"><span class="plus">+</span> @Izenda.AdHoc.Utility.GetLocalizedString("New")</a>
@@ -121,11 +121,6 @@
 							</ul>
 							<div class="clearfix"></div>
 						</div>
-					</div>
-					<!-- splashscreen -->
-					<div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
-						<div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
-						<img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="@Url.Content("./" + Izenda.AdHoc.AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter + "image=loading.gif")" alt=""/>
 					</div>
 					<!-- content -->
 					<div class="main-content" id="mainContentDiv">
