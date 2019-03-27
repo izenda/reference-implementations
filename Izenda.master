@@ -96,11 +96,6 @@
 							<div class="clearfix"></div>
 						</div>
 					</div>
-					<!-- splashscreen -->
-					<div id="dashLoadingVg" style="text-align: center; width: 100%; height: 100%; top: 130px; left: 0px; background-color: #FFFFFF; z-index: 8000; display: none;">
-						<div id="loadingWordDb" style="font-size: 20px; margin-left: 70px; font-size: 20px; color: #1D5987; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: normal !important; font-size: 20px; font-style: normal;">Loading...</div>
-						<img id="limgDb" style="margin-left: 70px; margin-top: 40px;" src="./<%=AdHocSettings.ResourcesProviderUniqueUrlWithDelimiter%>image=loading.gif" alt="" />
-					</div>
 					<!-- content -->
 					<asp:ContentPlaceHolder ID="PlaceHolder" runat="server"></asp:ContentPlaceHolder>
 				</div>
