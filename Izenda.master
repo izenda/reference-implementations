@@ -81,7 +81,9 @@
 									<ul class="dropdown-menu">
 										<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.ReportDesignerUrlWithDelimiter + "clear=1&tab=Data+Sources")%>"><%=Izenda.AdHoc.Utility.GetLocalizedString("Report")%></a></li>
 										<li runat="server" id="irItem"><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.InstantReport)%>"><%=Izenda.AdHoc.Utility.GetLocalizedString("InstantReport")%></a></li>
-										<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrlWithDelimiter + "clear=1")%>"><%=Izenda.AdHoc.Utility.GetLocalizedString("Dashboard")%></a></li>
+										<% If (Izenda.AdHoc.AdHocSettings.ShowDesignDashboardLink) Then%>
+											<li><a href="<%=Izenda.AdHoc.Utility.AppendIzPidParameter(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrlWithDelimiter + "clear=1")%>"><%=Izenda.AdHoc.Utility.GetLocalizedString("Dashboard")%></a></li>
+										<% End If%>
 									</ul>
 								</li>
 								<% End If%>
