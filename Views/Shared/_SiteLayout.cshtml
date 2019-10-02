@@ -102,16 +102,19 @@
 								<li class="top-nav-item" style="vertical-align: top;"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardViewer, "clear", "1"))">@Izenda.AdHoc.Utility.GetLocalizedString("Dashboards")</a></li>
 								@if (Izenda.AdHoc.AdHocSettings.ShowDesignLinks)
 								{
-								<li class="top-nav-item designer-only btn-group"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources" ))"><span class="plus">+</span> @Izenda.AdHoc.Utility.GetLocalizedString("New")</a>
-									<button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
-										<span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
-									</button>
-									<ul class="dropdown-menu">
-										<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources"))">@Izenda.AdHoc.Utility.GetLocalizedString("Report")</a></li>
-										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.InstantReport))">@Izenda.AdHoc.Utility.GetLocalizedString("InstantReport")</a></li>
-										  <li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, "clear", "1"))">@Izenda.AdHoc.Utility.GetLocalizedString("Dashboard")</a></li>
-									</ul>
-								</li>
+									<li class="top-nav-item designer-only btn-group"><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources" ))"><span class="plus">+</span> @Izenda.AdHoc.Utility.GetLocalizedString("New")</a>
+										<button type="button" class="btn dropdown-toggle" style="float: none; vertical-align: top; line-height: 20px; background-color: transparent; border: none !important;" data-toggle="dropdown">
+											<span class="caret" style="margin-top: 8px; vertical-align: top;"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.ReportDesignerUrl, "clear", "1", "tab", "Data Sources"))">@Izenda.AdHoc.Utility.GetLocalizedString("Report")</a></li>
+											<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.InstantReport))">@Izenda.AdHoc.Utility.GetLocalizedString("InstantReport")</a></li>
+											@if (Izenda.AdHoc.AdHocSettings.ShowDesignDashboardLink)
+											{
+												<li><a href="@Izenda.AdHoc.Utility.AppendIzPidParameter(GetIzendaActionUrl(Izenda.AdHoc.AdHocSettings.DashboardDesignerUrl, "clear", "1"))">@Izenda.AdHoc.Utility.GetLocalizedString("Dashboard")</a></li>
+											}
+										</ul>
+									</li>
 								}
 								@if (Izenda.AdHoc.AdHocSettings.ShowSettingsButton)
 								{
