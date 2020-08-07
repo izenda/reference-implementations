@@ -84,8 +84,8 @@
     </Target>
 
     <Target Name="_DownloadNuGet">
-        <DownloadNuGet OutputFilename="$(NuGetExePath)" Condition="'$(DownloadNuGetExe)' == 'true' AND '$(OS)' == 'Windows_NT' AND !Exists('$(NuGetExePath)')" />
-        <Exec Command="$(WgetDownloadNuGetCommand)" Condition="'$(DownloadNuGetExe)' == 'true' AND '($OS)' != 'Windows_NT' AND !Exists('$(NuGetExePath)')" />
+        <!-- <DownloadNuGet OutputFilename="$(NuGetExePath)" Condition="'$(DownloadNuGetExe)' == 'true' AND '$(OS)' == 'Windows_NT' AND !Exists('$(NuGetExePath)')" /> -->
+        <!-- <Exec Command="$(WgetDownloadNuGetCommand)" Condition="'$(DownloadNuGetExe)' == 'true' AND '($OS)' != 'Windows_NT' AND !Exists('$(NuGetExePath)')" /> -->
     </Target>
 
     <Target Name="RestorePackages" DependsOnTargets="CheckPrerequisites">
