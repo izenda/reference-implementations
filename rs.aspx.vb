@@ -5,4 +5,8 @@ Partial Class rs
       HttpContext.Current.Response.End()
     End If
   End Sub
+
+  Protected Overrides Sub OnPreInit(ByVal e As System.EventArgs)
+    ASP.global_asax.CustomAdHocConfig.InitializeReporting()
+  End Sub
 End Class
